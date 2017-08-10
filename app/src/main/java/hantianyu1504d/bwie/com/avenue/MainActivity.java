@@ -16,7 +16,7 @@ import hantianyu1504d.bwie.com.avenue.nearby.view.NearbyFragment;
 import hantianyu1504d.bwie.com.avenue.rebate.view.RebateFragment;
 
 public class MainActivity extends AppCompatActivity {
-//山东高速告诉交话费
+//山东高速告诉交话费黄飞鸿
     @BindView(R.id.main_home)
     RadioButton mainHome;
     @BindView(R.id.main_nearby)
