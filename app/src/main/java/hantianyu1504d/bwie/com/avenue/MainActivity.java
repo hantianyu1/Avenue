@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private RebateFragment rebate;
     private MineFragment mine;
     //
+    //
 
 
     @Override
