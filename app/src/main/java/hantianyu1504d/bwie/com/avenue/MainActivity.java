@@ -14,9 +14,12 @@ import hantianyu1504d.bwie.com.avenue.homepage.view.HomeFragment;
 import hantianyu1504d.bwie.com.avenue.mine.view.MineFragment;
 import hantianyu1504d.bwie.com.avenue.nearby.view.NearbyFragment;
 import hantianyu1504d.bwie.com.avenue.rebate.view.RebateFragment;
-
+/*
+* 住房公积金
+*
+* */
 public class MainActivity extends AppCompatActivity {
-//李飞宇 测试 1.0
+
     @BindView(R.id.main_home)
     RadioButton mainHome;
     @BindView(R.id.main_nearby)
