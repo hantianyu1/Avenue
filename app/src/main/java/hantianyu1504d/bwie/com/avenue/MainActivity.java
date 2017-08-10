@@ -18,6 +18,7 @@ import hantianyu1504d.bwie.com.avenue.rebate.view.RebateFragment;
 /*
 * 住房公积金
 *1
+* 测试3
 * */
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.main_home)
