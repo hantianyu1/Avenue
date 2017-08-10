@@ -16,7 +16,10 @@ import hantianyu1504d.bwie.com.avenue.nearby.view.NearbyFragment;
 import hantianyu1504d.bwie.com.avenue.rebate.view.RebateFragment;
 /*
 *
-* 我的梦 -。  -
+* 我的梦 -。  - 我是分支   我写的
+*
+* 21  写的
+*
 * */
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.main_home)
