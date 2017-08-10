@@ -16,7 +16,8 @@ import hantianyu1504d.bwie.com.avenue.nearby.view.NearbyFragment;
 import hantianyu1504d.bwie.com.avenue.rebate.view.RebateFragment;
 /*
 * 住房公积金
-*
+*1
+* 测试334
 * */
 public class MainActivity extends AppCompatActivity {
 //山东高速告诉交话费黄飞鸿第三个vs的
@@ -37,6 +38,11 @@ public class MainActivity extends AppCompatActivity {
     private NearbyFragment nearby;
     private RebateFragment rebate;
     private MineFragment mine;
+    /*
+    * 我的师傅 、水电费
+    *
+    * */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
