@@ -10,7 +10,6 @@ import android.widget.RadioGroup;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import hantianyu1504d.bwie.com.avenue.R;
 import hantianyu1504d.bwie.com.avenue.homepage.view.HomeFragment;
 import hantianyu1504d.bwie.com.avenue.mine.view.MineFragment;
 import hantianyu1504d.bwie.com.avenue.nearby.view.NearbyFragment;
@@ -18,7 +17,7 @@ import hantianyu1504d.bwie.com.avenue.rebate.view.RebateFragment;
 /*
 * 住房公积金
 *1
-* 测试3
+* 测试334
 * */
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.main_home)
@@ -38,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
     private NearbyFragment nearby;
     private RebateFragment rebate;
     private MineFragment mine;
+    /*
+    * 我的师傅 、水电费
+    *
+    * */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
