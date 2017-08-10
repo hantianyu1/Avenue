@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private MineFragment mine;
     /*
     * 我的师傅 、水电费
-    *
+    *我爱你
     * */
 
     @Override
