@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <RadioGroup
+        android:id="@+id/main_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#fff"
+        android:layout_alignParentBottom="true">
+
+        <RadioButton
+            android:id="@+id/main_home"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:text="@string/home"
+            android:gravity="center"
+            android:textColor="@drawable/main_textcolor_selector"
+            android:drawableTop="@drawable/home"
+            />
+        <RadioButton
+            android:id="@+id/main_nearby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@drawable/main_textcolor_selector"
+            android:text="@string/nearby"
+            android:drawableTop="@drawable/nearby"/>
+        <RadioButton
+            android:id="@+id/main_rebate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:text="@string/rebate"
+            android:gravity="center"
+            android:textColor="@drawable/main_textcolor_selector"
+            android:drawableTop="@drawable/rebate"
+            android:layout_weight="1"/>
+        <RadioButton
+            android:id="@+id/main_me"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:text="@string/me"
+            android:textColor="@drawable/main_textcolor_selector"
+            android:gravity="center"
+            android:drawableTop="@drawable/me"
+            android:layout_weight="1"/>
+
+    </RadioGroup>
+    <FrameLayout
+        android:id="@+id/main_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_above="@+id/main_group"
+        android:background="#fff"
+        android:layout_alignParentStart="true"></FrameLayout>
+
+
+
+
+</RelativeLayout>

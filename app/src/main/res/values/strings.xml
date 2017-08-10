@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Avenue</string>
+    <string name="home">首页</string>
+    <string name="nearby">附近</string>
+    <string name="me">我的</string>
+    <string name="rebate">返利</string>
+</resources>
