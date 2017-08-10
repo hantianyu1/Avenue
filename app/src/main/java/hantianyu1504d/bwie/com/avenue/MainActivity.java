@@ -14,7 +14,9 @@ import hantianyu1504d.bwie.com.avenue.homepage.view.HomeFragment;
 import hantianyu1504d.bwie.com.avenue.mine.view.MineFragment;
 import hantianyu1504d.bwie.com.avenue.nearby.view.NearbyFragment;
 import hantianyu1504d.bwie.com.avenue.rebate.view.RebateFragment;
+
 public class MainActivity extends AppCompatActivity {
+
     @BindView(R.id.main_home)
     RadioButton mainHome;
     @BindView(R.id.main_nearby)
@@ -32,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
     private NearbyFragment nearby;
     private RebateFragment rebate;
     private MineFragment mine;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
