@@ -1,14 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:orientation="vertical" android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="#fff">
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:text="@string/me" />
-=======
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
@@ -218,5 +208,4 @@ android:background="#fff">
                 />
         </RelativeLayout>
     </LinearLayout>
->>>>>>> origin/WWJ
 </LinearLayout>
