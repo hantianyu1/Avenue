@@ -33,12 +33,31 @@
     <dimen name="t36">18sp</dimen>
     <dimen name="t22">11sp</dimen>
     <dimen name="x438">219dp</dimen>
-    <dimen name="x200">100dp</dimen>
-
-
     <dimen name="x83" >41.5dp</dimen>
     <dimen name="x37" >18.5dp</dimen>
     <dimen name="x1" >0.5dp</dimen>
     <dimen name="x34">17dp</dimen>
     <dimen name="x10">5dp</dimen>
+    <dimen name="x4">2dp</dimen>
+    <dimen name="x21">10.5dp</dimen>
+    <dimen name="x22">11dp</dimen>
+    <dimen name="x28">14dp</dimen>
+    <dimen name="x46">23dp</dimen>
+    <dimen name="x50">25dp</dimen>
+    <dimen name="x54">27dp</dimen>
+    <dimen name="x62">31dp</dimen>
+    <dimen name="x68">34dp</dimen>
+    <dimen name="x70">35dp</dimen>
+    <dimen name="x74">32dp</dimen>
+    <dimen name="x90">45dp</dimen>
+    <dimen name="x92">46dp</dimen>
+    <dimen name="x130">65dp</dimen>
+    <dimen name="x200">100dp</dimen>
+    <dimen name="x274">137dp</dimen>
+    <dimen name="x360">180dp</dimen>
+    <dimen name="x526">263dp</dimen>
+    <dimen name="x550">275dp</dimen>
+    <dimen name="x532">266dp</dimen>
+    <dimen name="x300">150dp</dimen>
+    <dimen name="x690">345dp</dimen>
 </resources>
