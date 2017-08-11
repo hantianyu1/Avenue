@@ -11,9 +11,10 @@
     <color name="cFFFC0410">#FFFC0410</color>
     <!--背景图-->
     <color name="cFFF9F5F5">#FFF9F5F5</color>
-
-
     <color name="cf2f4f5">#f2f4f5</color>
-
+    <color name="c435C94">#435C94</color>
+    <color name="c88CBFF">#88CBFF</color>
+    <color name="C20000">#C20000</color>
+    <color name="c435c94">#435c94</color>
     <color name="cdddddd">#dddddd</color>
 </resources>
