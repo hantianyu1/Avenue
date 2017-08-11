@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:background="@color/c333333"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1" />
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:orientation="horizontal"
+       android:layout_height="wrap_content">
+    <ImageView
+        android:layout_marginTop="@dimen/x34"
+        android:id="@+id/foot_viewpaer_item_image"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="@dimen/x34"
+        android:layout_marginLeft="@dimen/x30"
+        android:background="@mipmap/ic_launcher"
+        android:layout_height="match_parent" />
+       <LinearLayout
+           android:layout_marginTop="@dimen/x34"
+           android:layout_marginLeft="@dimen/x20"
+           android:layout_width="match_parent"
+           android:orientation="vertical"
+           android:layout_height="@dimen/x200">
+    <TextView
+        android:id="@+id/foot_viewpaer_item_title"
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/t28"
+        android:textColor="@color/c333333"
+        android:text="798 咖啡"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/foot_viewpaer_item_page"
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/t24"
+        android:textColor="@color/c999999"
+        android:layout_marginTop="@dimen/x10"
+        android:text="钱45/人"
+
+        android:layout_height="wrap_content" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+           <TextView
+
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="@dimen/x57"
+               android:text="积分率"
+
+               android:textColor="@color/c333333"
+               android:textSize="@dimen/t28"
+               android:id="@+id/textView" />
+                <TextView
+                    android:id="@+id/foot_viewpaer_item_integral"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15%"
+                    android:layout_marginLeft="@dimen/x10"
+                    android:textColor="@color/cC20000"
+                    android:textSize="@dimen/t28"
+                    android:layout_toRightOf="@+id/textView"
+                    android:layout_toEndOf="@+id/textView"
+                    android:layout_alignBottom="@+id/textView" />
+                <TextView
+                    android:id="@+id/foot_viewpaer_item_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="安贞距您100m"
+
+                    android:textColor="@color/c999999"
+                    android:textSize="@dimen/t24"
+                    android:layout_marginRight="@dimen/x30"
+                    android:layout_alignBottom="@+id/textView"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+       </LinearLayout>
+   </LinearLayout>
+</LinearLayout>

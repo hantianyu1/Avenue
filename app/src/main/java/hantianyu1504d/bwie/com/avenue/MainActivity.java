@@ -38,10 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private NearbyFragment nearby;
     private RebateFragment rebate;
     private MineFragment mine;
-    /*
-    * 我的师傅 、水电费
-    *我爱你
-    * */
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
