@@ -4,4 +4,18 @@
     <string name="nearby">附近</string>
     <string name="me">我的</string>
     <string name="rebate">返利</string>
+    <string name="login_title">注册</string>
+    <string name="et_phone">请输入手机号</string>
+    <string name="yanzhengma">请输入验证码</string>
+
+    <string name="btn_send">获取验证码</string>
+
+    <string name="txt_login_password">设置密码</string>
+    <string name="txt_login_spang">我已经阅读并同意大道用户协议</string>
+
+    <string name="btn_login">登录</string>
+
+
+
+
 </resources>

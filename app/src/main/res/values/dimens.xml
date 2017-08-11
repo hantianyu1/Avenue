@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <dimen name="text_width">100px</dimen>
+
+    <dimen name="x50">100dp</dimen>
+
+    <dimen name="x5">10dp</dimen>
+    <dimen name="x88">44dp</dimen>
+    <dimen name="x300">150px</dimen>
+    <dimen name="x150">150dp</dimen>
+    <dimen name="x30">15dp</dimen>
+    <dimen name="x36">18dp</dimen>
+    <dimen name="x46">23dp</dimen>
+    <dimen name="x60">30dp</dimen>
+    <dimen name="x20">10dp</dimen>
+    <dimen name="x42">21dp</dimen>
+    <dimen name="x22">11dp</dimen>
+    <dimen name="x32">16dp</dimen>
+    <dimen name="x28">14sp</dimen>
+    <dimen name="x186">84dp</dimen>
+    <dimen name="x148">74dp</dimen>
+
+</resources>

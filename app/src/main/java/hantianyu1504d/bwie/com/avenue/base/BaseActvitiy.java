@@ -15,7 +15,7 @@ import butterknife.Unbinder;
 public abstract class BaseActvitiy extends AppCompatActivity {
 
     private Unbinder bind;
-    private Context mContext;
+    public Context mContext;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
