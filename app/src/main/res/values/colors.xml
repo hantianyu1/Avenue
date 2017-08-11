@@ -4,5 +4,11 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="c333333">#333333</color>
-    <color name="cC20000">#C20000</color>
+    <color name="cC20000">#200000</color>
+    <color name="c666666">#666666</color>
+    <color name="c999999">#999999</color>
+    <color name="cffffff">#ffffff</color>
+    <color name="cFFFC0410">#FFFC0410</color>
+    <!--背景图-->
+    <color name="cFFF9F5F5">#FFF9F5F5</color>
 </resources>
