@@ -8,12 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import hantianyu1504d.bwie.com.avenue.R;
+import hantianyu1504d.bwie.com.avenue.homepage.mode.HomeView;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements HomeView{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -22,4 +23,8 @@ public class HomeFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
+    @Override
+    public void upDate(Class aClass) {
+
+    }
 }
