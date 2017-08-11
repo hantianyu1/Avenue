@@ -343,15 +343,17 @@
             </LinearLayout>
         </LinearLayout>
 
-    </LinearLayout>
+
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/x50"
         android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/t30"
+        android:layout_marginRight="@dimen/t30"
         android:text="显示更多"
         android:textColor="@color/c435C94"
-        android:textSize="@dimen/x22" />
+        android:textSize="@dimen/x22" /></LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/x130"
@@ -392,7 +394,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/x38"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="@dimen/x10"
+            android:layout_marginRight="@dimen/x30"
             android:src="@mipmap/gengduo" />
     </RelativeLayout>
 </LinearLayout>
