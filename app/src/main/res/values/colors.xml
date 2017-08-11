@@ -4,5 +4,14 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="c333333">#333333</color>
+    <color name="c999999">#999999</color>
     <color name="cC20000">#C20000</color>
+    <color name="cffffff">#ffffff</color>
+    <color name="c666666">#666666</color>
+    <color name="c435C94">#435C94</color>
+    <color name="c88CBFF">#88CBFF</color>
+    <color name="C20000">#C20000</color>
+    <color name="c435c94">#435c94</color>
+    <color name="cf2f4f5">#f2f4f5</color>
+    <color name="cdddddd">#dddddd</color>
 </resources>
