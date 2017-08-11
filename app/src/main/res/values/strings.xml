@@ -1,7 +1,15 @@
 <resources>
     <string name="app_name">Avenue</string>
+    <string name="fujin">附近旺铺</string>
     <string name="home">首页</string>
     <string name="nearby">附近</string>
     <string name="me">我的</string>
     <string name="rebate">返利</string>
+    <string name="beijing">北京</string>
+    <string name="title_edit">麻辣小龙虾</string>
+    <string name="wangputuijian">旺铺推荐</string>
+    <string name="nuanxinfuli">暖&#160;心&#160;福&#160;利</string>
+    <string name="xinyonghu">新&#160;用&#160;户&#160;优&#160;惠</string>
+    <string name="dadaoshike">大&#160;道&#160;时&#160;刻</string>
+    <string name="xingongneng">新&#160;功&#160;能&#160;上&#160;线</string>
 </resources>
