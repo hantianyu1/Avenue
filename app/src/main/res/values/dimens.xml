@@ -87,4 +87,5 @@
         <dimen name="x54">27dp</dimen>
         <dimen name="x50">25dp</dimen>
         <dimen name="x24">12dp</dimen>
+        <dimen name="x18">9dp</dimen>
     </resources>

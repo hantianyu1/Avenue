@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
     android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/x360"
@@ -87,12 +93,14 @@
                         android:textSize="@dimen/x36" />
 
                     <TextView
+                        android:id="@+id/txt_record"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_marginBottom="@dimen/x62"
                         android:layout_marginRight="@dimen/x30"
                         android:layout_marginTop="@dimen/x10"
+                        android:clickable="true"
                         android:text="记录查询"
                         android:textColor="@color/cffffff"
                         android:textSize="@dimen/x28" />
@@ -171,6 +179,7 @@
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
             <Button
                 android:id="@+id/btn_more"
                 android:layout_width="match_parent"
@@ -181,51 +190,52 @@
                 android:text="显示更多"
                 android:textColor="@color/c435C94"
                 android:textSize="@dimen/x22" />
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
 
-        <ImageView
-            android:id="@+id/calender"
-            android:layout_width="@dimen/x66"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/x34"
-            android:layout_gravity="center"
-            android:layout_marginLeft="@dimen/x30"
-            android:src="@mipmap/calender" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/txt_first"
-            android:layout_toRightOf="@+id/calender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/x24"
-            android:textColor="@color/c666666"
-            android:text="近7日有2笔返利"
-            android:layout_marginTop="@dimen/x38"
-            android:layout_marginLeft="@dimen/x70"/>
+                <ImageView
+                    android:id="@+id/calender"
+                    android:layout_width="@dimen/x66"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:layout_marginTop="@dimen/x34"
+                    android:src="@mipmap/calender" />
 
-        <TextView
-            android:id="@+id/txt_230"
-            android:layout_below="@+id/txt_first"
-            android:layout_toRightOf="@+id/calender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/x24"
-            android:textColor="@color/c999999"
-            android:layout_marginTop="@dimen/x10"
-            android:text="5月25日（明天）返利230元"
-            android:layout_marginLeft="@dimen/x70"/>
+                <TextView
+                    android:id="@+id/txt_first"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x70"
+                    android:layout_marginTop="@dimen/x38"
+                    android:layout_toRightOf="@+id/calender"
+                    android:text="近7日有2笔返利"
+                    android:textColor="@color/c666666"
+                    android:textSize="@dimen/x24" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/x38"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="@dimen/x10"
-            android:src="@mipmap/gengduo" />
+                <TextView
+                    android:id="@+id/txt_230"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_first"
+                    android:layout_marginLeft="@dimen/x70"
+                    android:layout_marginTop="@dimen/x10"
+                    android:layout_toRightOf="@+id/calender"
+                    android:text="5月25日（明天）返利230元"
+                    android:textColor="@color/c999999"
+                    android:textSize="@dimen/x24" />
 
-    </RelativeLayout>
-</LinearLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/x10"
+                    android:layout_marginTop="@dimen/x38"
+                    android:src="@mipmap/gengduo" />
+
+            </RelativeLayout>
+        </LinearLayout>
+</ScrollView>
