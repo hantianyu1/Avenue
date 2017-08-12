@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Avenue</string>
-    <string name="fujin">附近旺铺</string>
     <string name="home">首页</string>
     <string name="nearby">附近</string>
     <string name="me">我的</string>
@@ -12,4 +11,20 @@
     <string name="xinyonghu">新&#160;用&#160;户&#160;优&#160;惠</string>
     <string name="dadaoshike">大&#160;道&#160;时&#160;刻</string>
     <string name="xingongneng">新&#160;功&#160;能&#160;上&#160;线</string>
+
+    <string name="nearby_merchant_name">请输入商户名称</string>
+    <string name="nearby_site">胜古家园</string>
+    <string name="nearby_Near_the_location">附近旺铺</string>
+    <string name="nearby_food_recommendation">超人气美食推荐</string>
+    <string name="nearby_food_west">小可爱西点</string>
+    <string name="nearby_food_Italian_restaurant">巴贝拉意式餐厅</string>
+    <string name="nearby_food_barbecue">金釜山自助烤肉</string>
+    <string name="nearby_Anzhenmen">[安贞门]</string>
+    <string name="nearby_Gourmet">美食</string>
+    <string name="nearby_entertainment">休闲娱乐</string>
+    <string name="nearby_serve">生活服务</string>
+    <string name="nearby_grogshop">酒店</string>
+    <string name="nearby_all">全部</string>
+
+
 </resources>

@@ -20,4 +20,7 @@
     <color name="cf2f4f5">#f2f4f5</color>
 
     <color name="cdddddd">#dddddd</color>
+    <color name="c000000">#000000</color>
+    <color name="cF2F4F5">#F2F4F5</color>
+    <color name="cFFFFFF">#FFFFFF</color>
 </resources>
