@@ -13,9 +13,8 @@
         android:id="@+id/rlayout_login"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:visibility="gone">
+        android:visibility="visible">
 
 
         <RelativeLayout
@@ -76,7 +75,8 @@
             android:layout_marginEnd="12dp"
             android:layout_marginRight="@dimen/x60"
             android:layout_marginTop="10dp"
-            android:src="@mipmap/shouji" />
+            android:src="@mipmap/shouji"
+            android:layout_alignRight="@+id/et_login" />
 
         <LinearLayout
             android:id="@+id/llayout"
@@ -131,7 +131,8 @@
 
             android:layout_marginBottom="13dp"
             android:layout_marginRight="@dimen/x60"
-            android:src="@mipmap/biyan" />
+            android:src="@mipmap/biyan"
+            android:layout_alignLeft="@+id/imageView" />
 
         <CheckBox
             android:id="@+id/chk_login_select"
@@ -151,7 +152,9 @@
             android:layout_marginStart="24dp"
             android:layout_toEndOf="@+id/chk_login_select"
             android:text="@string/txt_login_spang"
-            android:textSize="@dimen/x28" />
+            android:textSize="@dimen/x28"
+            android:layout_marginLeft="24dp"
+            android:layout_toRightOf="@+id/chk_login_select" />
 
         <Button
             android:id="@+id/btn_login"

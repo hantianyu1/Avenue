@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 26
     buildToolsVersion "26.0.0"
     defaultConfig {
         applicationId "hantianyu1504d.bwie.com.avenue"
@@ -33,4 +33,6 @@ dependencies {
     compile 'com.youth.banner:banner:1.4.9'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
     compile 'com.android.support:design:26.0.0-alpha1'
+    // gson
+    compile 'com.google.code.gson:gson:2.8.1'
 }
