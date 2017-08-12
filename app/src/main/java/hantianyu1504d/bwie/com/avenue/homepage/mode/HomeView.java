@@ -7,5 +7,5 @@ package hantianyu1504d.bwie.com.avenue.homepage.mode;
  * 创建时间：2017/8/11 19:58
  */
 public interface HomeView <T>{
-    void upDate(Class<T> tClass);
+    void upDate(String s);
 }

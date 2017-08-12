@@ -7,4 +7,6 @@ package hantianyu1504d.bwie.com.avenue.core.utils;
  * 创建时间：2017/8/11 21:40
  */
 public class UrlServer {
+    public  static final String BASE_URL="http://123.57.33.185:8088";
+    public  static final String PAGEANDSHPOSURL="/listRecommendPositions";
 }
