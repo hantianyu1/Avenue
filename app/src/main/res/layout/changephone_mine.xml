@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cFFF9F5F5"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/x80"
@@ -24,22 +25,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="注册"
+                android:text="更换手机号"
                 android:textSize="@dimen/x40"
                 />
         </LinearLayout>
     </RelativeLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/x300"
-        android:gravity="center"
-        >
-        <ImageView
-            android:layout_width="@dimen/x186"
-            android:layout_height="@dimen/x182"
-            android:background="@mipmap/ic_launcher"
-            />
-    </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/x88"
@@ -47,11 +37,12 @@
         android:gravity="center_vertical"
         android:layout_marginLeft="@dimen/x30"
         android:layout_marginRight="@dimen/x30"
+        android:layout_marginTop="@dimen/x20"
         >
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="请输入新的手机号"
+            android:hint="请重新输入手机号"
             android:textSize="@dimen/x28"
             android:layout_marginLeft="@dimen/x30"
             android:background="@null"
@@ -103,79 +94,28 @@
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="重新发送"
+                android:text="获取验证码"
                 android:textSize="@dimen/x28"
                 android:button="@null"
                 android:gravity="center"
-                android:textColor="@color/c999999"
-                />
-        </LinearLayout>
-    </LinearLayout>
-    <RelativeLayout
-        android:layout_marginTop="@dimen/x20"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/x88"
-       android:gravity="center_vertical"
-        android:background="@color/cffffff"
-        android:layout_marginLeft="@dimen/x30"
-        android:layout_marginRight="@dimen/x30"
-        >
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="设置密码"
-            android:textColorHint="@color/c999999"
-            android:textSize="@dimen/x28"
-            android:layout_marginLeft="@dimen/x30"
-            android:background="@null"
-            />
-        <RadioButton
-            android:layout_width="@dimen/x42"
-            android:layout_height="@dimen/x22"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="@dimen/x30"
-            android:background="@mipmap/biyan"
-            android:button="@null"
-            />
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/x176">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/x88"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            >
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/x30"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="我已阅读并同意大道用户协议"
-                android:textSize="@dimen/x28"
                 android:textColor="@color/c333333"
                 />
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/x88"
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x70"
+        android:gravity="center"
+        >
+        <RadioButton
+            android:layout_width="@dimen/x690"
+            android:layout_height="@dimen/x88"
+            android:background="@color/cffffff"
+            android:button="@null"
             android:gravity="center"
-            >
-            <RadioButton
-                android:layout_width="@dimen/x690"
-                android:layout_height="@dimen/x88"
-                android:background="@color/cffffff"
-                android:button="@null"
-                android:gravity="center"
-                android:textSize="@dimen/x28"
-                android:textColor="@color/cFFFC0410"
-                android:text="重置密码"
-                /></LinearLayout>
-    </RelativeLayout>
-   
+            android:textSize="@dimen/x28"
+            android:textColor="@color/cFFFC0410"
+            android:text="确定"
+            /></LinearLayout>
 </LinearLayout>
