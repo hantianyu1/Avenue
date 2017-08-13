@@ -6,7 +6,7 @@
     android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="@dimen/x80"
         android:background="@color/cffffff"
         android:gravity="center"
         >
@@ -30,10 +30,155 @@
         </LinearLayout>
     </RelativeLayout>
     <LinearLayout
-        android:layout_marginTop="@dimen/x300"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x300"
+        android:gravity="center"
+        >
+        <ImageView
+            android:layout_width="@dimen/x186"
+            android:layout_height="@dimen/x182"
+            android:background="@mipmap/ic_launcher"
+            />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x88"
+        android:background="@color/cffffff"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/x30"
+        android:layout_marginRight="@dimen/x30"
+        >
+        <EditText
+            android:id="@+id/ed_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="请输入新的手机号"
+            android:textSize="@dimen/x28"
+            android:layout_marginLeft="@dimen/x30"
+            android:background="@null"
+            android:textColorHint="@color/c999999"
+            />
+        <RadioButton
+            android:layout_width="@dimen/x36"
+            android:layout_height="@dimen/x46"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x30"
+            android:background="@mipmap/shouji"
+            android:button="@null"
+            />
+    </RelativeLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/x88"
         android:orientation="horizontal"
+        android:layout_marginTop="@dimen/x20"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/x30"
+        android:layout_marginRight="@dimen/x30"
+        >
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/x88"
+            android:layout_weight="2"
+            android:background="@color/cffffff"
+            android:gravity="center_vertical"
+            >
+            <EditText
+                android:id="@+id/ed_sms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="请输入验证码"
+                android:textSize="@dimen/x28"
+                android:layout_marginLeft="@dimen/x30"
+                android:background="@null"
+                android:textColorHint="@color/c999999"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/x88"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/x20"
+            android:background="@color/cffffff"
+
+            >
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="重新发送"
+                android:textSize="@dimen/x28"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@color/c999999"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_marginTop="@dimen/x20"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x88"
+       android:gravity="center_vertical"
         android:background="@color/cffffff"
-        ></LinearLayout>
+        android:layout_marginLeft="@dimen/x30"
+        android:layout_marginRight="@dimen/x30"
+        >
+        <EditText
+            android:id="@+id/ed_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="设置密码"
+            android:textColorHint="@color/c999999"
+            android:textSize="@dimen/x28"
+            android:layout_marginLeft="@dimen/x30"
+            android:background="@null"
+            />
+        <RadioButton
+            android:layout_width="@dimen/x42"
+            android:layout_height="@dimen/x22"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x30"
+            android:background="@mipmap/biyan"
+            android:button="@null"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x176">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x88"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            >
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x30"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我已阅读并同意大道用户协议"
+                android:textSize="@dimen/x28"
+                android:textColor="@color/c333333"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x88"
+            android:gravity="center"
+            >
+            <RadioButton
+                android:layout_width="@dimen/x690"
+                android:layout_height="@dimen/x88"
+                android:background="@color/cffffff"
+                android:button="@null"
+                android:gravity="center"
+                android:textSize="@dimen/x28"
+                android:textColor="@color/cFFFC0410"
+                android:text="重置密码"
+                /></LinearLayout>
+    </RelativeLayout>
+   
 </LinearLayout>
