@@ -98,13 +98,13 @@ public class RebateFragment extends Fragment {
     @OnClick({btn_more, R.id.calender,R.id.txt_record})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case btn_more:
+            case R.id.btn_more:
                 if (recyclerViewAdapter.getItemCount() == 2) {
                     recyclerViewAdapter.AddItem(list.size());
-                    btnMore.setText("显示更多");
+                    btnMore.setText("收起更多");
                     recyclerViewAdapter.notifyDataSetChanged();
                 } else {
-                    btnMore.setText("收起更多");
+                    btnMore.setText("显示更多");
                     recyclerViewAdapter.AddItem(2);
                     recyclerViewAdapter.notifyDataSetChanged();
                 }

@@ -3,6 +3,7 @@ package hantianyu1504d.bwie.com.avenue.rebate.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +14,9 @@ import com.othershe.calendarview.listener.OnMonthItemChooseListener;
 import com.othershe.calendarview.listener.OnMonthItemClickListener;
 import com.othershe.calendarview.listener.OnPagerChangeListener;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import hantianyu1504d.bwie.com.avenue.R;
 
 /**
@@ -22,10 +26,14 @@ import hantianyu1504d.bwie.com.avenue.R;
  */
 
 public class CalenderActivity extends AppCompatActivity {
+    @BindView(R.id.img_return)
+    ImageView imgReturn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rebate);
+        ButterKnife.bind(this);
         CalendarView calendarView = (CalendarView) findViewById(R.id.calendar);
 //日历init
 //        calendarView.init();
@@ -50,7 +58,7 @@ public class CalenderActivity extends AppCompatActivity {
         calendarView.setOnItemClickListener(new OnMonthItemClickListener() {
             @Override
             public void onMonthItemClick(View view, DateBean date) {
-                Toast.makeText(CalenderActivity.this,"onMonthItemClick:"+date.toString(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(CalenderActivity.this, "onMonthItemClick:" + date.toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -61,5 +69,10 @@ public class CalenderActivity extends AppCompatActivity {
                 //flag=true代表选中数据，flag=false代表取消选中
             }
         });
+    }
+
+    @OnClick(R.id.img_return)
+    public void onViewClicked() {
+        CalenderActivity.this.finish();
     }
 }
