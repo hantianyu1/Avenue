@@ -12,23 +12,22 @@ import hantianyu1504d.bwie.com.avenue.R;
 /**
  * 类的作用:
  * author: 刘婕
- * date:2017/8/12
+ * date:2017/8/14
  */
 
-public class RecordActivity extends AppCompatActivity {
-
+public class RebatePlanActivity extends AppCompatActivity {
     @BindView(R.id.img_return)
     ImageView imgReturn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_record);
+        setContentView(R.layout.activity_rebateplan);
         ButterKnife.bind(this);
     }
 
     @OnClick(R.id.img_return)
     public void onViewClicked() {
-        RecordActivity.this.finish();
+        RebatePlanActivity.this.finish();
     }
 }

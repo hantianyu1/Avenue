@@ -28,14 +28,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.context = context;
         this.list = list;
     }
-    public static interface MyItemClickListener {
+    public  interface MyItemClickListener {
         void onItemClick(View view, int postion);
     }
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = View.inflate(context, R.layout.fragment_rebate_item, null);
+      View view =  View.inflate(context, R.layout.fragment_rebate_item, null);
         holder = new ViewHolder(view, mListener);
-        parent.setOnClickListener(this);
+        //parent.setOnClickListener(this);
         return holder;
     }
 
@@ -45,6 +45,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.txtA.setText(data.getName());
         holder.txtCalander.setText(data.getTitle());
         holder.itemView.setTag(position);//将position保存在itemView的Tag中，以便点击时进行获取
+        holder.itemView.setOnClickListener(this);
     }
 
     @Override

@@ -39,6 +39,7 @@
         </activity>
         <activity android:name=".rebate.activity.CalenderActivity"></activity>
         <activity android:name=".rebate.activity.RecordActivity"></activity>
+        <activity android:name=".rebate.activity.RebatePlanActivity"></activity>
     </application>
 
 </manifest>

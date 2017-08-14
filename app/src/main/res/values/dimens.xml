@@ -83,6 +83,7 @@
         <dimen name="x100">50dp</dimen>
         <dimen name="x170">85dp</dimen>
         <dimen name="x510">255dp</dimen>
+        <dimen name="x250">125dp</dimen>
         <dimen name="x66">33dp</dimen>
         <dimen name="x70">35dp</dimen>
         <dimen name="x54">27dp</dimen>

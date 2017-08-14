@@ -16,7 +16,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +26,7 @@ import butterknife.OnClick;
 import butterknife.Unbinder;
 import hantianyu1504d.bwie.com.avenue.R;
 import hantianyu1504d.bwie.com.avenue.rebate.activity.CalenderActivity;
+import hantianyu1504d.bwie.com.avenue.rebate.activity.RebatePlanActivity;
 import hantianyu1504d.bwie.com.avenue.rebate.activity.RecordActivity;
 import hantianyu1504d.bwie.com.avenue.rebate.adapter.RecyclerViewAdapter;
 import hantianyu1504d.bwie.com.avenue.rebate.bean.RecyclerData;
@@ -75,13 +75,15 @@ public class RebateFragment extends Fragment {
         LinearLayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
         recyclerViewAdapter = new RecyclerViewAdapter(getContext(), list);
-        recyclerView.setAdapter(recyclerViewAdapter);
+
         recyclerViewAdapter.setOnItemClickListener(new RecyclerViewAdapter.MyItemClickListener() {
             @Override
             public void onItemClick(View view, int postion) {
-                Toast.makeText(getActivity(),"点击了:"+postion,Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(getContext(), RebatePlanActivity.class);
+                startActivity(intent);
             }
         });
+        recyclerView.setAdapter(recyclerViewAdapter);
         SpannableString spannableString = new SpannableString("5月25日（明天）返利230元");
         RelativeSizeSpan sizeSpan01 = new RelativeSizeSpan(1.6f);
         spannableString.setSpan(sizeSpan01, 11, 14, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
