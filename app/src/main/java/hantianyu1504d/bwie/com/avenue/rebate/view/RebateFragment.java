@@ -31,7 +31,7 @@ import hantianyu1504d.bwie.com.avenue.rebate.activity.RecordActivity;
 import hantianyu1504d.bwie.com.avenue.rebate.adapter.RecyclerViewAdapter;
 import hantianyu1504d.bwie.com.avenue.rebate.bean.RecyclerData;
 
-import static hantianyu1504d.bwie.com.avenue.R.id.btn_more;
+
 
 
 /**
@@ -42,7 +42,7 @@ public class RebateFragment extends Fragment {
 
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
-    @BindView(btn_more)
+    @BindView(R.id.btn_more)
     Button btnMore;
     @BindView(R.id.txt_230)
     TextView mTxt;
@@ -95,7 +95,7 @@ public class RebateFragment extends Fragment {
         unbinder.unbind();
     }
 
-    @OnClick({btn_more, R.id.calender,R.id.txt_record})
+    @OnClick({R.id.btn_more, R.id.calender,R.id.txt_record})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_more:

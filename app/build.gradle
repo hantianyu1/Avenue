@@ -20,10 +20,9 @@ android {
 }
 
 dependencies {
-<<<<<<<<< Temporary merge branch 1
-=========
+
     compile fileTree(include: ['*.jar'], dir: 'libs')
->>>>>>>>> Temporary merge branch 2
+
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -39,10 +38,6 @@ dependencies {
     compile 'com.android.support:design:26.0.0-alpha1'
     // gson
     compile 'com.google.code.gson:gson:2.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.squareup.okio:okio:1.12.0'
-    compile 'com.youth.banner:banner:1.4.9'
-    compile 'com.android.support:design:25.3.1'
     compile files('src/main/jniLibs/BaiduLBS_Android.jar')
 }
