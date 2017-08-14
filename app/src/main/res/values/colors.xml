@@ -6,7 +6,7 @@
     <color name="c333333">#333333</color>
     <color name="cC20000">#C20000</color>
     <color name="cffffff">#ffffff</color>
-    <color name="cFFFFFF">#ffffff</color>
+
     <color name="c666666">#666666</color>
     <color name="c435C94">#435C94</color>
     <color name="c88CBFF">#88CBFF</color>
@@ -19,9 +19,7 @@
     <color name="cFFF9F5F5">#FFF9F5F5</color>
 
     <color name="cf2f4f5">#f2f4f5</color>
-    <color name="cF2F4F5">#f2f4f5</color>
 
     <color name="cdddddd">#dddddd</color>
-    <color name="c999999">#999999</color>
-    <color name="c000000">#000000</color>
+
 </resources>

@@ -3,41 +3,43 @@ package hantianyu1504d.bwie.com.avenue.homepage.presenter;
 import android.util.Log;
 
 import java.util.HashMap;
-import java.util.Map;
 
 import hantianyu1504d.bwie.com.avenue.core.utils.HttpUtils;
 import hantianyu1504d.bwie.com.avenue.core.utils.UrlServer;
+import hantianyu1504d.bwie.com.avenue.homepage.mode.CategoriesBean;
 import hantianyu1504d.bwie.com.avenue.homepage.mode.HomeView;
-import hantianyu1504d.bwie.com.avenue.homepage.mode.PagerAndShopsBean;
+
+import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
 
 /**
  * 类描述：
  * 创建人：韩天宇
  * 班级：移动通信1504D
- * 创建时间：2017/8/11 19:56
+ * 创建时间：2017/8/12 11:41
  */
-public class HomePresenter {
+public class MiddlePagerPresenter {
     private HomeView homeView;
-    private static final String TAG = "HomePresenter";
-    public HomePresenter(HomeView homeView) {
+    private String pageNum;
+    public MiddlePagerPresenter(HomeView homeView) {
         this.homeView = homeView;
     }
-    public void getDateBanner( ){
+    public void upMiddleDate(String s){
         HttpUtils httpUtils=new HttpUtils(new HttpUtils.RealCall() {
             @Override
             public void onSuessce(Object tClass) {
-                PagerAndShopsBean bean= (PagerAndShopsBean) tClass;
+                CategoriesBean bean= (CategoriesBean) tClass;
+                Log.e(TAG, "onSuessce: "+((CategoriesBean) tClass).getCode() );
                 homeView.upDate(bean);
-                Log.e(TAG, "onSuessce: "+ bean.getCode()+bean.getObject().getTotalSize());
             }
 
             @Override
             public void onError(String str) {
-                Log.e(TAG, "onError: "+str );
+
             }
         });
-        Map<String,String> map=new HashMap<>();
-        map.put("type","0");
-        httpUtils.loadDataFromServerPost(UrlServer.BASE_URL+UrlServer.PAGEANDSHPOSURL,map, PagerAndShopsBean.class);
+        HashMap<String, String> map = new HashMap<>();
+        map.put("pageNum",s);
+        httpUtils.loadDataFromServerPost(UrlServer.BASE_URL+UrlServer.CATEGORIESURL,map, CategoriesBean.class);
     }
+
 }
