@@ -20,9 +20,7 @@ android {
 }
 
 dependencies {
-
     compile fileTree(include: ['*.jar'], dir: 'libs')
-
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -36,11 +34,9 @@ dependencies {
     compile 'com.youth.banner:banner:1.4.9'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
     compile 'com.android.support:design:26.0.0-alpha1'
-
     compile 'com.google.code.gson:gson:2.8.1'
-
     compile files('src/main/jniLibs/BaiduLBS_Android.jar')
-
     compile 'com.youth.banner:banner:1.4.9'
     compile 'com.android.support:design:26.0.0-alpha1'
+    compile 'com.github.bumptech.glide:glide:4.0.0'
 }

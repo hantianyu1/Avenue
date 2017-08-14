@@ -9,7 +9,8 @@ import hantianyu1504d.bwie.com.avenue.core.utils.UrlServer;
 import hantianyu1504d.bwie.com.avenue.homepage.mode.CategoriesBean;
 import hantianyu1504d.bwie.com.avenue.homepage.mode.HomeView;
 
-import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
+import static android.content.ContentValues.TAG;
+
 
 /**
  * 类描述：
