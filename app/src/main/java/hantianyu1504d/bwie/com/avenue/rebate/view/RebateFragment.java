@@ -115,8 +115,6 @@ public class RebateFragment extends Fragment implements HttpUtils.RealCall<Count
 
     }
 
-
-
     @OnClick({btn_more, R.id.calender, R.id.txt_record})
     public void onViewClicked(View view) {
         switch (view.getId()) {

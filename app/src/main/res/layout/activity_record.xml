@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <RelativeLayout
+        android:id="@+id/txt_relative"
         android:layout_width="match_parent"
         android:layout_height="@dimen/x88"
         android:orientation="horizontal">
@@ -26,42 +27,55 @@
     </RelativeLayout>
 
     <RadioGroup
+        android:layout_below="@id/txt_relative"
+        android:id="@+id/radio_group"
         android:layout_width="match_parent"
         android:layout_height="@dimen/x88"
         android:orientation="horizontal">
 
         <RadioButton
+            android:id="@+id/radio_record"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="@dimen/x88"
-            android:background="@drawable/rebate_drawable"
-            android:button="@null"
-            android:text="积分记录"
-            android:gravity="center"
             android:layout_marginLeft="@dimen/t22"
+            android:layout_weight="1"
+            android:background="@drawable/rebate_drawable"
+            android:button="@null"
+            android:gravity="center"
+            android:text="积分记录"
+            android:checked="true"
             android:textColor="@drawable/rebate_back"
             android:textSize="@dimen/t28" />
 
         <RadioButton
+            android:id="@+id/radio_already"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="@dimen/x88"
+            android:layout_weight="1"
+            android:background="@drawable/rebate_drawable"
             android:button="@null"
+            android:gravity="center"
             android:text="已返利"
-            android:gravity="center"
-            android:background="@drawable/rebate_drawable"
             android:textColor="@drawable/rebate_back"
             android:textSize="@dimen/t28" />
 
         <RadioButton
+            android:id="@+id/radio_wait"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="@dimen/x88"
-            android:button="@null"
-            android:text="待返利"
-            android:gravity="center"
+            android:layout_weight="1"
             android:background="@drawable/rebate_drawable"
+            android:button="@null"
+            android:gravity="center"
+            android:text="待返利"
             android:textColor="@drawable/rebate_back"
             android:textSize="@dimen/t28" />
     </RadioGroup>
-</LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/record_frame"
+        android:layout_below="@id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_height="match_parent"></FrameLayout>
+</RelativeLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x180"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/t30"
+            android:layout_marginTop="@dimen/x78"
+            android:textSize="@dimen/t28"
+            android:textColor="@color/c000000"
+            android:text="肯德基" />
+
+        <TextView
+            android:id="@+id/money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/t28"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/x130"
+            android:textColor="@color/c000000"
+            android:text="25" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/t28"
+            android:layout_gravity="center"
+            android:textColor="@color/c000000"
+            android:text="元" />
+        <TextView
+            android:id="@+id/direction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/x130"
+            android:textSize="@dimen/t36"
+            android:textColor="@color/C20000"
+            android:text="+400.00" />
+        <ImageView
+            android:id="@+id/integralStyle"
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/x50"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/t30"
+            android:src="@mipmap/yanzhengma" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/t30"
+        android:text="今天12.05"/>
+</LinearLayout>

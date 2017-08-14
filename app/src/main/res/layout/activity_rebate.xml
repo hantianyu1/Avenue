@@ -26,6 +26,7 @@
     </RelativeLayout>
 
     <TextView
+        android:id="@+id/txt_calender"
         android:layout_width="match_parent"
         android:layout_height="@dimen/x150"
         android:gravity="center"

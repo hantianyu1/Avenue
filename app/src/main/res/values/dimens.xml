@@ -18,6 +18,7 @@
     <dimen name="x119" >59.5dp</dimen>
     <dimen name="x2">1dp</dimen>
     <dimen name="x182">91dp</dimen>
+    <dimen name="x180">90dp</dimen>
     <dimen name="t36">18sp</dimen>
     <dimen name="t22">11sp</dimen>
     <dimen name="x438">219dp</dimen>
@@ -27,6 +28,7 @@
     <dimen name="x21">10.5dp</dimen>
     <dimen name="x46">23dp</dimen>
     <dimen name="x74">32dp</dimen>
+    <dimen name="x78">39dp</dimen>
     <dimen name="x92">46dp</dimen>
     <dimen name="x200">100dp</dimen>
     <dimen name="x274">137dp</dimen>

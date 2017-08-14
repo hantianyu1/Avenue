@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import com.othershe.calendarview.CalendarView;
 import com.othershe.calendarview.DateBean;
-import com.othershe.calendarview.listener.CalendarViewAdapter;
 import com.othershe.calendarview.listener.OnMonthItemChooseListener;
 import com.othershe.calendarview.listener.OnMonthItemClickListener;
 import com.othershe.calendarview.listener.OnPagerChangeListener;
@@ -28,6 +27,8 @@ import hantianyu1504d.bwie.com.avenue.R;
 public class CalenderActivity extends AppCompatActivity {
     @BindView(R.id.img_return)
     ImageView imgReturn;
+    @BindView(R.id.txt_calender)
+    TextView txtCalender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,20 +37,23 @@ public class CalenderActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         CalendarView calendarView = (CalendarView) findViewById(R.id.calendar);
 //日历init
-//        calendarView.init();
+        calendarView.init();
+        DateBean d = calendarView.getDateInit();
 //自定义日期ietm的布局样式
-        calendarView.setOnCalendarViewAdapter(R.layout.activity_rebate_item, new CalendarViewAdapter() {
-            @Override
-            public TextView[] convertView(View view, DateBean date) {
-                TextView solarDay = (TextView) view.findViewById(R.id.solar_day);
-                TextView lunarDay = (TextView) view.findViewById(R.id.lunar_day);
-                return new TextView[]{solarDay, lunarDay};
-            }
-        });
+//        calendarView.setOnCalendarViewAdapter(R.layout.activity_rebate_item, new CalendarViewAdapter() {
+//            @Override
+//            public TextView[] convertView(View view, DateBean date) {
+//                TextView solarDay = (TextView) view.findViewById(R.id.solar_day);
+//                TextView lunarDay = (TextView) view.findViewById(R.id.lunar_day);
+//                return new TextView[]{solarDay, lunarDay};
+//            }
+//        });
+        txtCalender.setText(d.getSolar()[0] + "年" + d.getSolar()[1] + "月" + d.getSolar()[2] + "日");
 //月份切换回调
         calendarView.setOnPagerChangeListener(new OnPagerChangeListener() {
             @Override
             public void onPagerChanged(int[] date) {
+                txtCalender.setText(date[0] + "年" + date[1] + "月" + date[2] + "日");
 
             }
         });
@@ -59,6 +63,7 @@ public class CalenderActivity extends AppCompatActivity {
             @Override
             public void onMonthItemClick(View view, DateBean date) {
                 Toast.makeText(CalenderActivity.this, "onMonthItemClick:" + date.toString(), Toast.LENGTH_SHORT).show();
+                txtCalender.setText(date.getSolar()[0] + "年" + date.getSolar()[1] + "月" + date.getSolar()[2] + "日");
             }
         });
 

@@ -41,7 +41,6 @@ public class HttpUtils {
                     realCall.onSuessce(obj);
                     break;
                 case 1:
-
                     realCall.onError( msg.obj.toString());
                     break;
             }
