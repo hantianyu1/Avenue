@@ -19,6 +19,19 @@
     <string name="txt_login_password">设置密码</string>
     <string name="txt_login_spang">我已经阅读并同意大道用户协议</string>
     <string name="btn_login">登录</string>
+    <string name="text_details_2">$45/人</string>
+    <string name="text_details_3">积分率15%</string>
+
+    <string name="text_details_4">粗陶罐（安贞桥东点）</string>
+    <string name="text_details_5">15210024204</string>
+    <string name="text_details_6">每满100元减15元，周一至周日10.00-21:00可用</string>
+    <string name="text_details_7">120元双人情侣套餐(限一份)</string>
+    <string name="text_details_8">商品详情</string>
+    <string name="text_details_9">每满100元减15元，周一至周日10.00-21:00可用每满100元减15元，周一至周日10.00-21:00可用每满100元减15元，周一至周日10.00-21:00可用每满100元减15元，周一至周日10.00-21:00可用每满100元减15元，周一至周日10.00-21:00可用每满100元减15元，周一至周日10.00-21:00可用每满100元减15元，周一至周日10.00-21:00可用每满100元减15元，周一至周日10.00-21:00可用每满100元减15元，周一至周日10.00-21:00可用每满100元减15元，周一至周日10.00-21:00可用</string>
+    <string name="text_details_10">营业时间:  </string>
+    <string name="text_details_11">10:00-21:00</string>
+    <string name="text_details_12">WIFI</string>
+    <string name="text_details_13">停车</string>
 
     <string name="nearby_merchant_name">请输入商户名称</string>
     <string name="nearby_site">胜古家园</string>
