@@ -16,6 +16,7 @@
     <string name="login_title">注册</string>
     <string name="et_phone">请输入手机号</string>
     <string name="yanzhengma">请输入验证码</string>
+    <string name="et_password">请输入密码</string>
 
     <string name="btn_send">获取验证码</string>
 
@@ -36,6 +37,9 @@
     <string name="text_details_11">10:00-21:00</string>
     <string name="text_details_12">WIFI</string>
     <string name="text_details_13">停车</string>
+    <string name="get_verification_code">重新发送</string>
+    <string name="txt_mine_log">密码登录</string>
+    <string name="txt_mine_log1">忘记密码</string>
 
 
 </resources>

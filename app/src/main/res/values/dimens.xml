@@ -79,6 +79,8 @@
     <dimen name="x64">32dp</dimen>
     <dimen name="x280">140dp</dimen>
     <dimen name="x26">13dp</dimen>
+    <dimen name="x176">88dp</dimen>
+    <dimen name="x180">90dp</dimen>
 
 
 </resources>

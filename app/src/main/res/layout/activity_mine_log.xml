@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cFFF9F5F5"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x80"
+        android:background="@color/cffffff"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x30"
+            android:background="@mipmap/wx" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/txt_mine_log"
+                android:textSize="@dimen/x40" />
+
+            <TextView
+                android:id="@+id/txt_mine_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="@dimen/x30"
+                android:text="@string/login_title"
+                android:textSize="@dimen/x40" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x180"
+        android:layout_marginTop="@dimen/x40"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x88"
+            android:background="@color/cffffff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/x36"
+                android:layout_height="@dimen/x46"
+                android:layout_marginLeft="@dimen/x30"
+                android:background="@mipmap/shouji" />
+
+            <EditText
+                android:id="@+id/edt_log_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x20"
+                android:background="@null"
+                android:hint="请输入手机号"
+                android:textColor="@color/c999999"
+                android:textSize="@dimen/x28" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x88"
+            android:layout_marginTop="@dimen/x4">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x130"
+                android:layout_marginTop="@dimen/x4"
+                android:background="@color/cffffff"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/x42"
+                    android:layout_height="@dimen/x46"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:background="@mipmap/yanzhengma" />
+
+                <EditText
+                    android:id="@+id/edt_log_password"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x20"
+                    android:background="@null"
+                    android:hint="@string/et_password"
+                    android:textColor="@color/c999999"
+                    android:textSize="@dimen/x28" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x70"
+        android:gravity="center">
+
+        <RadioButton
+            android:id="@+id/rbtn_mine_log"
+            android:layout_width="@dimen/x690"
+            android:layout_height="@dimen/x88"
+            android:background="@color/cffffff"
+            android:button="@null"
+            android:gravity="center"
+            android:text="登陆"
+            android:textColor="@color/cFFFC0410"
+            android:textSize="@dimen/x28" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txt_mine_forgetpass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x30"
+            android:layout_marginTop="@dimen/x30"
+            android:text="@string/txt_mine_log1"
+            android:textColor="@color/c999999"
+            android:textSize="@dimen/x28" />
+    </RelativeLayout>
+</LinearLayout>
