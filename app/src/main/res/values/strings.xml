@@ -28,6 +28,17 @@
     <string name="dadaoshike">大&#160;道&#160;时&#160;刻</string>
     <string name="xingongneng">新&#160;功&#160;能&#160;上&#160;线</string>
 
+    <string name="login_title">注册</string>
+    <string name="et_phone">请输入手机号</string>
+    <string name="yanzhengma">请输入验证码</string>
+    <string name="et_password">请输入密码</string>
+
+    <string name="btn_send">获取验证码</string>
+
+    <string name="txt_login_password">设置密码</string>
+    <string name="txt_login_spang">我已经阅读并同意大道用户协议</string>
+
+    <string name="btn_login">登录</string>
     <string name="text_details_2">$45/人</string>
     <string name="text_details_3">积分率15%</string>
 
@@ -41,16 +52,8 @@
     <string name="text_details_11">10:00-21:00</string>
     <string name="text_details_12">WIFI</string>
     <string name="text_details_13">停车</string>
-
-
-    <string name="login_title">注册</string>
-    <string name="et_phone">请输入手机号</string>
-    <string name="yanzhengma">请输入验证码</string>
-
-    <string name="btn_send">获取验证码</string>
-
-    <string name="txt_login_password">设置密码</string>
-    <string name="txt_login_spang">我已经阅读并同意大道用户协议</string>
-    <string name="btn_login">登录</string>
+    <string name="get_verification_code">重新发送</string>
+    <string name="txt_mine_log">密码登录</string>
+    <string name="txt_mine_log1">忘记密码</string>
     <string name="fujin">附近商铺</string>
 </resources>
