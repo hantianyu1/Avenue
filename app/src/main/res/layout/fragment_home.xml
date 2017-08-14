@@ -1,14 +1,238 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
-    >
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    android:background="@color/cf2f4f5">
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/home" />
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="@color/c333333"
+                android:orientation="horizontal"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="@dimen/x106"
+                    android:layout_height="@dimen/x38"
+                    android:layout_marginTop="@dimen/x25"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:textSize="@dimen/t28"
+                    android:text="@string/beijing"
+                    android:drawableRight="@mipmap/xiala"
+                    android:background="@mipmap/beijingyuanjiao"/>
+                <EditText
+                    android:layout_width="@dimen/x366"
+                    android:layout_height="@dimen/x42"
+                    android:background="@mipmap/sousuo"
+                    android:layout_marginTop="@dimen/x24"
+                    android:textSize="@dimen/t24"
+                    android:paddingLeft="@dimen/x100"
+                    android:layout_marginLeft="@dimen/x57"
+                    android:hint="@string/title_edit"/>
+                <ImageView
+                    android:layout_width="@dimen/x60"
+                    android:layout_height="@dimen/x60"
+                    android:layout_marginLeft="@dimen/x40"
+                    android:layout_marginTop="@dimen/x14"
+                    android:background="@mipmap/xiaoxi"/>
+                <ImageView
+                    android:layout_width="@dimen/x60"
+                    android:layout_height="@dimen/x60"
+                    android:layout_marginTop="@dimen/x14"
+                    android:layout_marginLeft="@dimen/x5"
+                    android:background="@mipmap/saosao"
+                    /></LinearLayout>
+            <com.youth.banner.Banner
+                android:id="@+id/main_banner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x450"></com.youth.banner.Banner>
+        </RelativeLayout>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/main_middle_pager"
+            android:layout_marginTop="@dimen/x20"
+            android:layout_width="match_parent"
 
-</FrameLayout>
+            android:layout_height="@dimen/x334"></android.support.v4.view.ViewPager>
+        <!-- 后半部分-->
+        <LinearLayout
+            android:layout_marginTop="@dimen/x20"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <RelativeLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/x336">
+                <ImageView
+                    android:id="@+id/wangpu_iamge"
+                    android:layout_width="@dimen/x374"
+                    android:layout_height="@dimen/x336">
+                </ImageView>
+                <TextView
+                    android:text="@string/wangputuijian"
+                    android:layout_width="wrap_content"
+                    android:textSize="@dimen/x36"
+                    android:ems="1"
+                    android:lineSpacingExtra="8dp"
+                    android:layout_marginTop="@dimen/x60"
+                    android:textColor="@color/c333333"
+                    android:layout_marginLeft="@dimen/x60"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+            <LinearLayout
+
+                android:layout_marginLeft="@dimen/x2"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/x336">
+                <RelativeLayout
+                    android:layout_width="@dimen/x224"
+                    android:background="#ffffff"
+                    android:layout_height="@dimen/x182">
+                    <!--<ImageView-->
+
+                        <!--android:id="@+id/nuanxin_image"-->
+                        <!--android:layout_width="@dimen/x224"-->
+                        <!--android:layout_height="@dimen/x182"-->
+                       <!---->
+                        <!--android:layout_alignParentTop="true"-->
+                        <!--android:layout_alignParentLeft="true"-->
+                        <!--android:layout_alignParentStart="true" />-->
+                    <TextView
+                        android:layout_marginTop="@dimen/x20"
+                        android:id="@+id/main_nuanxin_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/t36"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/nuanxinfuli"
+
+                        />
+                    <TextView
+                        android:layout_below="@+id/main_nuanxin_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/t22"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/xinyonghu"
+                        android:textColor="@color/c999999"
+                        android:layout_marginTop="@dimen/x5"
+                        />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="@dimen/x224"
+                    android:background="#ffffff"
+                    android:layout_height="@dimen/x182">
+                    <!--<ImageView-->
+                        <!--android:id="@+id/dadao_image"-->
+                        <!--android:layout_width="@dimen/x224"-->
+                        <!--android:layout_height="@dimen/x182"-->
+                       <!---->
+                        <!--android:layout_alignParentTop="true"-->
+                        <!--android:layout_alignParentLeft="true"-->
+                        <!--android:layout_alignParentStart="true" />-->
+                    <TextView
+                        android:layout_marginTop="@dimen/x20"
+                        android:id="@+id/main_dadao_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/t36"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/dadaoshike"
+
+                        />
+                    <TextView
+                        android:layout_below="@+id/main_dadao_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/t22"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/xingongneng"
+                        android:textColor="@color/c999999"
+                        android:layout_marginTop="@dimen/x5"
+                        />
+                </RelativeLayout>
+
+            </LinearLayout>
+            <!--3333333333-->
+            <LinearLayout
+                android:layout_marginLeft="@dimen/x2"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+
+                    android:id="@+id/right_one_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x182"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+
+                <ImageView
+                    android:id="@+id/right_two_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x182"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <!--第三部分-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x88">
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/t28"
+                android:text="@string/fujin"
+
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+            <RelativeLayout
+                android:layout_width="@dimen/x88"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_height="@dimen/x88">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/main_search_image"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@mipmap/fujindingwei"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x438">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="match_parent"></LinearLayout>
+        </HorizontalScrollView>
+        <include
+
+            layout="@layout/foot_main"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"/>
+
+
+    </LinearLayout>
+</ScrollView>

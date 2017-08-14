@@ -1,10 +1,398 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff">
-    <TextView
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/rebate" />
+        android:layout_height="@dimen/x390"
+        android:background="@color/c435C94"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x30"
+                android:layout_marginTop="@dimen/x80"
+                android:text="累计返利金额"
+                android:textColor="@color/cffffff"
+                android:textSize="@dimen/x28" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x28"
+                android:layout_marginTop="@dimen/x80"
+                android:text="(元)"
+                android:textColor="@color/cffffff"
+                android:textSize="@dimen/x28" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout"
+            android:layout_marginLeft="@dimen/x30"
+            android:layout_marginTop="@dimen/x44"
+            android:text="2199.00"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/x80" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_below="@+id/price">
+
+            <TextView
+                android:id="@+id/return_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x30"
+                android:text="待返期数"
+                android:layout_marginBottom="@dimen/x68"
+                android:textColor="@color/cffffff"
+                android:textSize="@dimen/x28" />
+
+            <TextView
+                android:id="@+id/pencil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x68"
+                android:layout_marginLeft="@dimen/x28"
+                android:layout_toRightOf="@+id/return_count"
+                android:text="(笔)"
+                android:textColor="@color/cffffff"
+                android:textSize="@dimen/x28" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/pencil"
+                android:layout_marginLeft="27dp"
+                android:layout_marginStart="27dp"
+                android:layout_marginBottom="@dimen/x68"
+                android:layout_toRightOf="@+id/pencil"
+                android:text="5"
+                android:textColor="@color/cffffff"
+                android:textSize="@dimen/x36" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/x68"
+                android:layout_marginRight="@dimen/x30"
+                android:text="记录查询"
+                android:textColor="@color/cffffff"
+                android:textSize="@dimen/x28" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x88"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/x30"
+            android:text="已绑定" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/x10"
+            android:src="@mipmap/weixin" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="微信" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/x54"
+            android:text="继续绑定"
+            android:textColor="@color/c666666"
+            android:textSize="@dimen/x24" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/x10"
+            android:src="@mipmap/zhifu" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="支付宝"
+            android:textColor="@color/c88CBFF" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/x340"
+            android:layout_marginRight="@dimen/x30"
+            android:src="@mipmap/gengduo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x510"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x90"
+            android:layout_marginTop="@dimen/x10"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/x34"
+                android:layout_marginLeft="@dimen/x30"
+                android:text="返利计划（共9档）"
+                android:textColor="@color/c666666"
+                android:textSize="@dimen/x28" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x170"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x40"
+                android:layout_marginLeft="@dimen/x30"
+                android:layout_marginRight="@dimen/x30"
+                android:background="@color/C20000">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/x40"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:text="A2017023"
+                    android:textColor="@color/cffffff"
+                    android:textSize="@dimen/x22" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/x30"
+                    android:text="2017年6月21日兑换"
+                    android:textColor="@color/cffffff"
+                    android:textSize="@dimen/x22" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x138"
+                android:layout_marginLeft="@dimen/x30"
+                android:layout_marginRight="@dimen/x30"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/x100"
+                    android:layout_height="@dimen/x100"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:src="@mipmap/ic_huawei_login_normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/x10"
+                    android:text="现有"
+                    android:textColor="@color/c333333"
+                    android:textSize="@dimen/x28" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/x20"
+                    android:text="50.00"
+                    android:textColor="@color/C20000"
+                    android:textSize="@dimen/x24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/x20"
+                    android:text="有便宜不占，和咸鱼有什么区别？"
+                    android:textColor="@color/c999999"
+                    android:textSize="@dimen/x22" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/x10"
+                    android:layout_marginRight="@dimen/x10"
+                    android:src="@mipmap/gengduo" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x170"
+            android:layout_marginTop="@dimen/x30"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x40"
+                android:layout_marginLeft="@dimen/x30"
+                android:layout_marginRight="@dimen/x30"
+                android:background="@color/C20000">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/x40"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:text="B2017030"
+                    android:textColor="@color/cffffff"
+                    android:textSize="@dimen/x22" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/x30"
+                    android:text="2017年6月02日兑换"
+                    android:textColor="@color/cffffff"
+                    android:textSize="@dimen/x22" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x138"
+                android:layout_marginLeft="@dimen/x30"
+                android:layout_marginRight="@dimen/x30"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/x100"
+                    android:layout_height="@dimen/x100"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:src="@mipmap/ic_huawei_login_normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/x10"
+                    android:text="现有"
+                    android:textColor="@color/c333333"
+                    android:textSize="@dimen/x28" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/x20"
+                    android:text="120.00"
+                    android:textColor="@color/C20000"
+                    android:textSize="@dimen/x24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/x20"
+                    android:text="有便宜不占，和咸鱼有什么区别？"
+                    android:textColor="@color/c999999"
+                    android:textSize="@dimen/x22" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/x10"
+                    android:layout_marginRight="@dimen/x10"
+                    android:src="@mipmap/gengduo" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="显示更多"
+        android:textColor="@color/c435C94"
+        android:textSize="@dimen/x22" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x130"
+        android:layout_marginTop="@dimen/x20"
+        >
+        <ImageView
+            android:id="@+id/calender"
+            android:layout_width="@dimen/x66"
+            android:layout_height="@dimen/x66"
+            android:layout_marginTop="@dimen/x38"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/x30"
+            android:src="@mipmap/calender" />
+        <TextView
+            android:id="@+id/txt_first"
+            android:layout_toRightOf="@+id/calender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/x24"
+            android:textColor="@color/c666666"
+            android:text="近7日有2笔返利"
+            android:layout_marginTop="@dimen/x38"
+            android:layout_marginLeft="@dimen/x70"/>
+        <TextView
+            android:id="@+id/txt_230"
+            android:layout_below="@+id/txt_first"
+            android:layout_toRightOf="@+id/calender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/x24"
+            android:textColor="@color/c999999"
+            android:layout_marginTop="@dimen/x10"
+            android:text="5月25日（明天）返利230元"
+            android:layout_marginLeft="@dimen/x70"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/x38"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x10"
+            android:src="@mipmap/gengduo" />
+    </RelativeLayout>
 </LinearLayout>
