@@ -77,5 +77,7 @@
     <dimen name="x66">33dp</dimen>
 <dimen name="x340">170dp</dimen>
     <dimen name="x12">6dp</dimen>
+    <dimen name="x32">16dp</dimen>
+    <dimen name="x148">74dp</dimen>
 
 </resources>
