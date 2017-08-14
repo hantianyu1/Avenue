@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '26.0.0'
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
     defaultConfig {
         applicationId "hantianyu1504d.bwie.com.avenue"
         minSdkVersion 15
@@ -41,4 +41,6 @@ dependencies {
 
     compile files('src/main/jniLibs/BaiduLBS_Android.jar')
 
+    compile 'com.youth.banner:banner:1.4.9'
+    compile 'com.android.support:design:26.0.0-alpha1'
 }
