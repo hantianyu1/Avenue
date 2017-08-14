@@ -5,6 +5,7 @@
     <string name="nearby">附近</string>
     <string name="me">我的</string>
     <string name="rebate">返利</string>
+<<<<<<<<< Temporary merge branch 1
     <string name="beijing">北京</string>
     <string name="title_edit">麻辣小龙虾</string>
     <string name="wangputuijian">旺铺推荐</string>
@@ -46,6 +47,8 @@
     <string name="nearby_serve">生活服务</string>
     <string name="nearby_grogshop">酒店</string>
     <string name="nearby_all">全部</string>
+    <string name="fujin">附近旺铺</string>
 
 
+>>>>>>>>> Temporary merge branch 2
 </resources>
