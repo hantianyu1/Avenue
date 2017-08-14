@@ -7,14 +7,15 @@
         android:id="@+id/img_startpage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@mipmap/start_page" />
+         />
 
     <RelativeLayout
         android:id="@+id/rlayout_login"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:layout_alignParentTop="true"
-        android:visibility="visible">
+        >
 
 
         <RelativeLayout
@@ -49,7 +50,7 @@
             android:layout_below="@id/relativeLayout"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/x60"
-            android:src="@drawable/ic_login_visible" />
+            android:src="@mipmap/ic_launcher" />
 
         <EditText
             android:id="@+id/et_login"
@@ -70,13 +71,12 @@
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/et_login"
+            android:layout_alignRight="@+id/et_login"
             android:layout_alignTop="@+id/et_login"
             android:layout_marginEnd="12dp"
             android:layout_marginRight="@dimen/x60"
             android:layout_marginTop="10dp"
-            android:src="@mipmap/shouji"
-            android:layout_alignRight="@+id/et_login" />
+            android:src="@mipmap/shouji" />
 
         <LinearLayout
             android:id="@+id/llayout"
@@ -127,12 +127,11 @@
             android:layout_width="@dimen/x42"
             android:layout_height="@dimen/x22"
             android:layout_alignBottom="@+id/edt_login_password"
-            android:layout_alignStart="@+id/imageView"
+            android:layout_alignLeft="@+id/imageView"
 
             android:layout_marginBottom="13dp"
             android:layout_marginRight="@dimen/x60"
-            android:src="@mipmap/biyan"
-            android:layout_alignLeft="@+id/imageView" />
+            android:src="@mipmap/biyan" />
 
         <CheckBox
             android:id="@+id/chk_login_select"
@@ -149,12 +148,10 @@
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/chk_login_select"
             android:layout_alignBottom="@+id/chk_login_select"
-            android:layout_marginStart="24dp"
-            android:layout_toEndOf="@+id/chk_login_select"
-            android:text="@string/txt_login_spang"
-            android:textSize="@dimen/x28"
             android:layout_marginLeft="24dp"
-            android:layout_toRightOf="@+id/chk_login_select" />
+            android:layout_toRightOf="@+id/chk_login_select"
+            android:text="@string/txt_login_spang"
+            android:textSize="@dimen/x28" />
 
         <Button
             android:id="@+id/btn_login"
