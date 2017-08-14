@@ -31,7 +31,7 @@
         android:gravity="center"
         android:background="@color/cC20000"
         android:text="2017年5月"
-        android:textColor="@color/cFFFFFF" />
+        android:textColor="@color/cffffff" />
 
     <com.othershe.calendarview.WeekView
         android:layout_width="match_parent"
