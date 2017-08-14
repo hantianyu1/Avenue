@@ -96,9 +96,9 @@
     <dimen name="x126">63dp</dimen>
     <dimen name="x53">26.5dp</dimen>
     <dimen name="x150">75dp</dimen>
-
-
-
+    <dimen name="x158">79dp</dimen>
+    <dimen name="x64">32dp</dimen>
+    <dimen name="x280">140dp</dimen>
 
 
 </resources>
