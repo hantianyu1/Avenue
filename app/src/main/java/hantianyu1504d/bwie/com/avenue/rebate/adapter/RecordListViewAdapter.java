@@ -50,7 +50,7 @@ public class RecordListViewAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.rebate_radio_record_item, null);
             holder = new ViewHolder();
             holder.name = (TextView) convertView.findViewById(R.id.name);
-            holder.money = (TextView) convertView.findViewById(R.id.money);
+            holder.money = (TextView) convertView.findViewById(R.id.txt_money);
             holder.direction = (TextView) convertView.findViewById(R.id.direction);
             holder.integralStyle = (ImageView) convertView.findViewById(R.id.integralStyle);
             convertView.setTag(holder);
@@ -59,8 +59,8 @@ public class RecordListViewAdapter extends BaseAdapter {
         }
         RecordData data = list.get(position);
         holder.name.setText(data.getObject().getList().get(position).getName());
-        holder.money.setText(data.getObject().getList().get(position).getMoney());
-        holder.direction.setText(data.getObject().getList().get(position).getDirection());
+//        holder.money.setText(data.getObject().getList().get(position).getMoney());
+//        holder.direction.setText(data.getObject().getList().get(position).getDirection());
 //        Glide.with(context).load("").into(holder.integralStyle);
         return convertView;
     }

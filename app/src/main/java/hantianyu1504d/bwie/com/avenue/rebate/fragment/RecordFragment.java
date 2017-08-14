@@ -32,7 +32,6 @@ public class RecordFragment extends Fragment implements HttpUtils.RealCall<Recor
     @BindView(R.id.listView)
     ListView listView;
     List<RecordData> list = new ArrayList<>();
-    List<String> stringList = new ArrayList<>();
     Unbinder unbinder;
     private String baseurl = "http://123.57.33.185:8088/user/intergral/records";
     private static final String TAG = "RecordFragment";
@@ -63,6 +62,8 @@ public class RecordFragment extends Fragment implements HttpUtils.RealCall<Recor
 
     @Override
     public void onSuessce(RecordData tClass) {
+        RecordData recordData=tClass;
+        list.add(recordData);
         RecordListViewAdapter recordListview = new RecordListViewAdapter(getActivity(), list);
         listView.setAdapter(recordListview);
     }
