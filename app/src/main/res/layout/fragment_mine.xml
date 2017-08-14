@@ -1,115 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cFFF9F5F5"
-    >
+    android:orientation="vertical">
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/x360"
         android:background="@mipmap/backgroud"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
+
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-            <!--显示未登录-->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="立即登陆"
-                android:textSize="@dimen/x50"
-                android:textColor="@color/c666666"
-                android:layout_marginTop="@dimen/x100"
-                android:layout_marginLeft="@dimen/x100"
 
-                />
+                <!--显示未登录-->
+                <TextView
+                    android:id="@+id/txt_mine_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x100"
+                    android:layout_marginTop="@dimen/x100"
+                    android:text="立即登录"
+                    android:textColor="@color/c666666"
+                    android:textSize="@dimen/x50"
+                    />
             <!--显示以登陆-->
             <LinearLayout
+                android:id="@+id/llayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginTop="@dimen/x54"
-                android:visibility="gone"
-                >
+                android:orientation="vertical"
+                android:visibility="gone">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/x30"
-                        android:text="用户名"
-                        />
+                        android:text="用户名" />
+
                     <TextView
+                        android:id="@+id/txt_mine_username"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/x20"
-                        android:textSize="@dimen/x28"
-                        android:textColor="@color/c333333"
                         android:text="1212344"
-                        />
+                        android:textColor="@color/c333333"
+                        android:textSize="@dimen/x28" />
                 </LinearLayout>
+
                 <LinearLayout
-                    android:layout_marginTop="@dimen/x30"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x30"
                     android:orientation="horizontal"
 
                     >
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/x30"
-                        android:text="手机号"
-                        />
+                        android:text="手机号" />
+
                     <TextView
+                        android:id="@+id/txt_mine_phone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/x20"
-                        android:textSize="@dimen/x28"
                         android:text="158****1639"
                         android:textColor="@color/c333333"
-                        />
+                        android:textSize="@dimen/x28" />
                 </LinearLayout>
             </LinearLayout>
             <!--显示以登陆-->
         </RelativeLayout>
-            <!--显示三个图片-->
+        <!--显示三个图片-->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/x74"
-            >
+            android:layout_marginTop="@dimen/x74">
+
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-               android:background="@mipmap/shoukuanma"
-                android:button="@null"
                 android:layout_marginLeft="@dimen/x100"
-                />
+                android:background="@mipmap/shoukuanma"
+                android:button="@null" />
+
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@mipmap/yue"
-                android:button="@null"
                 android:layout_centerInParent="true"
-                />
+                android:background="@mipmap/yue"
+                android:button="@null" />
+
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@mipmap/kabao"
-                android:button="@null"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="@dimen/x100"
-                />
+                android:background="@mipmap/kabao"
+                android:button="@null" />
         </RelativeLayout>
         <!--显示三个图片-->
     </LinearLayout>
@@ -117,99 +119,103 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="@dimen/x526"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/x130"
-            android:gravity="center_vertical"
             android:background="@color/cffffff"
-            >
+            android:gravity="center_vertical">
+
             <TextView
+
+                android:id="@+id/txt_mine_record"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x30"
                 android:text="消费记录"
-                android:textSize="@dimen/x28"
-                android:layout_marginLeft="@dimen/x30"
-                />
+                android:textSize="@dimen/x28" />
+
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:background="@mipmap/gengduo"
                 android:layout_marginRight="@dimen/x30"
-                android:button="@null"
-                />
+                android:background="@mipmap/gengduo"
+                android:button="@null" />
         </RelativeLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/x130"
-            android:gravity="center_vertical"
-            android:background="@color/cffffff"
             android:layout_marginTop="@dimen/x4"
-            >
+            android:background="@color/cffffff"
+            android:gravity="center_vertical">
+
             <TextView
+                android:id="@+id/txt_mine_set"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x30"
                 android:text="安全设置"
-                android:textSize="@dimen/x28"
-                android:layout_marginLeft="@dimen/x30"
-                />
+                android:textSize="@dimen/x28" />
+
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:background="@mipmap/gengduo"
                 android:layout_marginRight="@dimen/x30"
-                android:button="@null"
-                />
+                android:background="@mipmap/gengduo"
+                android:button="@null" />
         </RelativeLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/x130"
-            android:gravity="center_vertical"
-            android:background="@color/cffffff"
             android:layout_marginTop="@dimen/x4"
-            >
+            android:background="@color/cffffff"
+            android:gravity="center_vertical">
+
             <TextView
+                android:id="@+id/txt_mine_news"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x30"
                 android:text="消息"
-                android:textSize="@dimen/x28"
-                android:layout_marginLeft="@dimen/x30"
-                />
+                android:textSize="@dimen/x28" />
+
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:background="@mipmap/gengduo"
                 android:layout_marginRight="@dimen/x30"
-                android:button="@null"
-                />
+                android:background="@mipmap/gengduo"
+                android:button="@null" />
         </RelativeLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/x130"
-            android:gravity="center_vertical"
-            android:background="@color/cffffff"
             android:layout_marginTop="@dimen/x4"
-            >
+            android:background="@color/cffffff"
+            android:gravity="center_vertical">
+
             <TextView
+                android:id="@+id/text_mine_about_us"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="关于我们"
-                android:textSize="@dimen/x28"
                 android:layout_marginLeft="@dimen/x30"
-                />
+                android:text="关于我们"
+                android:textSize="@dimen/x28" />
+
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:background="@mipmap/gengduo"
                 android:layout_marginRight="@dimen/x30"
-                android:button="@null"
-                />
+                android:background="@mipmap/gengduo"
+                android:button="@null" />
         </RelativeLayout>
     </LinearLayout>
->>>>>>> origin/WWJ
+
 </LinearLayout>
