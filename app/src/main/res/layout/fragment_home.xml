@@ -92,22 +92,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/x336">
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <ImageView
+                    android:layout_width="@dimen/x224"
+                    android:background="#ffffff"
+                    android:layout_height="@dimen/x182">
+                    <!--<ImageView-->
 
-                        android:id="@+id/nuanxin_image"
-                        android:layout_width="@dimen/x224"
-                        android:layout_height="@dimen/x182"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true" />
+                        <!--android:id="@+id/nuanxin_image"-->
+                        <!--android:layout_width="@dimen/x224"-->
+                        <!--android:layout_height="@dimen/x182"-->
+                       <!---->
+                        <!--android:layout_alignParentTop="true"-->
+                        <!--android:layout_alignParentLeft="true"-->
+                        <!--android:layout_alignParentStart="true" />-->
                     <TextView
                         android:layout_marginTop="@dimen/x20"
                         android:id="@+id/main_nuanxin_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/t36"
+                        android:layout_centerHorizontal="true"
                         android:text="@string/nuanxinfuli"
 
                         />
@@ -116,27 +119,31 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/t22"
+                        android:layout_centerHorizontal="true"
                         android:text="@string/xinyonghu"
                         android:textColor="@color/c999999"
                         android:layout_marginTop="@dimen/x5"
                         />
                 </RelativeLayout>
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:id="@+id/dadao_image"
-                        android:layout_width="@dimen/x224"
-                        android:layout_height="@dimen/x182"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true" />
+                    android:layout_width="@dimen/x224"
+                    android:background="#ffffff"
+                    android:layout_height="@dimen/x182">
+                    <!--<ImageView-->
+                        <!--android:id="@+id/dadao_image"-->
+                        <!--android:layout_width="@dimen/x224"-->
+                        <!--android:layout_height="@dimen/x182"-->
+                       <!---->
+                        <!--android:layout_alignParentTop="true"-->
+                        <!--android:layout_alignParentLeft="true"-->
+                        <!--android:layout_alignParentStart="true" />-->
                     <TextView
                         android:layout_marginTop="@dimen/x20"
                         android:id="@+id/main_dadao_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/t36"
+                        android:layout_centerHorizontal="true"
                         android:text="@string/dadaoshike"
 
                         />
@@ -145,6 +152,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/t22"
+                        android:layout_centerHorizontal="true"
                         android:text="@string/xingongneng"
                         android:textColor="@color/c999999"
                         android:layout_marginTop="@dimen/x5"

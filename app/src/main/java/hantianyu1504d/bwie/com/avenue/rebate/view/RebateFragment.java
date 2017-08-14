@@ -24,7 +24,6 @@ public class RebateFragment extends Fragment {
     private TextView mTxt;
 
     public RebateFragment() {
-        // Required empty public constructor
     }
 
 
