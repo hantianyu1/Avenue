@@ -1,6 +1,5 @@
 package hantianyu1504d.bwie.com.avenue.mine.view.fragment;
 
-
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.view.View;
