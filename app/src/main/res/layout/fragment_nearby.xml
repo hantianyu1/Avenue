@@ -1,47 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?><!--CoordinatorLayout滚动效果-->
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<com.sothree.slidinguppanel.SlidingUpPanelLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
-    android:orientation="vertical">
+    android:gravity="bottom"
+    sothree:umanoPanelHeight="70dp"
+    sothree:umanoShadowHeight="4dp">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/layout_appbar"
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/nearby_map"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent" />
 
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/ctb"
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:app="http://schemas.android.com/tools"
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/layout_appbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:expandedTitleMarginStart="10dp"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            <LinearLayout
+            android:background="#00000000">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/ctb"
+                app:expandedTitleMarginStart="10dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
 
+                android:background="#00000000"
+                android:fitsSystemWindows="true">
 
                 <RelativeLayout
-                    android:id="@+id/return_relativelayout"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+
+                    >
+
+
+                    <!--<RelativeLayout-->
+                    <!--android:id="@+id/return_relativelayout"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content">-->
                     <!--首页显示的地图-->
-                    <com.baidu.mapapi.map.MapView
-                        android:id="@+id/nearby_map"
+                    <!--x260-->
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/x260"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:clickable="true" />
+                        android:layout_height="500dp"
+                        android:layout_above="@+id/nearby_linear" />
 
 
                     <TextView
+
                         android:id="@+id/nearby_map_mylocation"
                         android:layout_width="@dimen/x220"
                         android:layout_height="@dimen/x72"
@@ -63,6 +80,7 @@
 
 
                     <RelativeLayout
+
                         android:layout_width="@dimen/x66"
                         android:layout_height="@dimen/x66"
                         android:layout_alignParentEnd="true"
@@ -80,287 +98,221 @@
                             android:layout_centerHorizontal="true"
                             android:src="@mipmap/searchs" />
 
-                        <!--<ImageView-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_centerHorizontal="true"-->
-                        <!--android:src="@mipmap/gengduo" />-->
-                    </RelativeLayout>
-                </RelativeLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/nearby_map"
-                    android:orientation="vertical">
-                    <!--@+id/return_relativelayout-->
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/nearby_txt_Near_the_location"
-                            android:layout_width="match_parent"
+                        <ImageView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/x20"
-                            android:gravity="center"
-                            android:text="@string/nearby_Near_the_location"
-                            android:textColor="@color/c000000"
-                            android:textSize="@dimen/x36" />
+                            android:layout_centerHorizontal="true"
+                            android:src="@mipmap/gengduo" />
+                    </RelativeLayout>
+                    <!--</RelativeLayout>-->
+
+
+                    <LinearLayout
+                        android:id="@+id/nearby_linear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/x260"
+                        android:orientation="vertical">
+                        <!--@+id/return_relativelayout-->
 
                         <RelativeLayout
-                            android:layout_width="@dimen/x88"
-                            android:layout_height="@dimen/x88"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentRight="true"
-                            android:layout_alignTop="@+id/nearby_txt_Near_the_location"
-                            android:gravity="center_vertical">
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/cffffff">
 
-                            <ImageView
-                                android:layout_width="wrap_content"
+                            <TextView
+                                android:id="@+id/nearby_txt_Near_the_location"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_centerHorizontal="true"
-                                android:src="@mipmap/gengduo" />
+                                android:layout_margin="@dimen/x20"
+                                android:gravity="center"
+                                android:text="@string/nearby_Near_the_location"
+                                android:textColor="@color/c000000"
+                                android:textSize="@dimen/x36" />
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/x88"
+                                android:layout_height="@dimen/x88"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignTop="@+id/nearby_txt_Near_the_location"
+                                android:gravity="center_vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:src="@mipmap/gengduo" />
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/nearby_txt_Near_the_location"
+                                android:background="@color/cffffff"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/x62"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/nearby_txt_Near_the_location"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_toLeftOf="@+id/nearby_txt_food_recommendation"
+                                    android:src="@mipmap/hengxiang" />
+
+                                <TextView
+                                    android:id="@+id/nearby_txt_food_recommendation"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/nearby_txt_Near_the_location"
+                                    android:text="@string/nearby_food_recommendation"
+                                    android:textColor="@color/c999999" />
+
+                                <ImageView
+                                    android:layout_width="@dimen/x62"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/nearby_txt_Near_the_location"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_toRightOf="@+id/nearby_txt_food_recommendation"
+                                    android:src="@mipmap/hengxiang" />
+                            </LinearLayout>
+
                         </RelativeLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/nearby_txt_Near_the_location"
-                            android:gravity="center"
-                            android:orientation="horizontal">
+                            android:background="@color/cffffff"
+                            android:orientation="vertical">
 
-                            <ImageView
-                                android:layout_width="@dimen/x62"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@+id/nearby_txt_Near_the_location"
-                                android:layout_marginLeft="10dp"
-                                android:layout_toLeftOf="@+id/nearby_txt_food_recommendation"
-                                android:src="@mipmap/hengxiang" />
+                                android:layout_marginLeft="@dimen/x30"
+                                android:layout_marginTop="@dimen/x28"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="@dimen/x224"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/nearby_shop_image1"
+                                        android:layout_width="@dimen/x224"
+                                        android:layout_height="@dimen/x218"
+                                        android:background="@mipmap/fff" />
+
+                                    <TextView
+                                        android:id="@+id/nearby_shop_txt1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/x14"
+                                        android:text="@string/nearby_food_west"
+                                        android:textColor="@color/c333333" />
+
+                                    <TextView
+                                        android:id="@+id/nearby_place_text"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/x15"
+                                        android:text="@string/nearby_Anzhenmen" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="@dimen/x224"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/nearby_shop_image2"
+                                        android:layout_width="@dimen/x224"
+                                        android:layout_height="@dimen/x218"
+                                        android:background="@mipmap/fff" />
+
+                                    <TextView
+                                        android:id="@+id/nearby_shop_txt2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/x14"
+                                        android:text="@string/nearby_food_Italian_restaurant"
+                                        android:textColor="@color/c333333" />
+
+                                    <TextView
+                                        android:id="@+id/nearby_place_text2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/txt2"
+                                        android:layout_marginTop="@dimen/x15"
+                                        android:text="@string/nearby_Anzhenmen" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="@dimen/x224"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/nearby_shop_image3"
+                                        android:layout_width="@dimen/x224"
+                                        android:layout_height="@dimen/x218"
+                                        android:background="@mipmap/fff" />
+
+                                    <TextView
+                                        android:id="@+id/nearby_shop_txt3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/imageView1"
+                                        android:layout_marginTop="@dimen/x14"
+                                        android:text="@string/nearby_food_barbecue"
+                                        android:textColor="@color/c333333" />
+
+                                    <TextView
+                                        android:id="@+id/nearby_place_text3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/txt3"
+                                        android:layout_marginTop="@dimen/x15"
+                                        android:text="@string/nearby_Anzhenmen" />
+                                </LinearLayout>
+
+                            </LinearLayout>
 
                             <TextView
-                                android:id="@+id/nearby_txt_food_recommendation"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@+id/nearby_txt_Near_the_location"
-                                android:text="@string/nearby_food_recommendation"
-                                android:textColor="@color/c999999" />
-
-                            <ImageView
-                                android:layout_width="@dimen/x62"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@+id/nearby_txt_Near_the_location"
-                                android:layout_marginRight="10dp"
-                                android:layout_toRightOf="@+id/nearby_txt_food_recommendation"
-                                android:src="@mipmap/hengxiang" />
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/x20"
+                                android:layout_marginTop="@dimen/x53"
+                                android:background="@color/cf2f4f5" />
                         </LinearLayout>
-
-                    </RelativeLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/x30"
-                            android:layout_marginTop="@dimen/x28"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="@dimen/x224"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:id="@+id/nearby_shop_image1"
-                                    android:layout_width="@dimen/x224"
-                                    android:layout_height="@dimen/x218"
-                                    android:background="@mipmap/fff" />
-
-                                <TextView
-                                    android:id="@+id/nearby_shop_txt1"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/x14"
-                                    android:text="@string/nearby_food_west"
-                                    android:textColor="@color/c333333" />
-
-                                <TextView
-                                    android:id="@+id/nearby_place_text"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/x15"
-                                    android:text="@string/nearby_Anzhenmen" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="@dimen/x224"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:id="@+id/nearby_shop_image2"
-                                    android:layout_width="@dimen/x224"
-                                    android:layout_height="@dimen/x218"
-                                    android:background="@mipmap/fff" />
-
-                                <TextView
-                                    android:id="@+id/nearby_shop_txt2"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/x14"
-                                    android:text="@string/nearby_food_Italian_restaurant"
-                                    android:textColor="@color/c333333" />
-
-                                <TextView
-                                    android:id="@+id/nearby_place_text2"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_below="@+id/txt2"
-                                    android:layout_marginTop="@dimen/x15"
-                                    android:text="@string/nearby_Anzhenmen" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="@dimen/x224"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:id="@+id/nearby_shop_image3"
-                                    android:layout_width="@dimen/x224"
-                                    android:layout_height="@dimen/x218"
-                                    android:background="@mipmap/fff" />
-
-                                <TextView
-                                    android:id="@+id/nearby_shop_txt3"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_below="@+id/imageView1"
-                                    android:layout_marginTop="@dimen/x14"
-                                    android:text="@string/nearby_food_barbecue"
-                                    android:textColor="@color/c333333" />
-
-                                <TextView
-                                    android:id="@+id/nearby_place_text3"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_below="@+id/txt3"
-                                    android:layout_marginTop="@dimen/x15"
-                                    android:text="@string/nearby_Anzhenmen" />
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/x20"
-                            android:layout_marginTop="@dimen/x53"
-                            android:background="@color/cf2f4f5" />
                     </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
+                </RelativeLayout>
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                app:layout_collapseMode="pin"
-                app:title="Toolbar" />
-        </android.support.design.widget.CollapsingToolbarLayout>
-    </android.support.design.widget.AppBarLayout>
+                <!--<android.support.v7.widget.Toolbar-->
+                <!--android:id="@+id/toolbar"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="30dp"-->
+                <!--app:layout_collapseMode="pin"-->
+                <!--app:title="Toolbar" />-->
+            </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.AppBarLayout>
 
-    <!--引用Tablayout的布局和ViewPager-->
-    <!--android:layout_below="@+id/nearby_txt_Near_the_location"-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <!--引用Tablayout的布局和ViewPager-->
+        <!--android:layout_below="@+id/nearby_txt_Near_the_location"-->
+        <LinearLayout
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/cffffff"
+            android:orientation="vertical">
 
-        <include
-            layout="@layout/foot_main"
-            android:scrollbars="none" />
-    </LinearLayout>
-
-    <!--<RadioGroup-->
-    <!--android:id="@+id/nearby_radiogroup"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="@dimen/x88"-->
-    <!--android:orientation="horizontal">-->
-
-    <!--<RadioButton-->
-    <!--android:id="@+id/nearby_radiobutton_gourmet"-->
-    <!--android:layout_width="@dimen/x150"-->
-    <!--android:layout_height="@dimen/x88"-->
-    <!--android:layout_weight="1"-->
-    <!--android:background="@drawable/nearby_radiogroup"-->
-    <!--android:button="@null"-->
-    <!--android:checked="true"-->
-    <!--android:gravity="center"-->
-    <!--android:text="@string/nearby_Gourmet"-->
-    <!--android:textColor="@drawable/main_textcolor_selector" />-->
-
-    <!--<RadioButton-->
-    <!--android:id="@+id/nearby_radiobutton_entertainment"-->
-    <!--android:layout_width="@dimen/x150"-->
-    <!--android:layout_height="@dimen/x88"-->
-    <!--android:layout_weight="1"-->
-    <!--android:background="@drawable/nearby_radiogroup"-->
-    <!--android:button="@null"-->
-    <!--android:gravity="center"-->
-    <!--android:text="@string/nearby_entertainment"-->
-    <!--android:textColor="@drawable/main_textcolor_selector" />-->
-
-    <!--<RadioButton-->
-    <!--android:id="@+id/nearby_radiobutton_serve"-->
-    <!--android:layout_width="@dimen/x150"-->
-    <!--android:layout_height="@dimen/x88"-->
-    <!--android:layout_weight="1"-->
-    <!--android:background="@drawable/nearby_radiogroup"-->
-    <!--android:button="@null"-->
-    <!--android:gravity="center"-->
-    <!--android:text="@string/nearby_serve"-->
-    <!--android:textColor="@drawable/main_textcolor_selector" />-->
-
-    <!--<RadioButton-->
-    <!--android:id="@+id/nearby_radiobutton_grogshop"-->
-    <!--android:layout_width="@dimen/x150"-->
-    <!--android:layout_height="@dimen/x88"-->
-    <!--android:layout_weight="1"-->
-    <!--android:background="@drawable/nearby_radiogroup"-->
-    <!--android:button="@null"-->
-    <!--android:gravity="center"-->
-    <!--android:text="@string/nearby_grogshop"-->
-    <!--android:textColor="@drawable/main_textcolor_selector" />-->
-
-    <!--<RadioButton-->
-    <!--android:id="@+id/nearby_radiobutton_all"-->
-    <!--android:layout_width="@dimen/x150"-->
-    <!--android:layout_height="@dimen/x88"-->
-    <!--android:layout_weight="1"-->
-    <!--android:background="@drawable/nearby_radiogroup"-->
-    <!--android:button="@null"-->
-    <!--android:gravity="center"-->
-    <!--android:text="@string/nearby_all"-->
-    <!--android:textColor="@drawable/main_textcolor_selector" />-->
-    <!--</RadioGroup>-->
-
-    <!--<TextView-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="@dimen/x4"-->
-    <!--android:background="@color/cF2F4F5" />-->
-
-    <!--<ListView-->
-    <!--android:id="@+id/lv"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"></ListView>-->
-</android.support.design.widget.CoordinatorLayout>
+            <include
+                android:id="@+id/include"
+                layout="@layout/foot_main"
+                android:scrollbars="none" />
+        </LinearLayout>
+    </android.support.design.widget.CoordinatorLayout>
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

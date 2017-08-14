@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,6 +53,8 @@ public class HomeFragment extends Fragment implements HomeView {
     @BindView(R.id.foot_viewpaer)
     ViewPager footViewpaer;
     Unbinder unbinder;
+    @BindView(R.id.nearbyshops_recycler)
+    RecyclerView nearbyshopsRecycler;
     private HomePresenter presenter;
     private static final String TAG = "HomeFragment";
     private List<Fragment> mFragments;
@@ -63,25 +66,33 @@ public class HomeFragment extends Fragment implements HomeView {
         unbinder = ButterKnife.bind(this, view);
         presenter = new HomePresenter(this);
         presenter.getDateBanner();
-
-
-        init();
+        initFragment();
+        initShops();
         mainMiddlePager.setAdapter(new FragAdapter(getFragmentManager()));
 
         return view;
     }
-    public void init(){
-        mFragments=new ArrayList<>();
+    public void initShops(){
+        //附近旺铺数据
+    }
+    public void initFragment() {
+        //列表两个Fragment
+        mFragments = new ArrayList<>();
+        new MiddlePagerFragment();
         mFragments.add(MiddlePagerFragment.setPageNum("1"));
         mFragments.add(MiddlePagerFragment.setPageNum("2"));
+
+
+
     }
+
     @Override
     public void upDate(Object object) {
-        PagerAndShopsBean bean= (PagerAndShopsBean) object;
+        PagerAndShopsBean bean = (PagerAndShopsBean) object;
         List<PagerAndShopsBean.ObjectBean.ListBean> list = bean.getObject().getList();
-        List<String> imageList=new ArrayList<>();
+        List<String> imageList = new ArrayList<>();
 
-        for (int i = 0; i <list.size() ; i++) {
+        for (int i = 0; i < list.size(); i++) {
             imageList.add(list.get(i).getPicture());
         }
 
@@ -108,6 +119,7 @@ public class HomeFragment extends Fragment implements HomeView {
         super.onDestroyView();
         unbinder.unbind();
     }
+
     class FragAdapter extends FragmentPagerAdapter {
 
 

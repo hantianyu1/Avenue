@@ -112,13 +112,13 @@ public class MiddlePagerFragment extends Fragment implements HomeView{
             image= (ImageView) itemView.findViewById(R.id.main_grid_item_image);
         }
     }
-    public static Fragment setPageNum(String str){
-        MiddlePagerFragment  fragment=new MiddlePagerFragment();
-        Bundle bundle=new Bundle();
-        bundle.putString(KEY,str);
-        fragment.setArguments(bundle);
-        return fragment;
-    }
+        public static Fragment setPageNum(String str){
+            MiddlePagerFragment  fragment=new MiddlePagerFragment();
+            Bundle bundle=new Bundle();
+            bundle.putString(KEY,str);
+            fragment.setArguments(bundle);
+            return fragment;
+        }
     public  String getPageNum(){
         Bundle bundle = getArguments();
         String key = (String) bundle.get(KEY);

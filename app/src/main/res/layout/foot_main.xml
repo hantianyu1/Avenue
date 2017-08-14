@@ -12,7 +12,7 @@
         android:layout_height="@dimen/x88"
         app:tabBackground="@drawable/tab_background"
         app:tabMode="scrollable"
-
+        app:tabIndicatorColor="@null"
         app:tabSelectedTextColor="@color/cC20000"
         app:tabTextAppearance="@style/TabLayoutTextStyle"
         app:tabTextColor="@color/c333333"></android.support.design.widget.TabLayout>

@@ -28,6 +28,24 @@ public class HomePresenter {
             public void onSuessce(Object tClass) {
                 PagerAndShopsBean bean= (PagerAndShopsBean) tClass;
                 homeView.upDate(bean);
+//                Log.e(TAG, "onSuessce: "+ bean.getCode()+bean.getObject().getTotalSize());
+            }
+
+            @Override
+            public void onError(String str) {
+                Log.e(TAG, "onError: "+str );
+            }
+        });
+        Map<String,String> map=new HashMap<>();
+        map.put("type","0");
+        httpUtils.loadDataFromServerPost(UrlServer.BASE_URL+UrlServer.PAGEANDSHPOSURL,map, PagerAndShopsBean.class);
+    }
+    public void getDateShops( ){
+        HttpUtils httpUtils=new HttpUtils(new HttpUtils.RealCall() {
+            @Override
+            public void onSuessce(Object tClass) {
+                PagerAndShopsBean bean= (PagerAndShopsBean) tClass;
+                homeView.upDate(bean);
                 Log.e(TAG, "onSuessce: "+ bean.getCode()+bean.getObject().getTotalSize());
             }
 

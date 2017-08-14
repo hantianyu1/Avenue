@@ -1,18 +1,16 @@
 package hantianyu1504d.bwie.com.avenue.nearby.view;
 
 
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -21,7 +19,6 @@ import android.widget.ZoomControls;
 import com.baidu.mapapi.SDKInitializer;
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.MapView;
-import com.baidu.mapapi.search.sug.OnGetSuggestionResultListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,13 +42,13 @@ public class NearbyFragment extends Fragment {
     private ViewPager viewPager;
     private CollapsingToolbarLayout ctb;
     private AppBarLayout layout_appbar;
-    private Toolbar toolbar;
+//    private Toolbar toolbar;
     private ViewPagerAdapter vpadapter;
-
+    private CoordinatorLayout coordinatorLayout;
     public NearbyFragment() {
         // Required empty public constructor
     }
-
+    float y1;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         SDKInitializer.initialize(getActivity().getApplicationContext());
@@ -61,18 +58,39 @@ public class NearbyFragment extends Fragment {
     }
 
     private void initView() {
+        coordinatorLayout=(CoordinatorLayout)view.findViewById(R.id.coordinatorLayout);
         map = (MapView) view.findViewById(R.id.nearby_map);
         initMap();
         ctb = (CollapsingToolbarLayout) view.findViewById(R.id.ctb);
         layout_appbar = (AppBarLayout) view.findViewById(R.id.layout_appbar);
-        toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+//        toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         initToolbar();
         tabLayout = (TabLayout) view.findViewById(R.id.foot_tab);
         viewPager = (ViewPager) view.findViewById(R.id.foot_viewpaer);
         initFootMain();
 
+        coordinatorLayout.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+
+                switch (motionEvent.getAction()){
+
+                    case MotionEvent.ACTION_DOWN:
+                        y1 = motionEvent.getY();
+                        break;
+                    case MotionEvent.ACTION_HOVER_MOVE:
+                        float y2 = motionEvent.getY();
+                        if(y1 < y2){
+
+                        }
+                        break;
+                }
+                return false;
+            }
+        });
 
     }
+
 
     private void initFootMain() {
         str_list.add("美食");
@@ -116,23 +134,24 @@ public class NearbyFragment extends Fragment {
      */
     private void initToolbar() {
         //        toolbar.setLogo(R.mipmap.ic_launcher);
-        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+//        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         //CollapsingToolbarLayout作用是提供了一个可以折叠的Toolbar
         //给左上角图标的左边加上一个返回的图标
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //这里要注意的就是需要将setSupportActionBar(toolbar)放在setNavigationOnClickListener()之前设置才行。
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //相当于获取Back键的按下事件
-                ((AppCompatActivity) getActivity()).onBackPressed();
-            }
-        });
-        //设置文字
-        ctb.setTitle("");
-        //设置收缩展开toolbar字体颜色
-        ctb.setExpandedTitleColor(Color.WHITE);
-        ctb.setCollapsedTitleTextColor(Color.BLACK);
+//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //相当于获取Back键的按下事件
+//                ((AppCompatActivity) getActivity()).onBackPressed();
+//            }
+//        });
+//        //设置文字
+//        ctb.setTitle("");
+//
+//        //设置收缩展开toolbar字体颜色
+//        ctb.setExpandedTitleColor(Color.WHITE);
+//        ctb.setCollapsedTitleTextColor(Color.parseColor("#00000000"));
     }
 
     /**
