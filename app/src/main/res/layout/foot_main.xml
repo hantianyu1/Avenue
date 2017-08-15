@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="@dimen/x20"
+    android:background="@color/cffffff"
     android:orientation="vertical">
     <!--app:tabIndicatorColor="@color/cC20000"-->
     <android.support.design.widget.TabLayout
@@ -12,7 +13,7 @@
         android:layout_height="@dimen/x88"
         app:tabBackground="@drawable/tab_background"
         app:tabMode="scrollable"
-
+        app:tabIndicatorColor="@null"
         app:tabSelectedTextColor="@color/cC20000"
         app:tabTextAppearance="@style/TabLayoutTextStyle"
         app:tabTextColor="@color/c333333"></android.support.design.widget.TabLayout>

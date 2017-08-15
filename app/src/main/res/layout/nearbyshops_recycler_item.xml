@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_marginLeft="@dimen/x10"
+    android:layout_height="match_parent">
+<ImageView
+    android:id="@+id/nearbyshops_recycler_image"
+    android:layout_width="@dimen/x224"
+    android:layout_height="@dimen/x218"
+/>
+    <TextView
+        android:id="@+id/nearbyshops_recycler_name"
+        android:layout_marginTop="@dimen/x14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="海友良品酒店"/>
+    <TextView
+        android:id="@+id/nearbyshops_recycler_address"
+        android:layout_marginTop="@dimen/x15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="[安贞门]"/>
+</LinearLayout>

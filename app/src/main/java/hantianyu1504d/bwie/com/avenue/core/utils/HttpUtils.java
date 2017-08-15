@@ -27,7 +27,7 @@ public class HttpUtils {
     private static final String TAG = "HttpUtils";
     private RealCall realCall;
 
-    public void setRealCall(RealCall realCall) {
+    public HttpUtils(RealCall realCall) {
         this.realCall = realCall;
     }
 
