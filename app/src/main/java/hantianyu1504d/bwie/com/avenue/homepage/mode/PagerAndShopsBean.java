@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class PagerAndShopsBean {
 
-    /**
+    /**首页分类列表
      * code : SUCCESS
      * descirption :
      * object : {"pageNum":1,"totalSize":5,"totalPage":1,"list":[{"recommendId":2,"picture":"two","description":"","type":-10,"sequence":-10,"status":-10,"createTime":""},{"recommendId":4,"picture":"four","description":"","type":-10,"sequence":-10,"status":-10,"createTime":""},{"recommendId":5,"picture":"five","description":"","type":-10,"sequence":-10,"status":-10,"createTime":""},{"recommendId":6,"picture":"six","description":"","type":-10,"sequence":-10,"status":-10,"createTime":""},{"recommendId":7,"picture":"seven","description":"","type":-10,"sequence":-10,"status":-10,"createTime":""}]}

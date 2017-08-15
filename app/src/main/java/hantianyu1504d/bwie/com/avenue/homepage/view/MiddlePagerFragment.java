@@ -70,6 +70,11 @@ public class MiddlePagerFragment extends Fragment implements HomeView{
         adapter.notifyDataSetChanged();
     }
 
+    @Override
+    public void upAddressDate(Object bean) {
+
+    }
+
     class Adapter extends RecyclerView.Adapter<ViewHolder>implements View.OnClickListener{
         private RecyclerListener listener;
 

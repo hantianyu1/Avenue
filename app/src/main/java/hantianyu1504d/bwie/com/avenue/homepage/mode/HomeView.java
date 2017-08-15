@@ -8,4 +8,5 @@ package hantianyu1504d.bwie.com.avenue.homepage.mode;
  */
 public interface HomeView <T>{
     void upDate(Object bean);
+    void upAddressDate(Object bean);
 }

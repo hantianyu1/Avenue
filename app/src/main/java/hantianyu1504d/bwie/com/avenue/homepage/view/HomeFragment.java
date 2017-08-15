@@ -8,7 +8,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,12 +23,16 @@ import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import hantianyu1504d.bwie.com.avenue.R;
+import hantianyu1504d.bwie.com.avenue.homepage.adapter.NearShopsAdapter;
+import hantianyu1504d.bwie.com.avenue.homepage.mode.AddressUtil;
 import hantianyu1504d.bwie.com.avenue.homepage.mode.HomeView;
+import hantianyu1504d.bwie.com.avenue.homepage.mode.NearShopsBean;
 import hantianyu1504d.bwie.com.avenue.homepage.mode.PagerAndShopsBean;
 import hantianyu1504d.bwie.com.avenue.homepage.presenter.HomePresenter;
 
@@ -59,6 +65,7 @@ public class HomeFragment extends Fragment implements HomeView {
     private static final String TAG = "HomeFragment";
     private List<Fragment> mFragments;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -81,6 +88,9 @@ public class HomeFragment extends Fragment implements HomeView {
         new MiddlePagerFragment();
         mFragments.add(MiddlePagerFragment.setPageNum("1"));
         mFragments.add(MiddlePagerFragment.setPageNum("2"));
+        AddressUtil addressUtil=new AddressUtil(getActivity());
+        Map<String, String> address = addressUtil.getAddress();
+        presenter.getAddress(address);
 
 
 
@@ -112,6 +122,28 @@ public class HomeFragment extends Fragment implements HomeView {
         mainBanner.setImages(imageList);
         mainBanner.setDelayTime(2000);
         mainBanner.start();
+    }
+
+    /**
+     * 附近商铺
+     * @param bean
+     */
+    @Override
+    public void upAddressDate(Object bean) {
+        NearShopsBean near= (NearShopsBean) bean;
+        Log.e(TAG, "upAddressDate: "+near.getCode());
+        List<String> list = near.getObject().getList();
+        list.clear();
+        list.add("http://imgsrc.baidu.com/imgad/pic/item/267f9e2f07082838b5168c32b299a9014c08f1f9.jpg");
+        list.add("http://img2.imgtn.bdimg.com/it/u=1989212580,3203216431&fm=214&gp=0.jpg");
+        list.add("http://pic96.nipic.com/file/20160429/21289054_220047597697_2.jpg");
+        list.add("http://img3.duitang.com/uploads/item/201205/07/20120507205511_vNtWf.jpeg");
+        list.add("http://pic1.16pic.com/00/10/80/16pic_1080912_b.jpg");
+        list.add("http://pic.35pic.com/normal/08/25/08/7487939_193935318119_2.jpg");
+
+        NearShopsAdapter  nearShopsAdapter = new NearShopsAdapter(getActivity(),list);
+        nearbyshopsRecycler.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));
+        nearbyshopsRecycler.setAdapter(nearShopsAdapter);
     }
 
     @Override
