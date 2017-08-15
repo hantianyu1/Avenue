@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/x200"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/x34"
+        android:layout_marginLeft="@dimen/x30"
+        android:layout_marginRight="@dimen/x30"
+        android:layout_marginTop="@dimen/x34">
+
+        <ImageView
+            android:id="@+id/recyclerview_shop_image"
+            android:layout_width="@dimen/x176"
+            android:layout_height="@dimen/x134"
+            android:background="@drawable/imag_corner_bg"
+            android:src="@mipmap/ic_huawei_login_normal" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x20"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/recyclerview_shop_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/shop_name"
+                android:textColor="@color/c333333"
+                android:textSize="@dimen/t28" />
+
+            <TextView
+                android:id="@+id/recyclerview_shop_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x10"
+                android:text="@string/shop_price"
+                android:textColor="@color/c999999"
+                android:textSize="@dimen/t24" />
+
+            <TextView
+                android:id="@+id/recyclerview_shop_integral"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x30"
+                android:text="@string/shop_integral"
+                android:textColor="@color/c333333" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/recyclerview_shop_site"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/x30"
+            android:text="@string/shop_site"
+            android:textColor="@color/c333333"
+            android:textSize="@dimen/t24" />
+    </LinearLayout>
+</LinearLayout>

@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
     android:orientation="vertical">
 
     <android.support.design.widget.AppBarLayout
@@ -273,94 +272,25 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                 app:layout_collapseMode="pin"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:title="Toolbar" />
+
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
     <!--引用Tablayout的布局和ViewPager-->
     <!--android:layout_below="@+id/nearby_txt_Near_the_location"-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <include
-            layout="@layout/foot_main"
-            android:scrollbars="none" />
+        <include layout="@layout/foot_main" />
     </LinearLayout>
 
-    <!--<RadioGroup-->
-    <!--android:id="@+id/nearby_radiogroup"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="@dimen/x88"-->
-    <!--android:orientation="horizontal">-->
-
-    <!--<RadioButton-->
-    <!--android:id="@+id/nearby_radiobutton_gourmet"-->
-    <!--android:layout_width="@dimen/x150"-->
-    <!--android:layout_height="@dimen/x88"-->
-    <!--android:layout_weight="1"-->
-    <!--android:background="@drawable/nearby_radiogroup"-->
-    <!--android:button="@null"-->
-    <!--android:checked="true"-->
-    <!--android:gravity="center"-->
-    <!--android:text="@string/nearby_Gourmet"-->
-    <!--android:textColor="@drawable/main_textcolor_selector" />-->
-
-    <!--<RadioButton-->
-    <!--android:id="@+id/nearby_radiobutton_entertainment"-->
-    <!--android:layout_width="@dimen/x150"-->
-    <!--android:layout_height="@dimen/x88"-->
-    <!--android:layout_weight="1"-->
-    <!--android:background="@drawable/nearby_radiogroup"-->
-    <!--android:button="@null"-->
-    <!--android:gravity="center"-->
-    <!--android:text="@string/nearby_entertainment"-->
-    <!--android:textColor="@drawable/main_textcolor_selector" />-->
-
-    <!--<RadioButton-->
-    <!--android:id="@+id/nearby_radiobutton_serve"-->
-    <!--android:layout_width="@dimen/x150"-->
-    <!--android:layout_height="@dimen/x88"-->
-    <!--android:layout_weight="1"-->
-    <!--android:background="@drawable/nearby_radiogroup"-->
-    <!--android:button="@null"-->
-    <!--android:gravity="center"-->
-    <!--android:text="@string/nearby_serve"-->
-    <!--android:textColor="@drawable/main_textcolor_selector" />-->
-
-    <!--<RadioButton-->
-    <!--android:id="@+id/nearby_radiobutton_grogshop"-->
-    <!--android:layout_width="@dimen/x150"-->
-    <!--android:layout_height="@dimen/x88"-->
-    <!--android:layout_weight="1"-->
-    <!--android:background="@drawable/nearby_radiogroup"-->
-    <!--android:button="@null"-->
-    <!--android:gravity="center"-->
-    <!--android:text="@string/nearby_grogshop"-->
-    <!--android:textColor="@drawable/main_textcolor_selector" />-->
-
-    <!--<RadioButton-->
-    <!--android:id="@+id/nearby_radiobutton_all"-->
-    <!--android:layout_width="@dimen/x150"-->
-    <!--android:layout_height="@dimen/x88"-->
-    <!--android:layout_weight="1"-->
-    <!--android:background="@drawable/nearby_radiogroup"-->
-    <!--android:button="@null"-->
-    <!--android:gravity="center"-->
-    <!--android:text="@string/nearby_all"-->
-    <!--android:textColor="@drawable/main_textcolor_selector" />-->
-    <!--</RadioGroup>-->
-
-    <!--<TextView-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="@dimen/x4"-->
-    <!--android:background="@color/cF2F4F5" />-->
-
-    <!--<ListView-->
-    <!--android:id="@+id/lv"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"></ListView>-->
 </android.support.design.widget.CoordinatorLayout>

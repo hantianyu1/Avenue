@@ -2,13 +2,14 @@ package hantianyu1504d.bwie.com.avenue.nearby.view;
 
 
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -21,14 +22,11 @@ import android.widget.ZoomControls;
 import com.baidu.mapapi.SDKInitializer;
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.MapView;
-import com.baidu.mapapi.search.sug.OnGetSuggestionResultListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import hantianyu1504d.bwie.com.avenue.R;
-import hantianyu1504d.bwie.com.avenue.vp_adapter.ViewPagerAdapter;
-import hantianyu1504d.bwie.com.avenue.vp_adapter.ViewPagerFragment;
 
 
 /**
@@ -46,7 +44,6 @@ public class NearbyFragment extends Fragment {
     private CollapsingToolbarLayout ctb;
     private AppBarLayout layout_appbar;
     private Toolbar toolbar;
-    private ViewPagerAdapter vpadapter;
 
     public NearbyFragment() {
         // Required empty public constructor
@@ -56,8 +53,13 @@ public class NearbyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         SDKInitializer.initialize(getActivity().getApplicationContext());
         view = inflater.inflate(R.layout.fragment_nearby, container, false);
-        initView();
         return view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        initView();
     }
 
     private void initView() {
@@ -69,46 +71,7 @@ public class NearbyFragment extends Fragment {
         initToolbar();
         tabLayout = (TabLayout) view.findViewById(R.id.foot_tab);
         viewPager = (ViewPager) view.findViewById(R.id.foot_viewpaer);
-        initFootMain();
 
-
-    }
-
-    private void initFootMain() {
-        str_list.add("美食");
-        str_list.add("休闲娱乐");
-        str_list.add("生活服务");
-        str_list.add("酒店");
-        str_list.add("全部 ");
-//        str_list.notify();
-        tabLayout.setTabMode(TabLayout.MODE_FIXED);
-        for (int i = 0; i < str_list.size(); i++) {
-            ViewPagerFragment vpFragment = new ViewPagerFragment();
-            frag_list.add(vpFragment);
-        }
-        vpadapter = new ViewPagerAdapter(getFragmentManager(), str_list, frag_list);
-        viewPager.setAdapter(vpadapter);
-        tabLayout.setupWithViewPager(viewPager);
-//        监听事件，tab选中改变的时候，改变图片：
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-//                tab.getCustomView().findViewById(R.id.main_tv).setFocusable(true);
-//                @mipmap/meishikuang   @mipmap/baisexuanzhongkaung
-
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-//                tab.getCustomView().findViewById(R.id.main_tv).setFocusable(false);
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
     }
 
     /**
@@ -151,8 +114,5 @@ public class NearbyFragment extends Fragment {
         map.showZoomControls(false);
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-    }
+
 }

@@ -28,4 +28,8 @@
     <string name="dadaoshike">大&#160;道&#160;时&#160;刻</string>
     <string name="xingongneng">新&#160;功&#160;能&#160;上&#160;线</string>
     <string name="fujin">附近</string>
+    <string name="shop_name">798咖啡</string>
+    <string name="shop_price">￥45/人</string>
+    <string name="shop_integral">积分率</string>
+    <string name="shop_site">安贞距您100m</string>
 </resources>

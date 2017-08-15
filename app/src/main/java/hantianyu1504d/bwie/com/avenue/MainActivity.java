@@ -8,6 +8,9 @@ import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import hantianyu1504d.bwie.com.avenue.homepage.view.HomeFragment;
@@ -16,7 +19,7 @@ import hantianyu1504d.bwie.com.avenue.nearby.view.NearbyFragment;
 import hantianyu1504d.bwie.com.avenue.rebate.view.RebateFragment;
 
 public class MainActivity extends AppCompatActivity {
-//
+    //
     @BindView(R.id.main_home)
     RadioButton mainHome;
     @BindView(R.id.main_nearby)
@@ -34,53 +37,80 @@ public class MainActivity extends AppCompatActivity {
     private NearbyFragment nearby;
     private RebateFragment rebate;
     private MineFragment mine;
+
+    private List<Fragment> fragments;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        fragments = new ArrayList<>();
         home = new HomeFragment();
+        nearby = new NearbyFragment();
+        rebate = new RebateFragment();
+        mine = new MineFragment();
+        fragments.add(home);
+        fragments.add(nearby);
+        fragments.add(rebate);
+        fragments.add(mine);
         addFragment(home);
+        addFragment(nearby);
+        addFragment(rebate);
+        addFragment(mine);
         mainGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.main_home:
-                        showFragment(home);
-                        fg = home;
+//                        showFragment(home);
+//                        fg = home;
+                        showHideFragment(0);
                         break;
                     case R.id.main_nearby:
-                        if (nearby == null) {
-                            nearby = new NearbyFragment();
-                            addFragment(nearby);
-                        }
-                        showFragment(nearby);
-                        fg = nearby;
+//                        if (nearby == null) {
+//                            nearby = new NearbyFragment();
+//                            addFragment(nearby);
+//                        }
+//                        showFragment(nearby);
+//                        fg = nearby;
+                        showHideFragment(1);
                         break;
                     case R.id.main_rebate:
-                        rebate = new RebateFragment();
-                        addFragment(rebate);
-
-                        showFragment(rebate);
-                        fg = rebate;
-
+//                        rebate = new RebateFragment();
+//                        addFragment(rebate);
+//
+//                        showFragment(rebate);
+//                        fg = rebate;
+                        showHideFragment(2);
                         break;
                     case R.id.main_me:
-                        if (mine == null) {
-                            mine = new MineFragment();
-                            addFragment(mine);
-                        }
-                        showFragment(mine);
-                        fg = mine;
-
+//                        if (mine == null) {
+//                            mine = new MineFragment();
+//                            addFragment(mine);
+//                        }
+//                        showFragment(mine);
+//                        fg = mine;
+                        showHideFragment(3);
                         break;
                 }
             }
         });
+        showHideFragment(0);
     }
+
     private void addFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.main_frame, fragment);
+        transaction.commit();
+    }
+
+    private void showHideFragment(int index) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        for (int i = 0; i < 4; i++) {
+            transaction = (i == index) ? transaction.show(fragments.get(i))
+                    : transaction.hide(fragments.get(i));
+        }
         transaction.commit();
     }
 
