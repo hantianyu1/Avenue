@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/x88"
@@ -23,4 +25,191 @@
             android:textSize="@dimen/x33" />
     </RelativeLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/x60"
+            android:layout_marginLeft="@dimen/t30"
+            android:gravity="center"
+            android:text="积分规则"
+            android:textColor="@color/c333333"
+            android:textSize="@dimen/t28" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/t30"
+            android:layout_marginTop="@dimen/x10"
+            android:gravity="center"
+            android:text="用户在大道商户消费即可获得积分。"
+            android:textColor="@color/c999999"
+            android:textSize="@dimen/t22" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/t30"
+            android:layout_marginTop="@dimen/x10"
+            android:gravity="center"
+            android:text="单笔在1----30000元之间的消费会获得A级积分。"
+            android:textColor="@color/c999999"
+            android:textSize="@dimen/t22" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/t30"
+            android:layout_marginTop="@dimen/x10"
+            android:gravity="center"
+            android:text="不同级别的积分不能通用。"
+            android:textColor="@color/c999999"
+            android:textSize="@dimen/t22" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/t30"
+            android:layout_marginTop="@dimen/x10"
+            android:gravity="center"
+            android:text="退款成功后已获得积分会相应扣除。"
+            android:textColor="@color/c999999"
+            android:textSize="@dimen/t22" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/t30"
+            android:layout_marginTop="@dimen/x10"
+            android:gravity="center"
+            android:text="7天内获得积分处于冻结状态，不参与返利兑换。"
+            android:textColor="@color/c999999"
+            android:textSize="@dimen/t22" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/x60"
+            android:layout_marginLeft="@dimen/t30"
+            android:gravity="center"
+            android:text="兑换规则"
+            android:textColor="@color/c333333"
+            android:textSize="@dimen/t28" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/t30"
+            android:layout_marginTop="@dimen/x10"
+            android:gravity="center"
+            android:text="在兑换日达到兑换所需积分即可自动兑换返利计划。"
+            android:textColor="@color/c999999"
+            android:textSize="@dimen/t22" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/t30"
+            android:layout_marginTop="@dimen/x10"
+            android:gravity="center"
+            android:text="兑换所需积分每次自动变化。"
+            android:textColor="@color/c999999"
+            android:textSize="@dimen/t22" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/t30"
+            android:layout_marginTop="@dimen/x10"
+            android:gravity="center"
+            android:text="用户可通过提示文字了解本次兑换的完成度。"
+            android:textColor="@color/c999999"
+            android:textSize="@dimen/t22" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/t30"
+            android:layout_marginTop="@dimen/x10"
+            android:gravity="center"
+            android:text="用户积分超过两倍兑换所需积分时自动兑换两份返利计划，以此类推，不设上限。"
+            android:textColor="@color/c999999"
+            android:textSize="@dimen/t22" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/x60"
+            android:layout_marginLeft="@dimen/t30"
+            android:gravity="center"
+            android:text="返利规则"
+            android:textColor="@color/c333333"
+            android:textSize="@dimen/t28" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/t30"
+            android:layout_marginTop="@dimen/x10"
+            android:gravity="center"
+            android:text="兑换的返利计划将分为多期返还给用户。"
+            android:textColor="@color/c999999"
+            android:textSize="@dimen/t22" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/t30"
+            android:layout_marginTop="@dimen/x10"
+            android:gravity="center"
+            android:text="返利时大道将代缴税费。"
+            android:textColor="@color/c999999"
+            android:textSize="@dimen/t22" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/t30"
+            android:layout_marginTop="@dimen/x10"
+            android:gravity="center"
+            android:text="返利到账后即可提现。"
+            android:textColor="@color/c999999"
+            android:textSize="@dimen/t22" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/x60"
+            android:layout_marginLeft="@dimen/t30"
+            android:gravity="center"
+            android:text="参考案例"
+            android:textColor="@color/c333333"
+            android:textSize="@dimen/t28" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/t30"
+            android:layout_marginTop="@dimen/x10"
+            android:gravity="center"
+            android:text="某人每日在商户A消费50元获得5积分，到兑换日共累计积分500分，其中35分为冻结状态。到兑换日用400积分兑换了20元，分12期发放。此人当天剩余积分为50-400=100积分，获得返利20/12=1.66元，且此后每隔一段时间还可获得1.66元，共计12次"
+            android:textColor="@color/c999999"
+            android:textSize="@dimen/t22" />
+    </LinearLayout>
 </LinearLayout>

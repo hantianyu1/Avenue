@@ -26,9 +26,13 @@ import okhttp3.Response;
 public class HttpUtils {
     private static final String TAG = "HttpUtils";
     private RealCall realCall;
+    private PlanCall planCall;
 
     public void setRealCall(RealCall realCall) {
         this.realCall = realCall;
+    }
+    public void setPlanCall(PlanCall planCall) {
+        this.planCall = planCall;
     }
 
     private Handler handler = new Handler() {
@@ -39,9 +43,11 @@ public class HttpUtils {
                 case 0:
                     Object obj = msg.obj;
                     realCall.onSuessce(obj);
+                    planCall.onSuccess(obj);
                     break;
                 case 1:
                     realCall.onError( msg.obj.toString());
+                    planCall.onFailure(msg.obj.toString());
                     break;
             }
         }
@@ -104,5 +110,8 @@ public class HttpUtils {
         void onSuessce(T tClass);
         void onError(String str);
     }
-
+    public interface PlanCall<T>{
+        void onSuccess(T tClass);
+        void onFailure(String str);
+    }
 }

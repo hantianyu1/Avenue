@@ -9,7 +9,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import hantianyu1504d.bwie.com.avenue.R;
-import hantianyu1504d.bwie.com.avenue.rebate.bean.RecyclerData;
+import hantianyu1504d.bwie.com.avenue.rebate.bean.RebatePlanData;
 
 /**
  * 类的作用:
@@ -19,12 +19,12 @@ import hantianyu1504d.bwie.com.avenue.rebate.bean.RecyclerData;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> implements View.OnClickListener {
     private Context context;
-    private List<RecyclerData> list;
+    private List<RebatePlanData> list;
     private ViewHolder holder;
     private int num = 2;
     private MyItemClickListener mListener = null;
 
-    public RecyclerViewAdapter(Context context, List<RecyclerData> list) {
+    public RecyclerViewAdapter(Context context, List<RebatePlanData> list) {
         this.context = context;
         this.list = list;
     }
@@ -36,15 +36,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
       View view =  View.inflate(context, R.layout.fragment_rebate_item, null);
         holder = new ViewHolder(view, mListener);
-        //parent.setOnClickListener(this);
         return holder;
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        RecyclerData data = list.get(position);
-        holder.txtA.setText(data.getName());
-        holder.txtCalander.setText(data.getTitle());
+        RebatePlanData data = list.get(position);
+        holder.txtA.setText(data.getObject().get(position).getRecordCoding());
+//        holder.txtCalander.setText(data.getTitle());
         holder.itemView.setTag(position);//将position保存在itemView的Tag中，以便点击时进行获取
         holder.itemView.setOnClickListener(this);
     }

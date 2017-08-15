@@ -35,16 +35,15 @@ import hantianyu1504d.bwie.com.avenue.rebate.activity.RebatePlanActivity;
 import hantianyu1504d.bwie.com.avenue.rebate.activity.RecordActivity;
 import hantianyu1504d.bwie.com.avenue.rebate.adapter.RecyclerViewAdapter;
 import hantianyu1504d.bwie.com.avenue.rebate.bean.CountCashbackData;
-import hantianyu1504d.bwie.com.avenue.rebate.bean.RecyclerData;
+import hantianyu1504d.bwie.com.avenue.rebate.bean.RebatePlanData;
 
 import static hantianyu1504d.bwie.com.avenue.R.id.btn_more;
-import static hantianyu1504d.bwie.com.avenue.rebate.bean.RecyclerData.initData;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class RebateFragment extends Fragment implements HttpUtils.RealCall<CountCashbackData>{
+public class RebateFragment extends Fragment implements HttpUtils.RealCall<CountCashbackData>, HttpUtils.PlanCall<RebatePlanData> {
 
 
     @BindView(R.id.recycler_view)
@@ -65,8 +64,9 @@ public class RebateFragment extends Fragment implements HttpUtils.RealCall<Count
     @BindView(R.id.txt_record)
     TextView txtRecord;
     private RecyclerViewAdapter recyclerViewAdapter;
-    private List<RecyclerData> list = new ArrayList<>();
+    private List<RebatePlanData> list = new ArrayList<>();
     private String baseUrl = "http://123.57.33.185:8088/cashback/countCashback";
+    private String planUrl = "http://123.57.33.185:8088/user/cashback/plan";
 
     public RebateFragment() {
     }
@@ -83,20 +83,11 @@ public class RebateFragment extends Fragment implements HttpUtils.RealCall<Count
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        list = initData();
         initPriceData();
+        initPlan();
         LinearLayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
-        recyclerViewAdapter = new RecyclerViewAdapter(getContext(), list);
-        recyclerViewAdapter.setOnItemClickListener(new RecyclerViewAdapter.MyItemClickListener() {
-            @Override
-            public void onItemClick(View view, int postion) {
-                Intent intent = new Intent(getContext(), RebatePlanActivity.class);
-                startActivity(intent);
-            }
-        });
         recyclerView.setAdapter(recyclerViewAdapter);
-
         SpannableString spannableString = new SpannableString("5月25日（明天）返利230元");
         RelativeSizeSpan sizeSpan01 = new RelativeSizeSpan(1.6f);
         spannableString.setSpan(sizeSpan01, 11, 14, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
@@ -104,14 +95,22 @@ public class RebateFragment extends Fragment implements HttpUtils.RealCall<Count
 
     }
 
+    private void initPlan() {
+        HttpUtils utils = new HttpUtils();
+        utils.setPlanCall(this);
+        Map<String, String> map = new HashMap<>();
+        map.put("token", "faf9105720d000f7bcea972fabb4b518");
+        utils.loadDataFromServerPost(planUrl, map, RebatePlanData.class);
+    }
+
     private void initPriceData() {
-        HttpUtils utils=new HttpUtils();
+        HttpUtils utils = new HttpUtils();
         utils.setRealCall(this);
-        Map<String,String> map=new HashMap<>();
-        map.put("status","1");
-        map.put("token","");
-        Log.e("..........", "initPriceData: "+ map.toString() );
-        utils.loadDataFromServerPost(baseUrl,map, CountCashbackData.class);
+        Map<String, String> map = new HashMap<>();
+        map.put("status", "1");
+        map.put("token", "");
+        Log.e("..........", "initPriceData: " + map.toString());
+        utils.loadDataFromServerPost(baseUrl, map, CountCashbackData.class);
 
     }
 
@@ -143,17 +142,39 @@ public class RebateFragment extends Fragment implements HttpUtils.RealCall<Count
     @Override
     public void onSuessce(CountCashbackData data) {
         double waitCashback = data.getObject().getWaitCashback();
-        txtPrice.setText(waitCashback+"");
-        txtCount.setText(data.getObject().getCountReally()+"");
+        txtPrice.setText(waitCashback + "");
+        txtCount.setText(data.getObject().getCountReally() + "");
     }
 
     @Override
     public void onError(String str) {
-        Toast.makeText(getContext(),"数据有误",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "数据有误", Toast.LENGTH_SHORT).show();
     }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
     }
+
+    @Override
+    public void onSuccess(RebatePlanData tClass) {
+        RebatePlanData data=tClass;
+        list.add(data);
+        recyclerViewAdapter = new RecyclerViewAdapter(getContext(), list);
+        recyclerViewAdapter.setOnItemClickListener(new RecyclerViewAdapter.MyItemClickListener() {
+            @Override
+            public void onItemClick(View view, int postion) {
+                Intent intent = new Intent(getContext(), RebatePlanActivity.class);
+                startActivity(intent);
+            }
+        });
+
+    }
+
+    @Override
+    public void onFailure(String str) {
+
+    }
+
 }

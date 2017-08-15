@@ -3,7 +3,7 @@ package hantianyu1504d.bwie.com.avenue.rebate.bean;
 import java.util.List;
 
 /**
- * 类的作用:
+ * 类的作用:积分记录
  * author: 刘婕
  * date:2017/8/14
  */
