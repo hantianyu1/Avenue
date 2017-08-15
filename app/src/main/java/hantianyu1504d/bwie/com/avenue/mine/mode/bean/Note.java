@@ -19,7 +19,6 @@ public class Note {
     public String object;
 
     public static Note objectFromData(String str) {
-
         return new Gson().fromJson(str, Note.class);
     }
 }

@@ -92,6 +92,8 @@
             android:layout_marginTop="@dimen/x74">
 
             <RadioButton
+                android:id="@+id/rbtn_mine_gathering"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/x100"
@@ -99,6 +101,7 @@
                 android:button="@null" />
 
             <RadioButton
+                android:id="@+id/rbtn_mine_balance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -106,6 +109,7 @@
                 android:button="@null" />
 
             <RadioButton
+                android:id="@+id/rbtn_mine_card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

@@ -101,9 +101,6 @@ public class HttpUtils {
             okHttpClient = new OkHttpClient();
         }
         HttpUtil.doPost(str, map, new Callback() {
-
-
-
             @Override
             public void onFailure(Call call, IOException e) {
 

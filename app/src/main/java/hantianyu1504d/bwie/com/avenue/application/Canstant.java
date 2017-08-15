@@ -11,6 +11,7 @@ public final class Canstant {
         public static final String PATH = "http://123.57.33.185:8088/";
 
         public static final String MINE_KEY = "key";
+        public static final String TOKEN = "token";
 
         public static final String USER_LOG = "UserLog";
 

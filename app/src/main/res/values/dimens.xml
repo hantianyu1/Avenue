@@ -94,4 +94,5 @@
 
     <dimen name="x15" type="dimen" format="float">7.5dp</dimen>
     <dimen name="x53" type="dimen" format="float">26.5dp</dimen>
+    <dimen name="x400">200dp</dimen>
 </resources>
