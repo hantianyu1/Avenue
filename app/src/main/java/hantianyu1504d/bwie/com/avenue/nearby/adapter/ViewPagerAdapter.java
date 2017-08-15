@@ -1,4 +1,4 @@
-package hantianyu1504d.bwie.com.avenue.nearby.vp_adapter;
+package hantianyu1504d.bwie.com.avenue.nearby.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

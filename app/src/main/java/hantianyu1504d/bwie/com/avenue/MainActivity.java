@@ -14,7 +14,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import hantianyu1504d.bwie.com.avenue.homepage.view.HomeFragment;
-import hantianyu1504d.bwie.com.avenue.mine.view.MineFragment;
+import hantianyu1504d.bwie.com.avenue.mine.view.fragment.MineFragment;
 import hantianyu1504d.bwie.com.avenue.nearby.view.NearbyFragment;
 import hantianyu1504d.bwie.com.avenue.rebate.view.RebateFragment;
 

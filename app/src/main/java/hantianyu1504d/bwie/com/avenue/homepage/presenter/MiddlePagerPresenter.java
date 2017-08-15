@@ -43,4 +43,5 @@ public class MiddlePagerPresenter {
         httpUtils.loadDataFromServerPost(UrlServer.BASE_URL+UrlServer.CATEGORIESURL,map, CategoriesBean.class);
     }
 
+
 }
