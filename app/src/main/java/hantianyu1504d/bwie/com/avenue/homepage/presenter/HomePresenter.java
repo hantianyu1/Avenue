@@ -8,6 +8,7 @@ import java.util.Map;
 import hantianyu1504d.bwie.com.avenue.core.utils.HttpUtils;
 import hantianyu1504d.bwie.com.avenue.core.utils.UrlServer;
 import hantianyu1504d.bwie.com.avenue.homepage.mode.HomeView;
+import hantianyu1504d.bwie.com.avenue.homepage.mode.NearShopsBean;
 import hantianyu1504d.bwie.com.avenue.homepage.mode.PagerAndShopsBean;
 
 /**
@@ -57,5 +58,22 @@ public class HomePresenter {
         Map<String,String> map=new HashMap<>();
         map.put("type","0");
         httpUtils.loadDataFromServerPost(UrlServer.BASE_URL+UrlServer.PAGEANDSHPOSURL,map, PagerAndShopsBean.class);
+    }
+    public void getAddress( Map<String,String> map){
+        HttpUtils httpUtils=new HttpUtils(new HttpUtils.RealCall() {
+            @Override
+            public void onSuessce(Object tClass) {
+                NearShopsBean bean= (NearShopsBean) tClass;
+                homeView.upAddressDate(bean);
+
+            }
+
+            @Override
+            public void onError(String str) {
+                Log.e(TAG, "onError: "+str );
+            }
+        });
+
+        httpUtils.loadDataFromServerPost(UrlServer.BASE_URL+UrlServer.NEARSHOPS,map, NearShopsBean.class);
     }
 }

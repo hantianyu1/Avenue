@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?><!--CoordinatorLayout滚动效果-->
-<com.sothree.slidinguppanel.SlidingUpPanelLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:sothree="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="bottom"
-    sothree:umanoPanelHeight="70dp"
-    sothree:umanoShadowHeight="4dp">
+   >
 
     <com.baidu.mapapi.map.MapView
-        android:id="@+id/nearby_map"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    android:id="@+id/nearby_map"
+    android:layout_width="match_parent"
 
+    android:layout_height="match_parent" />
+//整个滚动
     <android.support.design.widget.CoordinatorLayout
         xmlns:app="http://schemas.android.com/tools"
         android:id="@+id/coordinatorLayout"
@@ -20,14 +19,18 @@
         android:layout_height="match_parent"
         android:background="#00000000"
         android:orientation="vertical">
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            //折叠的
         <android.support.design.widget.AppBarLayout
             android:id="@+id/layout_appbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
             android:background="#00000000">
-
+//
             <android.support.design.widget.CollapsingToolbarLayout
                 android:id="@+id/ctb"
                 app:expandedTitleMarginStart="10dp"
@@ -51,10 +54,6 @@
                     <!--android:layout_height="wrap_content">-->
                     <!--首页显示的地图-->
                     <!--x260-->
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="500dp"
-                        android:layout_above="@+id/nearby_linear" />
 
 
                     <TextView
@@ -291,28 +290,17 @@
                     </LinearLayout>
                 </RelativeLayout>
 
-                <!--<android.support.v7.widget.Toolbar-->
-                <!--android:id="@+id/toolbar"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="30dp"-->
-                <!--app:layout_collapseMode="pin"-->
-                <!--app:title="Toolbar" />-->
             </android.support.design.widget.CollapsingToolbarLayout>
-        </android.support.design.widget.AppBarLayout>
-
-        <!--引用Tablayout的布局和ViewPager-->
-        <!--android:layout_below="@+id/nearby_txt_Near_the_location"-->
-        <LinearLayout
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/cffffff"
-            android:orientation="vertical">
-
             <include
+
                 android:id="@+id/include"
                 layout="@layout/foot_main"
                 android:scrollbars="none" />
-        </LinearLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <!--引用Tablayout的布局和ViewPager-->
+
+    </LinearLayout>
     </android.support.design.widget.CoordinatorLayout>
-</com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+</RelativeLayout>
