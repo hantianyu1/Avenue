@@ -8,8 +8,6 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -27,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import hantianyu1504d.bwie.com.avenue.R;
+import hantianyu1504d.bwie.com.avenue.nearby.adapter.ViewPagerAdapter;
 
 
 /**
@@ -44,6 +43,7 @@ public class NearbyFragment extends Fragment {
     private CollapsingToolbarLayout ctb;
     private AppBarLayout layout_appbar;
     private Toolbar toolbar;
+    private ViewPagerAdapter vpadapter;
 
     public NearbyFragment() {
         // Required empty public constructor
@@ -71,7 +71,24 @@ public class NearbyFragment extends Fragment {
         initToolbar();
         tabLayout = (TabLayout) view.findViewById(R.id.foot_tab);
         viewPager = (ViewPager) view.findViewById(R.id.foot_viewpaer);
+        initFootMain();
 
+
+    }
+
+    private void initFootMain() {
+        str_list.add("美食");
+        str_list.add("休闲娱乐");
+        str_list.add("生活服务");
+        str_list.add("酒店");
+        str_list.add("全部 ");
+        tabLayout.setTabMode(TabLayout.MODE_FIXED);
+        frag_list.clear();
+        for (int i = 0; i < str_list.size(); i++) {
+            ViewPagerFragment vpFragment = new ViewPagerFragment();
+            frag_list.add(vpFragment);
+        }
+        tabLayout.setupWithViewPager(viewPager);
     }
 
     /**
