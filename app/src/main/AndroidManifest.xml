@@ -42,6 +42,11 @@
         </activity>
         <activity android:name=".rebate.activity.CalenderActivity"></activity>
         <activity android:name=".rebate.activity.RecordActivity"></activity>
+        <activity android:name=".mine.view.activity.Activity_safety"></activity>
+        <activity android:name=".mine.view.activity.Record_Activity"></activity>
+        <activity android:name=".mine.view.activity.Phone_Mine_Activity"></activity>
+        <activity android:name=".mine.view.activity.Forget_Password_Activity"></activity>
+        <activity android:name=".mine.view.activity.Card_Holder_Activity"></activity>
     </application>
 
 </manifest>

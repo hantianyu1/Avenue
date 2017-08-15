@@ -6,7 +6,7 @@ import com.google.gson.Gson;
  * Created by lichaohui on 2017/8/11.
  */
 
-public class Login {
+public class Login_Base<T> {
 
     /**
      * code : 1000
@@ -16,10 +16,11 @@ public class Login {
 
     public String code;
     public String descirption;
-    public String object;
 
-    public static Login objectFromData(String str) {
+    public T object;
 
-        return new Gson().fromJson(str, Login.class);
+    public static Login_Base objectFromData(String str) {
+
+        return new Gson().fromJson(str, Login_Base.class);
     }
 }

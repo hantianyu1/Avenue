@@ -15,6 +15,8 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import hantianyu1504d.bwie.com.avenue.R;
 import hantianyu1504d.bwie.com.avenue.base.BaseActvitiy;
+import hantianyu1504d.bwie.com.avenue.mine.mode.bean.Note;
+import hantianyu1504d.bwie.com.avenue.mine.mode.utils.CommonUtils;
 import hantianyu1504d.bwie.com.avenue.mine.mode.utils.TimeCount;
 import hantianyu1504d.bwie.com.avenue.mine.presener.Login_Presener;
 import hantianyu1504d.bwie.com.avenue.mine.view.iview.IMainView;
@@ -22,6 +24,8 @@ import hantianyu1504d.bwie.com.avenue.mine.view.iview.IMainView;
 
 /**
  * Created by lichaohui on 2017/8/10.
+ * 该页面 为注册页面
+ *
  */
 
 public class Actitity_Login extends BaseActvitiy implements IMainView {
@@ -55,10 +59,11 @@ public class Actitity_Login extends BaseActvitiy implements IMainView {
     RelativeLayout rlayoutLogin;
     private Login_Presener login_presener;
     private TimeCount timeCount;
+    CommonUtils commonUtils=new CommonUtils();
 
     @Override
     public void initData() {
-        login_presener =  Login_Presener.getInstanct();
+        login_presener =  new  Login_Presener();
         login_presener.attachView(this);
     }
 
@@ -75,7 +80,11 @@ public class Actitity_Login extends BaseActvitiy implements IMainView {
 
     @Override
     public void sccessCallBack(Object o,String msg ) {
-
+        boolean boo= (boolean) o;
+        if (boo){
+            timeCount = new TimeCount(60000, 1000, actionLoginSend);
+            timeCount.start();
+        }
     }
 
     @Override
@@ -90,26 +99,31 @@ public class Actitity_Login extends BaseActvitiy implements IMainView {
             case R.id.img_back:
             finish();
                 break;
-            // 发送验证码
+            // 发送验证码  注册      * 0 登录  1 注册  2 找回密码
             case R.id.action_login_send:
-                timeCount = new TimeCount(60000, 1000, actionLoginSend);
-                timeCount.start();
-                login_presener.Login_Post_Presener(etLogin.getText().toString().trim(), mContext);
+                // 防止多少点击
+                if (CommonUtils.isFastDoubleClick()) {
+                    return;
+                }
+                boolean b = login_presener.Login_Post_Presener(1, etLogin.getText().toString().trim(), mContext, Note.class);
                 break;
             // 登录  1验证码 2 手机号，3密码
             case R.id.btn_login:
-                boolean checked = chkLoginSelect.isChecked();
+                if (CommonUtils.isFastDoubleClick()) {
+                    return;
+                }
+
+                    boolean checked = chkLoginSelect.isChecked();
                 if (checked) {
                     String password = edtLoginPassword.getText().toString().trim();
                     String code = etLoginVerify.getText().toString().trim();
-                    login_presener.Login_Post_Presener(etLogin.getText().toString().trim(), password, code, mContext);
+                    login_presener.Login_Post_Presener(0,etLogin.getText().toString().trim(), password, code, mContext);
                 } else {
                     Toast.makeText(this, "请阅读协议", Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();

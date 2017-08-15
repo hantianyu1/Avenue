@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -15,12 +16,15 @@ import hantianyu1504d.bwie.com.avenue.application.Canstant;
 import hantianyu1504d.bwie.com.avenue.base.BaseActvitiy;
 import hantianyu1504d.bwie.com.avenue.core.utils.SPUtil;
 import hantianyu1504d.bwie.com.avenue.mine.mode.bean.UserLog;
+import hantianyu1504d.bwie.com.avenue.mine.mode.utils.CommonUtils;
 import hantianyu1504d.bwie.com.avenue.mine.presener.Login_Presener;
 import hantianyu1504d.bwie.com.avenue.mine.view.iview.IMainView;
 
 
 /**
  * Created by lichaohui on 2017/8/10.
+ *
+ *              密码登录页面
  */
 
 public class Actitity_Log extends BaseActvitiy implements IMainView<UserLog> {
@@ -57,10 +61,9 @@ public class Actitity_Log extends BaseActvitiy implements IMainView<UserLog> {
     public void initData() {
 
     }
-
     @Override
     public void initView() {
-        login_presener = Login_Presener.getInstanct();
+        login_presener =  new Login_Presener();
         login_presener.attachView(this);
     }
 
@@ -83,12 +86,20 @@ public class Actitity_Log extends BaseActvitiy implements IMainView<UserLog> {
                 break;
             // 登录按钮
             case R.id.rbtn_mine_log:
+                if (CommonUtils.isFastDoubleClick()) {
+                    return;
+                }
+
+                Toast.makeText(this,"zzz",Toast.LENGTH_SHORT).show();
+
                 String password = edtLogPassword.getText().toString().trim();
                 String phone = edtLogPhone.getText().toString().trim();
                 login_presener.loadPresener(phone, password, mContext);
                 break;
             // 忘记密码
             case R.id.txt_mine_forgetpass:
+                startActivity(new Intent(mContext, Forget_Password_Activity.class));
+
                 break;
         }
     }
