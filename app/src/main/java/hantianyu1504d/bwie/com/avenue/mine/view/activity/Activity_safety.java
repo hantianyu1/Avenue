@@ -1,6 +1,7 @@
 package hantianyu1504d.bwie.com.avenue.mine.view.activity;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -74,7 +75,11 @@ public class Activity_safety extends BaseActvitiy {
             // 退出登录
             case R.id.txt_safe_exit:
                 // 清除 sp 记录
-                SPUtil.put(mContext,Canstant.anim.MINE_KEY,"");
+                SPUtil.put(mContext, Canstant.anim.MINE_KEY, "");
+                SPUtil.remove(mContext, Canstant.anim.MINE_KEY);
+                String o = (String) SPUtil.get(mContext, Canstant.anim.MINE_KEY, "");
+                Log.d("zzz", o);
+
                 Toast.makeText(this, "已经退出登录！！！", Toast.LENGTH_SHORT).show();
 
                 break;

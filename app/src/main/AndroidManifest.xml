@@ -47,6 +47,8 @@
         <activity android:name=".mine.view.activity.Phone_Mine_Activity"></activity>
         <activity android:name=".mine.view.activity.Forget_Password_Activity"></activity>
         <activity android:name=".mine.view.activity.Card_Holder_Activity"></activity>
+        <activity android:name=".mine.view.activity.Actitity_Login"></activity>
+        <activity android:name=".mine.view.activity.Actitity_Log"></activity>
     </application>
 
 </manifest>
