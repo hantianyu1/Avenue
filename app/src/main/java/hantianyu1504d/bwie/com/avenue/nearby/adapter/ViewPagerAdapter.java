@@ -1,4 +1,4 @@
-package hantianyu1504d.bwie.com.avenue.vp_adapter;
+package hantianyu1504d.bwie.com.avenue.nearby.vp_adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 作者：李飞宇
  * 时间：2017/8/13 21:22
- * 功能：ViewPager 的适配器
+ * 功能：附近页面商品详情页面的ViewPager 的适配器
  */
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {

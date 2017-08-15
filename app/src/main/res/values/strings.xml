@@ -56,4 +56,9 @@
     <string name="txt_mine_log">密码登录</string>
     <string name="txt_mine_log1">忘记密码</string>
     <string name="fujin">附近商铺</string>
+    <string name="fujin">附近</string>
+    <string name="shop_name">798咖啡</string>
+    <string name="shop_price">￥45/人</string>
+    <string name="shop_integral">积分率</string>
+    <string name="shop_site">安贞距您100m</string>
 </resources>

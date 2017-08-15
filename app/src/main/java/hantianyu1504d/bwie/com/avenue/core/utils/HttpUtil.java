@@ -25,7 +25,7 @@ import okhttp3.Response;
 public class HttpUtil {
     private static OkHttpClient client = null;
 
-    private HttpUtil() {}
+    public HttpUtil() {}
 
     public static OkHttpClient getInstance() {
         if (client == null) {
