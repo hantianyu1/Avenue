@@ -4,8 +4,13 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import hantianyu1504d.bwie.com.avenue.R;
@@ -28,13 +33,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.context = context;
         this.list = list;
     }
-    public  interface MyItemClickListener {
+
+    public interface MyItemClickListener {
         void onItemClick(View view, int postion);
 
     }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-      View view =  View.inflate(context, R.layout.fragment_rebate_item, null);
+        View view = View.inflate(context, R.layout.fragment_rebate_item, null);
         holder = new ViewHolder(view, mListener);
         return holder;
     }
@@ -43,7 +50,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(ViewHolder holder, int position) {
         RebatePlanData data = list.get(position);
         holder.txtA.setText(data.getObject().get(position).getRecordCoding());
-//        holder.txtCalander.setText(data.getTitle());
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日");
+        Date date = new Date(data.getObject().get(position).getCashbackSpecificDate());
+        String format = sdf.format(date);
+        holder.txtCalander.setText(format + "兑换");
+        Glide.with(context).load(data.getObject().get(position).getIntegralStyle()).into(holder.imageview);
         holder.itemView.setTag(position);//将position保存在itemView的Tag中，以便点击时进行获取
         holder.itemView.setOnClickListener(this);
     }
@@ -73,11 +84,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     class ViewHolder extends RecyclerView.ViewHolder {
         private TextView txtA;
         private TextView txtCalander;
+        private ImageView imageview;
 
         public ViewHolder(View itemView, MyItemClickListener mListener) {
             super(itemView);
             txtA = (TextView) itemView.findViewById(R.id.txt_a);
             txtCalander = (TextView) itemView.findViewById(R.id.txt_calander);
+            imageview = (ImageView) itemView.findViewById(R.id.imageview);
         }
     }
 

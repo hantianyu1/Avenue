@@ -10,10 +10,11 @@ import java.util.List;
 
 public class RebatePlanData {
 
+
     /**
      * code : 1000
      * descirption : 系统处理成功
-     * object : [{"cashbackSpecificDate":1499184000000,"consumeLower":20001,"consumeUpper":5000000,"integral":0,"integralStyle":"http://dadao-file.oss-cn-beijing.aliyuncs.com/dadao/1502360023391.png","recordCoding":"B20171002"}]
+     * object : [{"consumeLower":20001,"consumeUpper":5000000,"recordCoding":"B20171002","integral":0,"integralStyle":"http://dadao-file.oss-cn-beijing.aliyuncs.com/dadao/1502360023391.png","cashbackSpecificDate":1499184000000}]
      */
 
     private String code;
@@ -46,28 +47,20 @@ public class RebatePlanData {
 
     public static class ObjectBean {
         /**
-         * cashbackSpecificDate : 1499184000000
          * consumeLower : 20001
          * consumeUpper : 5000000
+         * recordCoding : B20171002
          * integral : 0
          * integralStyle : http://dadao-file.oss-cn-beijing.aliyuncs.com/dadao/1502360023391.png
-         * recordCoding : B20171002
+         * cashbackSpecificDate : 1499184000000
          */
 
-        private long cashbackSpecificDate;
         private int consumeLower;
         private int consumeUpper;
+        private String recordCoding;
         private int integral;
         private String integralStyle;
-        private String recordCoding;
-
-        public long getCashbackSpecificDate() {
-            return cashbackSpecificDate;
-        }
-
-        public void setCashbackSpecificDate(long cashbackSpecificDate) {
-            this.cashbackSpecificDate = cashbackSpecificDate;
-        }
+        private long cashbackSpecificDate;
 
         public int getConsumeLower() {
             return consumeLower;
@@ -83,6 +76,14 @@ public class RebatePlanData {
 
         public void setConsumeUpper(int consumeUpper) {
             this.consumeUpper = consumeUpper;
+        }
+
+        public String getRecordCoding() {
+            return recordCoding;
+        }
+
+        public void setRecordCoding(String recordCoding) {
+            this.recordCoding = recordCoding;
         }
 
         public int getIntegral() {
@@ -101,12 +102,12 @@ public class RebatePlanData {
             this.integralStyle = integralStyle;
         }
 
-        public String getRecordCoding() {
-            return recordCoding;
+        public long getCashbackSpecificDate() {
+            return cashbackSpecificDate;
         }
 
-        public void setRecordCoding(String recordCoding) {
-            this.recordCoding = recordCoding;
+        public void setCashbackSpecificDate(long cashbackSpecificDate) {
+            this.cashbackSpecificDate = cashbackSpecificDate;
         }
     }
 }
