@@ -121,12 +121,10 @@ public class MineFragment extends BaseFragment {
             case R.id.rbtn_mine_card:
                 startActivity(new Intent(mContext, Record_Activity.class));
                 break;
-            // 隐藏的账号密码
+           /* // 隐藏的账号密码
             case R.id.llayout:
                 startActivity(new Intent(mContext, Actitity_Log.class));
-                break;
-
-
+                break;*/
         }
     }
 }
