@@ -56,6 +56,7 @@ public class SPUtil {
      * @return
      */
     public static Object get(Context context, String key, Object defaultObject) {
+
         SharedPreferences sp = context.getSharedPreferences(FILE_NAME,
                 Context.MODE_PRIVATE);
 

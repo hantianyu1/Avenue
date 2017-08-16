@@ -39,6 +39,9 @@ import hantianyu1504d.bwie.com.avenue.rebate.present.CountCashPresenter;
 import hantianyu1504d.bwie.com.avenue.rebate.present.ICountCashView;
 import hantianyu1504d.bwie.com.avenue.rebate.present.IPlanView;
 import hantianyu1504d.bwie.com.avenue.rebate.present.PlanPresenter;
+import hantianyu1504d.bwie.com.avenue.rebate.bean.RecyclerData;
+
+
 
 
 /**
@@ -49,6 +52,8 @@ public class RebateFragment<T> extends Fragment implements ICountCashView<T>, IP
 
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
+    @BindView(R.id.btn_more)
+    Button btnMore;
     @BindView(R.id.txt_230)
     TextView mTxt;
     Unbinder unbinder;
@@ -108,6 +113,13 @@ public class RebateFragment<T> extends Fragment implements ICountCashView<T>, IP
     }
 
     @OnClick({R.id.btn_more, R.id.calender, R.id.txt_record})
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
+    }
+
+    @OnClick({R.id.btn_more, R.id.calender,R.id.txt_record})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_more:

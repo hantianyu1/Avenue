@@ -1,46 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
-    android:orientation="vertical">
+    android:orientation="vertical">-
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">-
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="@dimen/x360"
+            android:background="@color/c435C94"
+            android:orientation="vertical">-
 
-            <RelativeLayout
+            <LinearLayout
+                android:id="@+id/layout"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/x360"
-                android:background="@color/c435C94"
-                android:orientation="vertical">
+                android:layout_height="@dimen/x108"
+                android:orientation="horizontal">
 
-                <LinearLayout
-                    android:id="@+id/layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/x108"
-                    android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:layout_marginTop="@dimen/x74"
+                    android:text="累计返利金额"
+                    android:textColor="@color/cffffff"
+                    android:textSize="@dimen/x28" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/x30"
-                        android:layout_marginTop="@dimen/x74"
-                        android:text="累计返利金额"
-                        android:textColor="@color/cffffff"
-                        android:textSize="@dimen/x28" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x28"
+                    android:layout_marginTop="@dimen/x74"
+                    android:text="(元)"
+                    android:textColor="@color/cffffff"
+                    android:textSize="@dimen/x28" />
+            </LinearLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/x28"
-                        android:layout_marginTop="@dimen/x74"
-                        android:text="(元)"
-                        android:textColor="@color/cffffff"
-                        android:textSize="@dimen/x28" />
-                </LinearLayout>
-
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout"
+                android:layout_marginLeft="@dimen/x30"
+                android:layout_marginTop="@dimen/x42"
+                android:text="0.00"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/x74" />
+            -
                 <TextView
                     android:id="@+id/price"
                     android:layout_width="match_parent"
@@ -52,36 +64,45 @@
                     android:textColor="#ffffff"
                     android:textSize="@dimen/x74" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/price"
+                android:layout_marginTop="@dimen/x10"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/return_count"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/price"
+                    android:layout_marginBottom="@dimen/x60"
+                    android:layout_marginLeft="@dimen/x30"
                     android:layout_marginTop="@dimen/x10"
-                    android:gravity="center">
+                    android:text="待返期数"
+                    android:textColor="@color/cffffff"
+                    android:textSize="@dimen/x28" />
 
-                    <TextView
-                        android:id="@+id/return_count"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/x60"
-                        android:layout_marginLeft="@dimen/x30"
-                        android:layout_marginTop="@dimen/x10"
-                        android:text="待返期数"
-                        android:textColor="@color/cffffff"
-                        android:textSize="@dimen/x28" />
+                <TextView
+                    android:id="@+id/pencil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/x60"
+                    android:layout_marginLeft="@dimen/x28"
+                    android:layout_marginTop="@dimen/x10"
+                    android:layout_toRightOf="@+id/return_count"
+                    android:text="(笔)"
+                    android:textColor="@color/cffffff"
+                    android:textSize="@dimen/x28" />
 
-                    <TextView
-                        android:id="@+id/pencil"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/x60"
-                        android:layout_marginLeft="@dimen/x28"
-                        android:layout_marginTop="@dimen/x10"
-                        android:layout_toRightOf="@+id/return_count"
-                        android:text="(笔)"
-                        android:textColor="@color/cffffff"
-                        android:textSize="@dimen/x28" />
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x60"
+                    android:layout_marginTop="@dimen/x10"
+                    android:layout_toRightOf="@+id/pencil"
+                    android:text="5"
+                    android:textColor="@color/cffffff"
+                    android:textSize="@dimen/x36" />
                     <TextView
                         android:id="@+id/txt_count"
                         android:layout_width="wrap_content"
@@ -93,150 +114,151 @@
                         android:textColor="@color/cffffff"
                         android:textSize="@dimen/x36" />
 
-                    <TextView
-                        android:id="@+id/txt_record"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginBottom="@dimen/x62"
-                        android:layout_marginRight="@dimen/x30"
-                        android:layout_marginTop="@dimen/x10"
-                        android:clickable="true"
-                        android:text="记录查询"
-                        android:textColor="@color/cffffff"
-                        android:textSize="@dimen/x28" />
-                </RelativeLayout>
-            </RelativeLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/x88"
-                android:orientation="horizontal">
-
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/x30"
-                    android:text="已绑定" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/x10"
-                    android:src="@mipmap/weixin" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="微信" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/x54"
-                    android:text="继续绑定"
-                    android:textColor="@color/c666666"
-                    android:textSize="@dimen/x24" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/x10"
-                    android:src="@mipmap/zhifu" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="支付宝"
-                    android:textColor="@color/c88CBFF" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/x340"
-                    android:layout_marginRight="@dimen/x30"
-                    android:src="@mipmap/gengduo" />
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/x34"
-                android:layout_marginLeft="@dimen/x30"
-                android:layout_marginTop="@dimen/t28"
-                android:text="返利计划（共9档）"
-                android:textColor="@color/c666666"
-                android:textSize="@dimen/x28" />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
-
-            <Button
-                android:id="@+id/btn_more"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/t30"
-                android:layout_marginRight="@dimen/t30"
-                android:text="显示更多"
-                android:textColor="@color/c435C94"
-                android:textSize="@dimen/x22" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/calender"
-                    android:layout_width="@dimen/x66"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="@dimen/x30"
-                    android:layout_marginTop="@dimen/x34"
-                    android:src="@mipmap/calender" />
-
-                <TextView
-                    android:id="@+id/txt_first"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/x70"
-                    android:layout_marginTop="@dimen/x38"
-                    android:layout_toRightOf="@+id/calender"
-                    android:text="近7日有2笔返利"
-                    android:textColor="@color/c666666"
-                    android:textSize="@dimen/x24" />
-
-                <TextView
-                    android:id="@+id/txt_230"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/txt_first"
-                    android:layout_marginLeft="@dimen/x70"
-                    android:layout_marginTop="@dimen/x10"
-                    android:layout_toRightOf="@+id/calender"
-                    android:text="5月25日（明天）返利230元"
-                    android:textColor="@color/c999999"
-                    android:textSize="@dimen/x24" />
-
-                <ImageView
+                    android:id="@+id/txt_record"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="@dimen/x10"
-                    android:layout_marginTop="@dimen/x38"
-                    android:src="@mipmap/gengduo" />
-
+                    android:layout_marginBottom="@dimen/x62"
+                    android:layout_marginRight="@dimen/x30"
+                    android:layout_marginTop="@dimen/x10"
+                    android:clickable="true"
+                    android:text="记录查询"
+                    android:textColor="@color/cffffff"
+                    android:textSize="@dimen/x28" />
             </RelativeLayout>
+        </RelativeLayout>
+        -
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x88"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/x30"
+                android:text="已绑定" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/x10"
+                android:src="@mipmap/weixin" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="微信" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/x54"
+                android:text="继续绑定"
+                android:textColor="@color/c666666"
+                android:textSize="@dimen/x24" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/x10"
+                android:src="@mipmap/zhifu" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="支付宝"
+                android:textColor="@color/c88CBFF" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/x340"
+                android:layout_marginRight="@dimen/x30"
+                android:src="@mipmap/gengduo" />
         </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/x34"
+            android:layout_marginLeft="@dimen/x30"
+            android:layout_marginTop="@dimen/t28"
+            android:text="返利计划（共9档）"
+            android:textColor="@color/c666666"
+            android:textSize="@dimen/x28" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/t30"
+            android:layout_marginRight="@dimen/t30"
+            android:text="显示更多"
+            android:textColor="@color/c435C94"
+            android:textSize="@dimen/x22" />
+        -
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/calender"
+                android:layout_width="@dimen/x66"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/x30"
+                android:layout_marginTop="@dimen/x34"
+                android:src="@mipmap/calender" />
+
+            <TextView
+                android:id="@+id/txt_first"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x70"
+                android:layout_marginTop="@dimen/x38"
+                android:layout_toRightOf="@+id/calender"
+                android:text="近7日有2笔返利"
+                android:textColor="@color/c666666"
+                android:textSize="@dimen/x24" />
+
+            <TextView
+                android:id="@+id/txt_230"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_first"
+                android:layout_marginLeft="@dimen/x70"
+                android:layout_marginTop="@dimen/x10"
+                android:layout_toRightOf="@+id/calender"
+                android:text="5月25日（明天）返利230元"
+                android:textColor="@color/c999999"
+                android:textSize="@dimen/x24" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/x10"
+                android:layout_marginTop="@dimen/x38"
+                android:src="@mipmap/gengduo" />
+        </RelativeLayout>
+    </LinearLayout>
 </ScrollView>
