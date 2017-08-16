@@ -1,9 +1,7 @@
 package hantianyu1504d.bwie.com.avenue.mine.view.fragment;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -53,29 +51,13 @@ public class MineFragment extends BaseFragment {
     RadioButton rbtnMineBalance;
     @BindView(R.id.rbtn_mine_card)
     RadioButton rbtnMineCard;
-
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        Log.d("zzz", "Resume");
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-    }
-
     /*
-            * 获取登录信息 ，设置 他们的
-            * */
+    * 获取登录信息 ，设置 他们的
+    * */
     @Override
     public void onStart() {
         super.onStart();
-        Log.d("zzz", "onStart");
-
         String boo = (String) SPUtil.get(mContext, Canstant.anim.MINE_KEY, "");
-        Log.d("zzz", boo+"sdfasdfasdfasdfa");
         if (boo != null && boo != "" && boo.length() > 0) {
             Gson gson = new Gson();
             UserLogin userLog = gson.fromJson(boo, UserLogin.class);
@@ -90,8 +72,8 @@ public class MineFragment extends BaseFragment {
         }else {
             txtMineLogin.setVisibility(View.VISIBLE);
             lLinearLayout.setVisibility(View.GONE);
-
         }
+
     }
 
     @Override
@@ -110,7 +92,7 @@ public class MineFragment extends BaseFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             // 注册界面
-            case R.id.txt_mine_login:
+            case txt_mine_login:
                 startActivity(new Intent(mContext, Actitity_Log.class));
                 break;
             // 消费记录
@@ -141,12 +123,10 @@ public class MineFragment extends BaseFragment {
             case R.id.rbtn_mine_card:
                 startActivity(new Intent(mContext, Record_Activity.class));
                 break;
-            // 隐藏的账号密码
+           /* // 隐藏的账号密码
             case R.id.llayout:
                 startActivity(new Intent(mContext, Actitity_Log.class));
-                break;
-
-
+                break;*/
         }
     }
 }

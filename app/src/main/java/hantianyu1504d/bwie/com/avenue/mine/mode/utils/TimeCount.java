@@ -7,6 +7,8 @@ import hantianyu1504d.bwie.com.avenue.R;
 
 /**
  * Created by lichaohui on 2017/8/14.
+ *
+ *
  */
 
 public class TimeCount  extends CountDownTimer{
@@ -27,7 +29,6 @@ public class TimeCount  extends CountDownTimer{
     public void onFinish() {
         btn_count.setEnabled(true);
         btn_count.setText(R.string.get_verification_code);
-
     }
 
 }

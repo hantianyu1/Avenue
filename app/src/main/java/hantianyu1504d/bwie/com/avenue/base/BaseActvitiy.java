@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Window;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -21,6 +22,7 @@ public abstract class BaseActvitiy extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         //acticity跳转动画——右进左出
         overridePendingTransition(R.anim.left_in, R.anim.left_out);
         setContentView(initContentView());
