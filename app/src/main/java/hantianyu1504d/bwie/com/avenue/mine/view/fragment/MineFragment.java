@@ -51,8 +51,6 @@ public class MineFragment extends BaseFragment {
     RadioButton rbtnMineBalance;
     @BindView(R.id.rbtn_mine_card)
     RadioButton rbtnMineCard;
-
-
     /*
     * 获取登录信息 ，设置 他们的
     * */
@@ -71,7 +69,11 @@ public class MineFragment extends BaseFragment {
                 txtMineUsername.setText(nickname);
                 txtMinePhone.setText(phone);
             }
+        }else {
+            txtMineLogin.setVisibility(View.VISIBLE);
+            lLinearLayout.setVisibility(View.GONE);
         }
+
     }
 
     @Override

@@ -75,8 +75,8 @@ public class Activity_safety extends BaseActvitiy {
             case R.id.txt_safe_exit:
                 // 清除 sp 记录
                 SPUtil.put(mContext,Canstant.anim.MINE_KEY,"");
+                SPUtil.remove(mContext,Canstant.anim.MINE_KEY);
                 Toast.makeText(this, "已经退出登录！！！", Toast.LENGTH_SHORT).show();
-
                 break;
         }
     }
