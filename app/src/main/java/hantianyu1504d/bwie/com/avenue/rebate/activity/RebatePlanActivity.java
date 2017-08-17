@@ -34,6 +34,7 @@ public class RebatePlanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rebateplan);
         ButterKnife.bind(this);
+        //传值
         Intent intent = getIntent();
         String recordCoding = intent.getStringExtra("recordCoding");
         String cashbackSpecificDate = intent.getStringExtra("cashbackSpecificDate");
