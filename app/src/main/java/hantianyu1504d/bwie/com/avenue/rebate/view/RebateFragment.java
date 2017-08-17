@@ -28,7 +28,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 import hantianyu1504d.bwie.com.avenue.R;
+import hantianyu1504d.bwie.com.avenue.application.Canstant;
 import hantianyu1504d.bwie.com.avenue.core.utils.HttpUtils;
+import hantianyu1504d.bwie.com.avenue.core.utils.SPUtil;
 import hantianyu1504d.bwie.com.avenue.rebate.activity.CalenderActivity;
 import hantianyu1504d.bwie.com.avenue.rebate.activity.RebatePlanActivity;
 import hantianyu1504d.bwie.com.avenue.rebate.activity.RecordActivity;
@@ -39,7 +41,6 @@ import hantianyu1504d.bwie.com.avenue.rebate.present.CountCashPresenter;
 import hantianyu1504d.bwie.com.avenue.rebate.present.ICountCashView;
 import hantianyu1504d.bwie.com.avenue.rebate.present.IPlanView;
 import hantianyu1504d.bwie.com.avenue.rebate.present.PlanPresenter;
-
 
 
 /**
@@ -72,6 +73,7 @@ public class RebateFragment<T> extends Fragment implements ICountCashView<T>, IP
     private HttpUtils okhttp;
     private HashMap<String, String> map = new HashMap<>();
     private HashMap<String, String> mapPlan = new HashMap<>();
+    private String token;
 
     public RebateFragment() {
     }
@@ -88,14 +90,14 @@ public class RebateFragment<T> extends Fragment implements ICountCashView<T>, IP
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
+        token = (String) SPUtil.get(getActivity(), Canstant.anim.TOKEN, "");
         CountCashPresenter countPresent = new CountCashPresenter(this);
         map.put("status", "1");
-        map.put("token", "");
+        map.put("token", token);
         countPresent.getCount(baseUrl, map, CountCashbackData.class);
 
         PlanPresenter planPresenter = new PlanPresenter(this);
-        mapPlan.put("token", "");
+        mapPlan.put("token", token);
         planPresenter.getPlan(PlanUrl, mapPlan, RebatePlanData.class);
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
@@ -114,13 +116,13 @@ public class RebateFragment<T> extends Fragment implements ICountCashView<T>, IP
         unbinder.unbind();
     }
 
-    @OnClick({R.id.btn_more, R.id.calender,R.id.txt_record})
+    @OnClick({R.id.btn_more, R.id.calender, R.id.txt_record})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_more:
                 if (recyclerViewAdapter.getItemCount() < 2) {
                     btnMore.setClickable(false);
-                    Toast.makeText(getContext(),"无数据",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "无数据", Toast.LENGTH_SHORT).show();
                     recyclerViewAdapter.notifyDataSetChanged();
                 } else {
                     btnMore.setClickable(true);
@@ -164,8 +166,8 @@ public class RebateFragment<T> extends Fragment implements ICountCashView<T>, IP
             @Override
             public void onItemClick(View view, int postion) {
                 Intent intent = new Intent(getContext(), RebatePlanActivity.class);
-                intent.putExtra("key",postion);
-               startActivityForResult(intent,1234);
+                intent.putExtra("key", postion);
+                startActivityForResult(intent, 1234);
 //                setResult(Activity.RESULT_OK,intent);
 //                finish();
             }

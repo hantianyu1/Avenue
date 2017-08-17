@@ -2,6 +2,7 @@ package hantianyu1504d.bwie.com.avenue.mine.view.fragment;
 
 import android.content.Intent;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -51,6 +52,7 @@ public class MineFragment extends BaseFragment {
     RadioButton rbtnMineBalance;
     @BindView(R.id.rbtn_mine_card)
     RadioButton rbtnMineCard;
+
     /*
     * 获取登录信息 ，设置 他们的
     * */
@@ -60,6 +62,7 @@ public class MineFragment extends BaseFragment {
         String boo = (String) SPUtil.get(mContext, Canstant.anim.MINE_KEY, "");
         if (boo != null && boo != "" && boo.length() > 0) {
             Gson gson = new Gson();
+            Log.d("zzz", boo);
             UserLogin userLog = gson.fromJson(boo, UserLogin.class);
             String phone = userLog.object.phone;
             String nickname = userLog.object.nickname;
@@ -69,7 +72,7 @@ public class MineFragment extends BaseFragment {
                 txtMineUsername.setText(nickname);
                 txtMinePhone.setText(phone);
             }
-        }else {
+        } else {
             txtMineLogin.setVisibility(View.VISIBLE);
             lLinearLayout.setVisibility(View.GONE);
         }
@@ -100,7 +103,7 @@ public class MineFragment extends BaseFragment {
                 startActivity(new Intent(mContext, Record_Activity.class));
 
                 break;
-            // 安全设置
+             // 安全设置
             case R.id.txt_mine_set:
                 startActivity(new Intent(mContext, Activity_safety.class));
 

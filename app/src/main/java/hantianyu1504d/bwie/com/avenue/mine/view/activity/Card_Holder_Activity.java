@@ -1,5 +1,8 @@
 package hantianyu1504d.bwie.com.avenue.mine.view.activity;
 
+import android.os.Handler;
+import android.os.Message;
+
 import hantianyu1504d.bwie.com.avenue.R;
 import hantianyu1504d.bwie.com.avenue.base.BaseActvitiy;
 
@@ -8,6 +11,8 @@ import hantianyu1504d.bwie.com.avenue.base.BaseActvitiy;
  */
 
 public class Card_Holder_Activity extends BaseActvitiy {
+
+
     @Override
     public void initData() {
 

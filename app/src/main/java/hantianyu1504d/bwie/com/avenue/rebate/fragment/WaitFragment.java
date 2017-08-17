@@ -16,7 +16,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import hantianyu1504d.bwie.com.avenue.R;
+import hantianyu1504d.bwie.com.avenue.application.Canstant;
 import hantianyu1504d.bwie.com.avenue.core.utils.HttpUtils;
+import hantianyu1504d.bwie.com.avenue.core.utils.SPUtil;
 import hantianyu1504d.bwie.com.avenue.rebate.bean.RebateData;
 
 /**
@@ -36,6 +38,7 @@ public class WaitFragment extends Fragment implements HttpUtils.RealCall<RebateD
     TextView waitPrice;
     Unbinder unbinder;
     private String baseUrl = "http://123.57.33.185:8088/cashback/list";
+   String  token = (String) SPUtil.get(getActivity(), Canstant.anim.TOKEN, "");
 
     @Nullable
     @Override
@@ -54,7 +57,7 @@ public class WaitFragment extends Fragment implements HttpUtils.RealCall<RebateD
     private void initPriceData() {
         HttpUtils utils = new HttpUtils(this);
         Map<String, String> map = new HashMap<>();
-        map.put("token", "");
+        map.put("token", token);
         map.put("status", "0");
         utils.loadDataFromServerPost(baseUrl, map, RebateData.class);
     }
