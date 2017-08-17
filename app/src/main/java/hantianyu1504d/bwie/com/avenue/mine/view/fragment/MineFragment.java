@@ -66,6 +66,8 @@ public class MineFragment extends BaseFragment {
             UserLogin userLog = gson.fromJson(boo, UserLogin.class);
             String phone = userLog.object.phone;
             String nickname = userLog.object.nickname;
+            String token = userLog.object.token;
+            SPUtil.put(mContext,Canstant.anim.TOKEN,token);
             if (txtMineLogin != null && lLinearLayout != null) {
                 txtMineLogin.setVisibility(View.GONE);
                 lLinearLayout.setVisibility(View.VISIBLE);
