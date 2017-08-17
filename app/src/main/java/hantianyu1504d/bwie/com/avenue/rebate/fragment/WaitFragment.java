@@ -52,8 +52,7 @@ public class WaitFragment extends Fragment implements HttpUtils.RealCall<RebateD
     }
 
     private void initPriceData() {
-        HttpUtils utils = new HttpUtils();
-        utils.setRealCall(this);
+        HttpUtils utils = new HttpUtils(this);
         Map<String, String> map = new HashMap<>();
         map.put("token", "");
         map.put("status", "0");

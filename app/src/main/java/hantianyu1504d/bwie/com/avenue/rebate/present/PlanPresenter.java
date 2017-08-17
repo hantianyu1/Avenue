@@ -18,8 +18,7 @@ public class PlanPresenter<T> implements HttpUtils.RealCall<T>{
       }
 
       public  <T>void getPlan(String url, HashMap<String,String> map, Class<T> tClass){
-            HttpUtils httpUtils=new HttpUtils();
-            httpUtils.setRealCall(this);
+            HttpUtils httpUtils=new HttpUtils(this);
             httpUtils.loadDataFromServerPost(url,map,tClass);
       }
 

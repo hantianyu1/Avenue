@@ -51,8 +51,7 @@ public class RecordFragment extends Fragment implements HttpUtils.RealCall<Recor
     }
 
     private void initRecordData() {
-        HttpUtils utils = new HttpUtils();
-        utils.setRealCall(this);
+        HttpUtils utils = new HttpUtils(this);
         Map<String, String> map = new HashMap<>();
         map.put("token", "faf9105720d000f7bcea972fabb4b518");
         map.put("page.perPageSize", "1");

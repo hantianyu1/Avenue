@@ -30,7 +30,6 @@ public class HttpUtils {
     public HttpUtils(RealCall realCall) {
         this.realCall = realCall;
     }
-
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {

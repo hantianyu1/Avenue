@@ -39,7 +39,6 @@ import hantianyu1504d.bwie.com.avenue.rebate.present.CountCashPresenter;
 import hantianyu1504d.bwie.com.avenue.rebate.present.ICountCashView;
 import hantianyu1504d.bwie.com.avenue.rebate.present.IPlanView;
 import hantianyu1504d.bwie.com.avenue.rebate.present.PlanPresenter;
-import hantianyu1504d.bwie.com.avenue.rebate.bean.RecyclerData;
 
 
 
@@ -52,8 +51,6 @@ public class RebateFragment<T> extends Fragment implements ICountCashView<T>, IP
 
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
-    @BindView(R.id.btn_more)
-    Button btnMore;
     @BindView(R.id.txt_230)
     TextView mTxt;
     Unbinder unbinder;
@@ -74,6 +71,7 @@ public class RebateFragment<T> extends Fragment implements ICountCashView<T>, IP
     private String baseUrl = "http://123.57.33.185:8088/cashback/countCashback";
     private String PlanUrl = "http://123.57.33.185:8088/user/cashback/plan";
     private HttpUtils okhttp;
+    private HashMap<String, String> map = new HashMap<>();
     private HashMap<String, String> mapPlan = new HashMap<>();
 
     public RebateFragment() {
@@ -93,7 +91,7 @@ public class RebateFragment<T> extends Fragment implements ICountCashView<T>, IP
         super.onActivityCreated(savedInstanceState);
 
         CountCashPresenter countPresent = new CountCashPresenter(this);
-        HashMap<String, String> map = new HashMap<>();
+
         map.put("status", "1");
         map.put("token", "");
         countPresent.getCount(baseUrl, map, CountCashbackData.class);
@@ -112,7 +110,6 @@ public class RebateFragment<T> extends Fragment implements ICountCashView<T>, IP
 
     }
 
-    @OnClick({R.id.btn_more, R.id.calender, R.id.txt_record})
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -144,11 +141,6 @@ public class RebateFragment<T> extends Fragment implements ICountCashView<T>, IP
         }
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
-    }
 
     @Override
     public void onSuccessCount(T t) {

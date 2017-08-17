@@ -18,8 +18,7 @@ public class CountCashPresenter<T> implements HttpUtils.RealCall<T>{
       }
 
       public  <T>void getCount(String url, HashMap<String,String> map, Class<T> tClass){
-            HttpUtils httpUtils=new HttpUtils();
-            httpUtils.setRealCall(this);
+            HttpUtils httpUtils=new HttpUtils(this);
             httpUtils.loadDataFromServerPost(url,map,tClass);
       }
 
