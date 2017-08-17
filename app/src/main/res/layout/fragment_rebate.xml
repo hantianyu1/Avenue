@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
-    android:orientation="vertical">-
-
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">-
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/x360"
+            android:layout_height="wrap_content"
             android:background="@color/c435C94"
-            android:orientation="vertical">-
-
+            android:orientation="vertical">
             <LinearLayout
                 android:id="@+id/layout"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/x108"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
@@ -41,18 +38,6 @@
                     android:textColor="@color/cffffff"
                     android:textSize="@dimen/x28" />
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/price"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/layout"
-                android:layout_marginLeft="@dimen/x30"
-                android:layout_marginTop="@dimen/x42"
-                android:text="0.00"
-                android:textColor="#ffffff"
-                android:textSize="@dimen/x74" />
-            -
                 <TextView
                     android:id="@+id/price"
                     android:layout_width="match_parent"
@@ -94,15 +79,6 @@
                     android:textColor="@color/cffffff"
                     android:textSize="@dimen/x28" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/x60"
-                    android:layout_marginTop="@dimen/x10"
-                    android:layout_toRightOf="@+id/pencil"
-                    android:text="5"
-                    android:textColor="@color/cffffff"
-                    android:textSize="@dimen/x36" />
                     <TextView
                         android:id="@+id/txt_count"
                         android:layout_width="wrap_content"
@@ -128,7 +104,6 @@
                     android:textSize="@dimen/x28" />
             </RelativeLayout>
         </RelativeLayout>
-        -
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -213,7 +188,6 @@
             android:text="显示更多"
             android:textColor="@color/c435C94"
             android:textSize="@dimen/x22" />
-        -
 
         <RelativeLayout
             android:layout_width="match_parent"
