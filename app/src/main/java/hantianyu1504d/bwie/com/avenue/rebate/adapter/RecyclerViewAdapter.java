@@ -61,7 +61,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public int getItemCount() {
-        if (list.size() > 2) {
+        if (list.size() > num) {
             return num;
         } else {
             return list.size();
@@ -84,12 +84,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     class ViewHolder extends RecyclerView.ViewHolder {
         private TextView txtA;
         private TextView txtCalander;
+        private TextView txt50;
         private ImageView imageview;
 
         public ViewHolder(View itemView, MyItemClickListener mListener) {
             super(itemView);
             txtA = (TextView) itemView.findViewById(R.id.txt_a);
             txtCalander = (TextView) itemView.findViewById(R.id.txt_calander);
+            txt50 = (TextView) itemView.findViewById(R.id.txt_50);
             imageview = (ImageView) itemView.findViewById(R.id.imageview);
         }
     }

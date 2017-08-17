@@ -102,7 +102,6 @@ public class RebateFragment<T> extends Fragment implements ICountCashView<T>, IP
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
-
         SpannableString spannableString = new SpannableString("5月25日（明天）返利230元");
         RelativeSizeSpan sizeSpan01 = new RelativeSizeSpan(1.6f);
         spannableString.setSpan(sizeSpan01, 11, 14, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
@@ -120,14 +119,14 @@ public class RebateFragment<T> extends Fragment implements ICountCashView<T>, IP
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_more:
-                if (recyclerViewAdapter.getItemCount() < 2) {
-                    btnMore.setClickable(false);
-                    Toast.makeText(getContext(), "无数据", Toast.LENGTH_SHORT).show();
-                    recyclerViewAdapter.notifyDataSetChanged();
-                } else {
+                if (recyclerViewAdapter.getItemCount() > 2) {
                     btnMore.setClickable(true);
                     btnMore.setText("显示更多");
                     recyclerViewAdapter.AddItem(2);
+                    recyclerViewAdapter.notifyDataSetChanged();
+                } else {
+                    btnMore.setClickable(false);
+                    Toast.makeText(getContext(), "无数据", Toast.LENGTH_SHORT).show();
                     recyclerViewAdapter.notifyDataSetChanged();
                 }
                 break;
@@ -159,19 +158,22 @@ public class RebateFragment<T> extends Fragment implements ICountCashView<T>, IP
     @Override
     public void onSuccess(T t) {
         Log.i("=====", "onSuccess: ");
-        RebatePlanData plan = (RebatePlanData) t;
+        final RebatePlanData plan = (RebatePlanData) t;
+        list.add(plan);
         list.add(plan);
         recyclerViewAdapter = new RecyclerViewAdapter(getContext(), list);
         recyclerViewAdapter.setOnItemClickListener(new RecyclerViewAdapter.MyItemClickListener() {
             @Override
             public void onItemClick(View view, int postion) {
                 Intent intent = new Intent(getContext(), RebatePlanActivity.class);
-                intent.putExtra("key", postion);
-                startActivityForResult(intent, 1234);
-//                setResult(Activity.RESULT_OK,intent);
-//                finish();
+                intent.putExtra("recordCoding", plan.getObject().get(postion).getRecordCoding());
+                intent.putExtra("cashbackSpecificDate", plan.getObject().get(postion).getCashbackSpecificDate());
+                intent.putExtra("IntegralStyle", plan.getObject().get(postion).getIntegralStyle());
+                startActivity(intent);
             }
         });
         recyclerView.setAdapter(recyclerViewAdapter);
+
     }
+
 }
