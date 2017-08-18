@@ -173,7 +173,6 @@ public class RebateFragment<T> extends Fragment implements ICountCashView<T>, IP
             }
         });
         recyclerView.setAdapter(recyclerViewAdapter);
-
     }
 
 }
