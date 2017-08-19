@@ -80,7 +80,6 @@ public class RebateFragment<T> extends Fragment implements ICountCashView<T>, IP
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_rebate, container, false);
         unbinder = ButterKnife.bind(this, view);
         return view;
