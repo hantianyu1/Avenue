@@ -18,12 +18,16 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import hantianyu1504d.bwie.com.avenue.R;
+import hantianyu1504d.bwie.com.avenue.application.Canstant;
 import hantianyu1504d.bwie.com.avenue.core.utils.HttpUtils;
+import hantianyu1504d.bwie.com.avenue.core.utils.SPUtil;
 import hantianyu1504d.bwie.com.avenue.rebate.adapter.RecordListViewAdapter;
 import hantianyu1504d.bwie.com.avenue.rebate.bean.RecordData;
 
+import static hantianyu1504d.bwie.com.avenue.rebate.bean.Url.RecordURL;
+
 /**
- * 类的作用:
+ * 类的作用:积分记录
  * author: 刘婕
  * date:2017/8/14
  */
@@ -33,8 +37,8 @@ public class RecordFragment extends Fragment implements HttpUtils.RealCall<Recor
     ListView listView;
     List<RecordData> list = new ArrayList<>();
     Unbinder unbinder;
-    private String baseurl = "http://123.57.33.185:8088/user/intergral/records";
     private static final String TAG = "RecordFragment";
+    private String token;
 
     @Nullable
     @Override
@@ -47,16 +51,18 @@ public class RecordFragment extends Fragment implements HttpUtils.RealCall<Recor
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        token = (String) SPUtil.get(getActivity(), Canstant.anim.TOKEN, "");
         initRecordData();
+
     }
 
     private void initRecordData() {
         HttpUtils utils = new HttpUtils(this);
         Map<String, String> map = new HashMap<>();
-        map.put("token", "faf9105720d000f7bcea972fabb4b518");
-        map.put("page.perPageSize", "1");
-        map.put("page.currentPageNum", "5");
-        utils.loadDataFromServerPost(baseurl, map, RecordData.class);
+        map.put("token",token);
+        map.put("pageSize", "1");
+        map.put("pageNum", "10");
+        utils.loadDataFromServerPost(RecordURL, map, RecordData.class);
     }
 
     @Override

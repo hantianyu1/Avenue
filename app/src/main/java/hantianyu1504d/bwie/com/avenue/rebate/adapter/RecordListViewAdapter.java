@@ -58,7 +58,8 @@ public class RecordListViewAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         RecordData data = list.get(position);
-        holder.name.setText(data.getObject().getList().get(position).getName());
+        holder.money.setText(data.getCode());
+//        holder.name.setText(data.getObject().getList().get(position).getName());
 //        holder.money.setText(data.getObject().getList().get(position).getMoney());
 //        holder.direction.setText(data.getObject().getList().get(position).getDirection());
 //        Glide.with(context).load("").into(holder.integralStyle);

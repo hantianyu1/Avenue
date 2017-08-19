@@ -19,15 +19,17 @@ import hantianyu1504d.bwie.com.avenue.R;
 import hantianyu1504d.bwie.com.avenue.application.Canstant;
 import hantianyu1504d.bwie.com.avenue.core.utils.HttpUtils;
 import hantianyu1504d.bwie.com.avenue.core.utils.SPUtil;
-import hantianyu1504d.bwie.com.avenue.rebate.bean.RebateData;
+import hantianyu1504d.bwie.com.avenue.rebate.bean.RebateAlreadyData;
+
+import static hantianyu1504d.bwie.com.avenue.rebate.bean.Url.ALREADYURL;
 
 /**
- * 类的作用:
+ * 类的作用:未返利
  * author: 刘婕
  * date:2017/8/14
  */
 
-public class WaitFragment extends Fragment implements HttpUtils.RealCall<RebateData> {
+public class WaitFragment extends Fragment implements HttpUtils.RealCall<RebateAlreadyData> {
     @BindView(R.id.txt_wait_a)
     TextView txtWaitA;
     @BindView(R.id.txt_wait_calander)
@@ -37,8 +39,7 @@ public class WaitFragment extends Fragment implements HttpUtils.RealCall<RebateD
     @BindView(R.id.wait_price)
     TextView waitPrice;
     Unbinder unbinder;
-    private String baseUrl = "http://123.57.33.185:8088/cashback/list";
-   String  token = (String) SPUtil.get(getActivity(), Canstant.anim.TOKEN, "");
+    String token;
 
     @Nullable
     @Override
@@ -51,6 +52,7 @@ public class WaitFragment extends Fragment implements HttpUtils.RealCall<RebateD
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        token = (String) SPUtil.get(getActivity(), Canstant.anim.TOKEN, "");
         initPriceData();
     }
 
@@ -59,17 +61,19 @@ public class WaitFragment extends Fragment implements HttpUtils.RealCall<RebateD
         Map<String, String> map = new HashMap<>();
         map.put("token", token);
         map.put("status", "0");
-        utils.loadDataFromServerPost(baseUrl, map, RebateData.class);
+        map.put("pageNum", "1");
+        map.put("pageSize", "10");
+        utils.loadDataFromServerPost(ALREADYURL, map, RebateAlreadyData.class);
     }
 
     @Override
-    public void onSuessce(RebateData data) {
+    public void onSuessce(RebateAlreadyData data) {
         waitPrice.setText(data.getCode());
     }
 
     @Override
     public void onError(String str) {
-        Toast.makeText(getContext(),"WaitFragment",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "WaitFragment", Toast.LENGTH_SHORT).show();
     }
 
     @Override
