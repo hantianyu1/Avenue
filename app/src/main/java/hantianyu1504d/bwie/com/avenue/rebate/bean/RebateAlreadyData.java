@@ -3,17 +3,17 @@ package hantianyu1504d.bwie.com.avenue.rebate.bean;
 import java.util.List;
 
 /**
- * 类的作用:积分记录
+ * 类的作用:
  * author: 刘婕
  * date:2017/8/14
  */
 
-public class RecordData {
+public class RebateAlreadyData {
 
     /**
      * code : 1000
      * descirption : 系统处理成功
-     * object : {"pageNum":10,"totalSize":0,"totalPage":0,"list":[]}
+     * object : {"pageNum":1,"totalSize":0,"totalPage":0,"list":[]}
      */
 
     private String code;
@@ -46,7 +46,7 @@ public class RecordData {
 
     public static class ObjectBean {
         /**
-         * pageNum : 10
+         * pageNum : 1
          * totalSize : 0
          * totalPage : 0
          * list : []

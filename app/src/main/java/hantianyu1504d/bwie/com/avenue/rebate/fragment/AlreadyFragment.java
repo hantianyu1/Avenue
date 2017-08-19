@@ -15,16 +15,20 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import hantianyu1504d.bwie.com.avenue.R;
+import hantianyu1504d.bwie.com.avenue.application.Canstant;
 import hantianyu1504d.bwie.com.avenue.core.utils.HttpUtils;
-import hantianyu1504d.bwie.com.avenue.rebate.bean.RebateData;
+import hantianyu1504d.bwie.com.avenue.core.utils.SPUtil;
+import hantianyu1504d.bwie.com.avenue.rebate.bean.RebateAlreadyData;
+
+import static hantianyu1504d.bwie.com.avenue.rebate.bean.Url.ALREADYURL;
 
 /**
- * 类的作用:
+ * 类的作用:已返利
  * author: 刘婕
  * date:2017/8/14
  */
 
-public class AlreadyFragment extends Fragment implements HttpUtils.RealCall<RebateData> {
+public class AlreadyFragment extends Fragment implements HttpUtils.RealCall<RebateAlreadyData> {
     @BindView(R.id.txt_already_a)
     TextView txtA;
     @BindView(R.id.txt_already_calander)
@@ -40,7 +44,7 @@ public class AlreadyFragment extends Fragment implements HttpUtils.RealCall<Reba
     @BindView(R.id.shidao_price)
     TextView shidaoPrice;
     Unbinder unbinder;
-    private String baseUrl = "http://123.57.33.185:8088/cashback/list";
+    private String token;
 
     @Nullable
     @Override
@@ -53,19 +57,22 @@ public class AlreadyFragment extends Fragment implements HttpUtils.RealCall<Reba
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        token = (String) SPUtil.get(getActivity(), Canstant.anim.TOKEN, "");
         initPriceData();
     }
 
     private void initPriceData() {
         HttpUtils utils = new HttpUtils(this);
         Map<String, String> map = new HashMap<>();
-        map.put("token", "");
+        map.put("token",token);
         map.put("status", "1");
-        utils.loadDataFromServerPost(baseUrl, map, RebateData.class);
+        map.put("pageNum", "1");
+        map.put("pageSize", "10");
+        utils.loadDataFromServerPost(ALREADYURL, map, RebateAlreadyData.class);
     }
 
     @Override
-    public void onSuessce(RebateData recordData) {
+    public void onSuessce(RebateAlreadyData recordData) {
         txtAlreadyPrice.setText(recordData.getCode());
     }
 

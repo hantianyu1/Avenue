@@ -29,7 +29,6 @@ import butterknife.OnClick;
 import butterknife.Unbinder;
 import hantianyu1504d.bwie.com.avenue.R;
 import hantianyu1504d.bwie.com.avenue.application.Canstant;
-import hantianyu1504d.bwie.com.avenue.core.utils.HttpUtils;
 import hantianyu1504d.bwie.com.avenue.core.utils.SPUtil;
 import hantianyu1504d.bwie.com.avenue.rebate.activity.CalenderActivity;
 import hantianyu1504d.bwie.com.avenue.rebate.activity.RebatePlanActivity;
@@ -41,6 +40,9 @@ import hantianyu1504d.bwie.com.avenue.rebate.present.CountCashPresenter;
 import hantianyu1504d.bwie.com.avenue.rebate.present.ICountCashView;
 import hantianyu1504d.bwie.com.avenue.rebate.present.IPlanView;
 import hantianyu1504d.bwie.com.avenue.rebate.present.PlanPresenter;
+
+import static hantianyu1504d.bwie.com.avenue.rebate.bean.Url.COUNTCASHURL;
+import static hantianyu1504d.bwie.com.avenue.rebate.bean.Url.PLANURL;
 
 
 /**
@@ -68,9 +70,6 @@ public class RebateFragment<T> extends Fragment implements ICountCashView<T>, IP
     Button btnMore;
     private RecyclerViewAdapter recyclerViewAdapter;
     private List<RebatePlanData> list = new ArrayList<>();
-    private String baseUrl = "http://123.57.33.185:8088/cashback/countCashback";
-    private String PlanUrl = "http://123.57.33.185:8088/user/cashback/plan";
-    private HttpUtils okhttp;
     private HashMap<String, String> map = new HashMap<>();
     private HashMap<String, String> mapPlan = new HashMap<>();
     private String token;
@@ -94,11 +93,11 @@ public class RebateFragment<T> extends Fragment implements ICountCashView<T>, IP
         CountCashPresenter countPresent = new CountCashPresenter(this);
         map.put("status", "1");
         map.put("token", token);
-        countPresent.getCount(baseUrl, map, CountCashbackData.class);
+        countPresent.getCount(COUNTCASHURL, map, CountCashbackData.class);
 
         PlanPresenter planPresenter = new PlanPresenter(this);
         mapPlan.put("token", token);
-        planPresenter.getPlan(PlanUrl, mapPlan, RebatePlanData.class);
+        planPresenter.getPlan(PLANURL, mapPlan, RebatePlanData.class);
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
