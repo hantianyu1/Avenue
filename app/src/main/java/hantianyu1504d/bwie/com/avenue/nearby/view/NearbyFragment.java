@@ -1,16 +1,11 @@
 package hantianyu1504d.bwie.com.avenue.nearby.view;
 
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,10 +35,6 @@ public class NearbyFragment extends Fragment {
     private BaiduMap baiduMap;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private CollapsingToolbarLayout ctb;
-    private AppBarLayout layout_appbar;
-    private Toolbar toolbar;
-    private ViewPagerAdapter vpadapter;
 
     public NearbyFragment() {
         // Required empty public constructor
@@ -65,12 +56,9 @@ public class NearbyFragment extends Fragment {
     private void initView() {
         map = (MapView) view.findViewById(R.id.nearby_map);
         initMap();
-        ctb = (CollapsingToolbarLayout) view.findViewById(R.id.ctb);
-        layout_appbar = (AppBarLayout) view.findViewById(R.id.layout_appbar);
-        toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         initToolbar();
-        tabLayout = (TabLayout) view.findViewById(R.id.foot_tab);
-        viewPager = (ViewPager) view.findViewById(R.id.foot_viewpaer);
+        tabLayout = (TabLayout) view.findViewById(R.id.foot_tab1);
+        viewPager = (ViewPager) view.findViewById(R.id.foot_viewpaer1);
         initFootMain();
 
 
@@ -88,6 +76,8 @@ public class NearbyFragment extends Fragment {
             ViewPagerFragment vpFragment = new ViewPagerFragment();
             frag_list.add(vpFragment);
         }
+        ViewPagerAdapter viewAdapter = new ViewPagerAdapter(getFragmentManager(), str_list, frag_list);
+        viewPager.setAdapter(viewAdapter);
         tabLayout.setupWithViewPager(viewPager);
     }
 
@@ -95,24 +85,6 @@ public class NearbyFragment extends Fragment {
      * Toolbar 设置折叠
      */
     private void initToolbar() {
-        //        toolbar.setLogo(R.mipmap.ic_launcher);
-        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
-        //CollapsingToolbarLayout作用是提供了一个可以折叠的Toolbar
-        //给左上角图标的左边加上一个返回的图标
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //这里要注意的就是需要将setSupportActionBar(toolbar)放在setNavigationOnClickListener()之前设置才行。
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //相当于获取Back键的按下事件
-                ((AppCompatActivity) getActivity()).onBackPressed();
-            }
-        });
-        //设置文字
-        ctb.setTitle("");
-        //设置收缩展开toolbar字体颜色
-        ctb.setExpandedTitleColor(Color.WHITE);
-        ctb.setCollapsedTitleTextColor(Color.BLACK);
     }
 
     /**

@@ -22,6 +22,7 @@ import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -29,13 +30,15 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import hantianyu1504d.bwie.com.avenue.R;
+import hantianyu1504d.bwie.com.avenue.homepage.adapter.HomeViewPagerAdapter;
 import hantianyu1504d.bwie.com.avenue.homepage.adapter.NearShopsAdapter;
 import hantianyu1504d.bwie.com.avenue.homepage.mode.AddressUtil;
 import hantianyu1504d.bwie.com.avenue.homepage.mode.HomeView;
 import hantianyu1504d.bwie.com.avenue.homepage.mode.NearShopsBean;
 import hantianyu1504d.bwie.com.avenue.homepage.mode.PagerAndShopsBean;
 import hantianyu1504d.bwie.com.avenue.homepage.presenter.HomePresenter;
-
+import hantianyu1504d.bwie.com.avenue.nearby.adapter.ViewPagerAdapter;
+import hantianyu1504d.bwie.com.avenue.nearby.view.ViewPagerFragment;
 
 public class HomeFragment extends Fragment implements HomeView {
     @BindView(R.id.main_banner)
@@ -54,9 +57,9 @@ public class HomeFragment extends Fragment implements HomeView {
     ImageView rightTwoImage;
     @BindView(R.id.main_search_image)
     ImageView mainSearchImage;
-    @BindView(R.id.foot_tab)
+    @BindView(R.id./*foot_tab*/home_tab)
     TabLayout footTab;
-    @BindView(R.id.foot_viewpaer)
+    @BindView(R.id./*foot_viewpaer*/home_viewpaer)
     ViewPager footViewpaer;
     Unbinder unbinder;
     @BindView(R.id.nearbyshops_recycler)
@@ -64,7 +67,8 @@ public class HomeFragment extends Fragment implements HomeView {
     private HomePresenter presenter;
     private static final String TAG = "HomeFragment";
     private List<Fragment> mFragments;
-
+    private List<Fragment> homeFragments = new ArrayList<>();
+    private List<String> str_list = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -76,22 +80,43 @@ public class HomeFragment extends Fragment implements HomeView {
         initFragment();
         initShops();
         mainMiddlePager.setAdapter(new FragAdapter(getFragmentManager()));
-
+        initFootMain();
         return view;
     }
-    public void initShops(){
+
+    /**
+     * tablayout和ViewPagwer
+     */
+    private void initFootMain() {
+        str_list.add("美食");
+        str_list.add("休闲娱乐");
+        str_list.add("生活服务");
+        str_list.add("酒店");
+        str_list.add("全部");
+        for (int i = 0; i < str_list.size(); i++) {
+            ViewPagerFragment vpFragment = new ViewPagerFragment();
+            homeFragments.add(vpFragment);
+        }
+
+        HomeViewPagerAdapter vpAdapter = new HomeViewPagerAdapter(getFragmentManager(), str_list, homeFragments);
+        footViewpaer.setAdapter(vpAdapter);
+        footTab.setupWithViewPager(footViewpaer);
+
+    }
+
+    public void initShops() {
         //附近旺铺数据
     }
+
     public void initFragment() {
         //列表两个Fragment
         mFragments = new ArrayList<>();
         new MiddlePagerFragment();
         mFragments.add(MiddlePagerFragment.setPageNum("1"));
         mFragments.add(MiddlePagerFragment.setPageNum("2"));
-        AddressUtil addressUtil=new AddressUtil(getActivity());
+        AddressUtil addressUtil = new AddressUtil(getActivity());
         Map<String, String> address = addressUtil.getAddress();
         presenter.getAddress(address);
-
 
 
     }
@@ -126,12 +151,13 @@ public class HomeFragment extends Fragment implements HomeView {
 
     /**
      * 附近商铺
+     *
      * @param bean
      */
     @Override
     public void upAddressDate(Object bean) {
-        NearShopsBean near= (NearShopsBean) bean;
-        Log.e(TAG, "upAddressDate: "+near.getCode());
+        NearShopsBean near = (NearShopsBean) bean;
+        Log.e(TAG, "upAddressDate: " + near.getCode());
         List<String> list = near.getObject().getList();
         list.clear();
         list.add("http://imgsrc.baidu.com/imgad/pic/item/267f9e2f07082838b5168c32b299a9014c08f1f9.jpg");
@@ -141,8 +167,8 @@ public class HomeFragment extends Fragment implements HomeView {
         list.add("http://pic1.16pic.com/00/10/80/16pic_1080912_b.jpg");
         list.add("http://pic.35pic.com/normal/08/25/08/7487939_193935318119_2.jpg");
 
-        NearShopsAdapter  nearShopsAdapter = new NearShopsAdapter(getActivity(),list);
-        nearbyshopsRecycler.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));
+        NearShopsAdapter nearShopsAdapter = new NearShopsAdapter(getActivity(), list);
+        nearbyshopsRecycler.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         nearbyshopsRecycler.setAdapter(nearShopsAdapter);
     }
 

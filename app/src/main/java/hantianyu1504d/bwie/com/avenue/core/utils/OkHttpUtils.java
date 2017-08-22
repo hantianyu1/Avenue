@@ -2,6 +2,7 @@ package hantianyu1504d.bwie.com.avenue.core.utils;
 
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 
 import com.google.gson.Gson;
 
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import hantianyu1504d.bwie.com.avenue.port.RequestDataCallBack;
@@ -45,6 +47,7 @@ public class OkHttpUtils {
             }
         }
     };
+
     /**
      * 定义请求数据
      *
@@ -79,6 +82,37 @@ public class OkHttpUtils {
 //                Log.e(TAG, "onResponse: " + t);
                 message.obj = t;
                 handler.sendMessage(message);
+            }
+        });
+    }
+
+    public <T> void postAsynHttpLogin(String url, final RequestDataCallBack requestDataCallBack, final Class<T> tClass, Map<String, String> map) {
+        OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
+        Set<Map.Entry<String, String>> entries = map.entrySet();
+        FormBody.Builder builder = new FormBody.Builder();
+        for (Map.Entry<String, String> set : entries) {
+            builder.add(set.getKey(), set.getValue());
+        }
+        Request request = new Request.Builder().post(builder.build()).url(url).build();
+        Call call = okHttpClient.newCall(request);
+        final Message message = handler.obtainMessage();
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+            }
+
+            @Override
+            public void onResponse(Call call, final Response response) throws IOException {
+                try {
+                    final String str = response.body().string();
+                    Message message = handler.obtainMessage();
+                    message.what = 1;
+                    Gson asylgson = new Gson();
+                    T t = asylgson.fromJson(str, tClass);
+                    requestDataCallBack.SucceedBack(t);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
