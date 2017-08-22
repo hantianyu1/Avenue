@@ -1,15 +1,11 @@
 package hantianyu1504d.bwie.com.avenue.homepage.presenter;
 
-import android.util.Log;
-
 import java.util.HashMap;
 
 import hantianyu1504d.bwie.com.avenue.core.utils.HttpUtils;
 import hantianyu1504d.bwie.com.avenue.core.utils.UrlServer;
 import hantianyu1504d.bwie.com.avenue.homepage.mode.CategoriesBean;
 import hantianyu1504d.bwie.com.avenue.homepage.mode.HomeView;
-
-import static android.content.ContentValues.TAG;
 
 
 /**
@@ -25,11 +21,9 @@ public class MiddlePagerPresenter {
         this.homeView = homeView;
     }
     public void upMiddleDate(String s){
-        HttpUtils httpUtils=new HttpUtils(new HttpUtils.RealCall() {
+        HttpUtils httpUtils=new HttpUtils(new HttpUtils.RealCall<CategoriesBean>() {
             @Override
-            public void onSuessce(Object tClass) {
-                CategoriesBean bean= (CategoriesBean) tClass;
-                Log.e(TAG, "onSuessce: "+((CategoriesBean) tClass).getCode() );
+            public void onSuessce(CategoriesBean bean) {
                 homeView.upDate(bean);
             }
 

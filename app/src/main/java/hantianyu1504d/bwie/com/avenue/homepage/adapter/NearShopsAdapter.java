@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import hantianyu1504d.bwie.com.avenue.R;
+import hantianyu1504d.bwie.com.avenue.homepage.mode.NearShopsBean;
 
 /**
  * 类描述：
@@ -21,9 +22,9 @@ import hantianyu1504d.bwie.com.avenue.R;
  */
 public class NearShopsAdapter extends RecyclerView.Adapter<NearShopsAdapter.ViewHolder>{
 private Context context;
-    private List<String> list;
+    private List<NearShopsBean.ObjectBean.ListBean> list;
 
-    public NearShopsAdapter(Context context, List<String> list) {
+    public NearShopsAdapter(Context context, List<NearShopsBean.ObjectBean.ListBean> list) {
         this.context = context;
         this.list = list;
     }
@@ -37,7 +38,9 @@ private Context context;
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Glide.with(context).load(list.get(position)).into(holder.image);
+        holder.name.setText(list.get(position).getShopName());
+        holder.address.setText("["+list.get(position).getAddress()+"]");
+        Glide.with(context).load(list.get(position).getPicture()).into(holder.image);
     }
 
     @Override
