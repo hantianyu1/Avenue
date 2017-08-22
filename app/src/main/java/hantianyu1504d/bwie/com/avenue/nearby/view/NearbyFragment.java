@@ -25,7 +25,7 @@ import hantianyu1504d.bwie.com.avenue.nearby.adapter.ViewPagerAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
- * 附近页面
+ * 附近页面  ssss
  */
 public class NearbyFragment extends Fragment {
     private List<String> str_list = new ArrayList<>();
