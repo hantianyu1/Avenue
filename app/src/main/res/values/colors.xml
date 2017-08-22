@@ -6,7 +6,6 @@
     <color name="c333333">#333333</color>
     <color name="cC20000">#C20000</color>
     <color name="cffffff">#ffffff</color>
-    <color name="cFFFFFF">#FFFFFF</color>
 
     <color name="c666666">#666666</color>
     <color name="c435C94">#435C94</color>
@@ -14,11 +13,15 @@
     <color name="C20000">#C20000</color>
     <color name="c435c94">#435c94</color>
     <color name="cFFFC0410">#FFFC0410</color>
-    <!--背景图-->
-    <color name="cFFF9F5F5">#FFF9F5F5</color>
-    <color name="cf2f4f5">#f2f4f5</color>
-    <color name="cdddddd">#dddddd</color>
     <color name="c999999">#999999</color>
     <color name="c000000">#000000</color>
+    <!--背景图-->
+    <color name="cFFF9F5F5">#FFF9F5F5</color>
+
+    <color name="cf2f4f5">#f2f4f5</color>
+
+    <color name="cdddddd">#dddddd</color>
+
+
 
 </resources>

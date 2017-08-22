@@ -2,6 +2,7 @@ package hantianyu1504d.bwie.com.avenue.core.utils;
 
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 
 import com.google.gson.Gson;
 
@@ -94,7 +95,9 @@ public class HttpUtils {
             public void onResponse(Call call, Response response) throws IOException {
                 message.what = 0;
                 Gson gson=new Gson();
-                message.obj =  gson.fromJson(response.body().string(), tClass);
+                String string = response.body().string();
+                Log.e(TAG, "onResponse: "+string );
+                message.obj =  gson.fromJson(string, tClass);
                 handler.sendMessage(message);
             }
         });

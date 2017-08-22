@@ -73,6 +73,7 @@ public class HomeFragment extends Fragment implements HomeView {
         unbinder = ButterKnife.bind(this, view);
         presenter = new HomePresenter(this);
         presenter.getDateBanner();
+        presenter.getDateShops();
         initFragment();
         initShops();
         mainMiddlePager.setAdapter(new FragAdapter(getFragmentManager()));
@@ -106,13 +107,13 @@ public class HomeFragment extends Fragment implements HomeView {
             imageList.add(list.get(i).getPicture());
         }
 
-        imageList.clear();
-        imageList.add("http://imgsrc.baidu.com/imgad/pic/item/267f9e2f07082838b5168c32b299a9014c08f1f9.jpg");
-        imageList.add("http://img2.imgtn.bdimg.com/it/u=1989212580,3203216431&fm=214&gp=0.jpg");
-        imageList.add("http://pic96.nipic.com/file/20160429/21289054_220047597697_2.jpg");
-        imageList.add("http://img3.duitang.com/uploads/item/201205/07/20120507205511_vNtWf.jpeg");
-        imageList.add("http://pic1.16pic.com/00/10/80/16pic_1080912_b.jpg");
-        imageList.add("http://pic.35pic.com/normal/08/25/08/7487939_193935318119_2.jpg");
+//        imageList.clear();
+//        imageList.add("http://imgsrc.baidu.com/imgad/pic/item/267f9e2f07082838b5168c32b299a9014c08f1f9.jpg");
+//        imageList.add("http://img2.imgtn.bdimg.com/it/u=1989212580,3203216431&fm=214&gp=0.jpg");
+//        imageList.add("http://pic96.nipic.com/file/20160429/21289054_220047597697_2.jpg");
+//        imageList.add("http://img3.duitang.com/uploads/item/201205/07/20120507205511_vNtWf.jpeg");
+//        imageList.add("http://pic1.16pic.com/00/10/80/16pic_1080912_b.jpg");
+//        imageList.add("http://pic.35pic.com/normal/08/25/08/7487939_193935318119_2.jpg");
         mainBanner.setImageLoader(new ImageLoader() {
             @Override
             public void displayImage(Context context, Object path, ImageView imageView) {
@@ -131,15 +132,15 @@ public class HomeFragment extends Fragment implements HomeView {
     @Override
     public void upAddressDate(Object bean) {
         NearShopsBean near= (NearShopsBean) bean;
-        Log.e(TAG, "upAddressDate: "+near.getCode());
-        List<String> list = near.getObject().getList();
-        list.clear();
-        list.add("http://imgsrc.baidu.com/imgad/pic/item/267f9e2f07082838b5168c32b299a9014c08f1f9.jpg");
-        list.add("http://img2.imgtn.bdimg.com/it/u=1989212580,3203216431&fm=214&gp=0.jpg");
-        list.add("http://pic96.nipic.com/file/20160429/21289054_220047597697_2.jpg");
-        list.add("http://img3.duitang.com/uploads/item/201205/07/20120507205511_vNtWf.jpeg");
-        list.add("http://pic1.16pic.com/00/10/80/16pic_1080912_b.jpg");
-        list.add("http://pic.35pic.com/normal/08/25/08/7487939_193935318119_2.jpg");
+        Log.e(TAG, "upAddressDate123: "+near.getCode());
+        List<NearShopsBean.ObjectBean.ListBean> list = near.getObject().getList();
+//        list.clear();
+//        list.add("http://imgsrc.baidu.com/imgad/pic/item/267f9e2f07082838b5168c32b299a9014c08f1f9.jpg");
+//        list.add("http://img2.imgtn.bdimg.com/it/u=1989212580,3203216431&fm=214&gp=0.jpg");
+//        list.add("http://pic96.nipic.com/file/20160429/21289054_220047597697_2.jpg");
+//        list.add("http://img3.duitang.com/uploads/item/201205/07/20120507205511_vNtWf.jpeg");
+//        list.add("http://pic1.16pic.com/00/10/80/16pic_1080912_b.jpg");
+//        list.add("http://pic.35pic.com/normal/08/25/08/7487939_193935318119_2.jpg");
 
         NearShopsAdapter  nearShopsAdapter = new NearShopsAdapter(getActivity(),list);
         nearbyshopsRecycler.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));

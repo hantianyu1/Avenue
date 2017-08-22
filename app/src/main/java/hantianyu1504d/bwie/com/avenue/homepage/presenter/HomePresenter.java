@@ -24,28 +24,9 @@ public class HomePresenter {
         this.homeView = homeView;
     }
     public void getDateBanner( ){
-        HttpUtils httpUtils=new HttpUtils(new HttpUtils.RealCall() {
+        HttpUtils httpUtils=new HttpUtils(new HttpUtils.RealCall<PagerAndShopsBean>() {
             @Override
-            public void onSuessce(Object tClass) {
-                PagerAndShopsBean bean= (PagerAndShopsBean) tClass;
-                homeView.upDate(bean);
-//                Log.e(TAG, "onSuessce: "+ bean.getCode()+bean.getObject().getTotalSize());
-            }
-
-            @Override
-            public void onError(String str) {
-                Log.e(TAG, "onError: "+str );
-            }
-        });
-        Map<String,String> map=new HashMap<>();
-        map.put("type","0");
-        httpUtils.loadDataFromServerPost(UrlServer.BASE_URL+UrlServer.PAGEANDSHPOSURL,map, PagerAndShopsBean.class);
-    }
-    public void getDateShops( ){
-        HttpUtils httpUtils=new HttpUtils(new HttpUtils.RealCall() {
-            @Override
-            public void onSuessce(Object tClass) {
-                PagerAndShopsBean bean= (PagerAndShopsBean) tClass;
+            public void onSuessce( PagerAndShopsBean bean) {
                 homeView.upDate(bean);
                 Log.e(TAG, "onSuessce: "+ bean.getCode()+bean.getObject().getTotalSize());
             }
@@ -59,11 +40,29 @@ public class HomePresenter {
         map.put("type","0");
         httpUtils.loadDataFromServerPost(UrlServer.BASE_URL+UrlServer.PAGEANDSHPOSURL,map, PagerAndShopsBean.class);
     }
-    public void getAddress( Map<String,String> map){
-        HttpUtils httpUtils=new HttpUtils(new HttpUtils.RealCall() {
+    public void getDateShops( ){
+        HttpUtils httpUtils=new HttpUtils(new HttpUtils.RealCall<PagerAndShopsBean>() {
             @Override
-            public void onSuessce(Object tClass) {
-                NearShopsBean bean= (NearShopsBean) tClass;
+            public void onSuessce(PagerAndShopsBean bean) {
+
+                homeView.upDate(bean);
+                Log.e(TAG, "getDateShops: "+ bean.getCode()+bean.getObject().getTotalSize());
+            }
+
+            @Override
+            public void onError(String str) {
+                Log.e(TAG, "onError: "+str );
+            }
+        });
+        Map<String,String> map=new HashMap<>();
+        map.put("type","0");
+        httpUtils.loadDataFromServerPost(UrlServer.BASE_URL+UrlServer.PAGEANDSHPOSURL,map, PagerAndShopsBean.class);
+    }
+    public void getAddress( Map<String,String> map){
+        HttpUtils httpUtils=new HttpUtils(new HttpUtils.RealCall<NearShopsBean>() {
+            @Override
+            public void onSuessce(NearShopsBean bean) {
+
                 homeView.upAddressDate(bean);
 
             }
