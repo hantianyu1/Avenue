@@ -169,7 +169,7 @@
             android:layout_marginBottom="@dimen/x34"
             android:layout_marginLeft="@dimen/x30"
             android:layout_marginTop="@dimen/t28"
-            android:text="返利计划（共9档）"
+            android:text="返利计划（共2档）"
             android:textColor="@color/c666666"
             android:textSize="@dimen/x28" />
 
