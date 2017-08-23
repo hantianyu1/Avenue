@@ -53,8 +53,8 @@
             android:src="@mipmap/yanzhengma" />
     </LinearLayout>
     <TextView
+        android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/t30"
-        android:text="今天12.05"/>
+        android:layout_marginLeft="@dimen/t30" />
 </LinearLayout>

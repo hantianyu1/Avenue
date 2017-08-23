@@ -7,9 +7,7 @@ import android.os.Message;
  */
 
 public interface BaseView {
-
     void onSuccessd(Message message);
-
     void onFaid(Message message);
 
 }

@@ -3,12 +3,15 @@ package hantianyu1504d.bwie.com.avenue.rebate.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
@@ -18,6 +21,7 @@ import hantianyu1504d.bwie.com.avenue.R;
 import hantianyu1504d.bwie.com.avenue.application.Canstant;
 import hantianyu1504d.bwie.com.avenue.core.utils.HttpUtils;
 import hantianyu1504d.bwie.com.avenue.core.utils.SPUtil;
+import hantianyu1504d.bwie.com.avenue.rebate.adapter.AlreadyRecyclerViewAdapter;
 import hantianyu1504d.bwie.com.avenue.rebate.bean.RebateAlreadyData;
 
 import static hantianyu1504d.bwie.com.avenue.rebate.bean.Url.ALREADYURL;
@@ -29,22 +33,12 @@ import static hantianyu1504d.bwie.com.avenue.rebate.bean.Url.ALREADYURL;
  */
 
 public class AlreadyFragment extends Fragment implements HttpUtils.RealCall<RebateAlreadyData> {
-    @BindView(R.id.txt_already_a)
-    TextView txtA;
-    @BindView(R.id.txt_already_calander)
-    TextView txtCalander;
-    @BindView(R.id.txt_already)
-    TextView txtAlready;
-    @BindView(R.id.txt_already_price)
-    TextView txtAlreadyPrice;
-    @BindView(R.id.txt_already_money)
-    TextView txtAlreadyMoney;
-    @BindView(R.id.shidao)
-    TextView shidao;
-    @BindView(R.id.shidao_price)
-    TextView shidaoPrice;
+
+    @BindView(R.id.recycler_already)
+    RecyclerView recyclerAlready;
     Unbinder unbinder;
     private String token;
+    private List<RebateAlreadyData> list = new ArrayList<>();
 
     @Nullable
     @Override
@@ -57,6 +51,8 @@ public class AlreadyFragment extends Fragment implements HttpUtils.RealCall<Reba
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        LinearLayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        recyclerAlready.setLayoutManager(manager);
         token = (String) SPUtil.get(getActivity(), Canstant.anim.TOKEN, "");
         initPriceData();
     }
@@ -64,7 +60,7 @@ public class AlreadyFragment extends Fragment implements HttpUtils.RealCall<Reba
     private void initPriceData() {
         HttpUtils utils = new HttpUtils(this);
         Map<String, String> map = new HashMap<>();
-        map.put("token",token);
+        map.put("token", token);
         map.put("status", "1");
         map.put("pageNum", "1");
         map.put("pageSize", "10");
@@ -73,7 +69,9 @@ public class AlreadyFragment extends Fragment implements HttpUtils.RealCall<Reba
 
     @Override
     public void onSuessce(RebateAlreadyData recordData) {
-        txtAlreadyPrice.setText(recordData.getCode());
+        list.add(recordData);
+        AlreadyRecyclerViewAdapter alreadyRecyclerViewAdapter = new AlreadyRecyclerViewAdapter(getContext(), list);
+        recyclerAlready.setAdapter(alreadyRecyclerViewAdapter);
     }
 
     @Override

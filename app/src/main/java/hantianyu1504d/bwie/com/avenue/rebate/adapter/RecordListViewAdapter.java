@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import hantianyu1504d.bwie.com.avenue.R;
@@ -52,6 +54,7 @@ public class RecordListViewAdapter extends BaseAdapter {
             holder.name = (TextView) convertView.findViewById(R.id.name);
             holder.money = (TextView) convertView.findViewById(R.id.txt_money);
             holder.direction = (TextView) convertView.findViewById(R.id.direction);
+            holder.time = (TextView) convertView.findViewById(R.id.time);
             holder.integralStyle = (ImageView) convertView.findViewById(R.id.integralStyle);
             convertView.setTag(holder);
         } else {
@@ -59,6 +62,10 @@ public class RecordListViewAdapter extends BaseAdapter {
         }
         RecordData data = list.get(position);
         holder.money.setText(data.getCode());
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+        Date date = new Date(data.getObject().getPageNum());
+        String format = sdf.format(date);
+        holder.time.setText("今天:"+format);
 //        holder.name.setText(data.getObject().getList().get(position).getName());
 //        holder.money.setText(data.getObject().getList().get(position).getMoney());
 //        holder.direction.setText(data.getObject().getList().get(position).getDirection());
@@ -70,6 +77,7 @@ public class RecordListViewAdapter extends BaseAdapter {
         TextView name;
         TextView money;
         TextView direction;
+        TextView time;
         ImageView integralStyle;
     }
 }
