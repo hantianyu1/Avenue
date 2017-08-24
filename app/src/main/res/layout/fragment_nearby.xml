@@ -20,7 +20,8 @@
             <com.baidu.mapapi.map.MapView
                 android:id="@+id/nearby_map"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/x260"></com.baidu.mapapi.map.MapView>
+                android:layout_height="500dp"></com.baidu.mapapi.map.MapView>
+            <!--@dimen/x260-->
 
             <include layout="@layout/includ_nearby_wangpu"></include>
         </LinearLayout>

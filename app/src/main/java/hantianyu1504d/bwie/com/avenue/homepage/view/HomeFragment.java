@@ -41,6 +41,7 @@ import hantianyu1504d.bwie.com.avenue.nearby.adapter.ViewPagerAdapter;
 import hantianyu1504d.bwie.com.avenue.nearby.view.ViewPagerFragment;
 
 public class HomeFragment extends Fragment implements HomeView {
+    //..
     @BindView(R.id.main_banner)
     Banner mainBanner;
     @BindView(R.id.main_middle_pager)
@@ -67,8 +68,8 @@ public class HomeFragment extends Fragment implements HomeView {
     private HomePresenter presenter;
     private static final String TAG = "HomeFragment";
     private List<Fragment> mFragments;
-    private List<Fragment> homeFragments = new ArrayList<>();
-    private List<String> str_list = new ArrayList<>();
+    private List<Fragment> homeFragments;
+    private List<String> str_list;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -76,6 +77,8 @@ public class HomeFragment extends Fragment implements HomeView {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         unbinder = ButterKnife.bind(this, view);
         presenter = new HomePresenter(this);
+        homeFragments = new ArrayList<>();
+        str_list = new ArrayList<>();
         presenter.getDateBanner();
         initFragment();
         initShops();
