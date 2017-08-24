@@ -204,7 +204,6 @@ public class MyLocationListener implements BDLocationListener {
             //无法获取有效定位依据，但无法确定具体原因
             //建议检查是否有安全软件屏蔽相关定位权限
             //或调用LocationClient.restart()重新启动后重试！
-
         }
     }
 
