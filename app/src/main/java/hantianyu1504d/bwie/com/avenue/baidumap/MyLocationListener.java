@@ -18,7 +18,7 @@ import hantianyu1504d.bwie.com.avenue.R;
 /**
  * 作者：李飞宇
  * 时间：2017/8/23 15:44
- * 功能：
+ * 功能：sss
  */
 public class MyLocationListener implements BDLocationListener {
     // 百度地图对象
