@@ -3,6 +3,8 @@ package hantianyu1504d.bwie.com.avenue.application;
 import android.app.Activity;
 import android.app.Application;
 
+import com.baidu.mapapi.SDKInitializer;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,6 +29,8 @@ public class MyApplication extends Application {
         instance = this;
         // 全局异常处理
         CrashHandler.getInstance().init(this, true);
+        //百度地图SDK
+        SDKInitializer.initialize(getApplicationContext());
     }
 
 

@@ -17,6 +17,7 @@ import java.util.List;
 import hantianyu1504d.bwie.com.avenue.R;
 import hantianyu1504d.bwie.com.avenue.nearby.adapter.ViewPagerFragmentAdapter;
 import hantianyu1504d.bwie.com.avenue.nearby.bean.SBean;
+import hantianyu1504d.bwie.com.avenue.nearby.bean.ShopBean;
 import hantianyu1504d.bwie.com.avenue.nearby.persebter.ShopPersebter;
 import hantianyu1504d.bwie.com.avenue.port.INearbyView;
 

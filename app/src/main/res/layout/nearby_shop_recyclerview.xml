@@ -4,16 +4,17 @@
     android:background="#00ff00"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <hantianyu1504d.bwie.com.avenue.homepage.view.NestedScrollView
+   <!-- <hantianyu1504d.bwie.com.avenue.homepage.view.NestedScrollView
         android:layout_width="match_parent"
         android:id="@+id/nearby_shop_recycler"
         android:layout_height="match_parent"></hantianyu1504d.bwie.com.avenue.homepage.view.NestedScrollView>
+-->
 
-    <!--<android.support.v7.widget.RecyclerView-->
-        <!--android:id="@+id/nearby_shop_recycler"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/nearby_shop_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <!--</android.support.v7.widget.RecyclerView>-->
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

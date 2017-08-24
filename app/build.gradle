@@ -1,7 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
+    signingConfigs {
+        release {
+            keyAlias 'key0'
+            keyPassword '123456'
+            storeFile file('F:/AndroidStudio_1504D/Avenue/avenue.jks')
+            storePassword '123456'
+        }
+    }
+    compileSdkVersion 26
     buildToolsVersion "26.0.0"
     defaultConfig {
         applicationId "hantianyu1504d.bwie.com.avenue"
@@ -34,8 +42,11 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.7.0'
     compile 'com.github.Othershe:CalendarView:1.0.1'
     compile 'com.youth.banner:banner:1.4.9'
+    compile 'com.android.support:design:26.0.0-alpha1'
+    compile 'com.github.bumptech.glide:glide:3.6.1'
     compile 'com.google.code.gson:gson:2.8.1'
     compile 'com.github.bumptech.glide:glide:4.0.0'
+    compile 'com.sothree.slidinguppanel:library:3.3.1'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
