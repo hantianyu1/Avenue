@@ -29,12 +29,15 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import hantianyu1504d.bwie.com.avenue.R;
+import hantianyu1504d.bwie.com.avenue.homepage.adapter.HomeViewPagerAdapter;
 import hantianyu1504d.bwie.com.avenue.homepage.adapter.NearShopsAdapter;
 import hantianyu1504d.bwie.com.avenue.homepage.mode.AddressUtil;
 import hantianyu1504d.bwie.com.avenue.homepage.mode.HomeView;
 import hantianyu1504d.bwie.com.avenue.homepage.mode.NearShopsBean;
 import hantianyu1504d.bwie.com.avenue.homepage.mode.PagerAndShopsBean;
 import hantianyu1504d.bwie.com.avenue.homepage.presenter.HomePresenter;
+import hantianyu1504d.bwie.com.avenue.myview.MyViewPager;
+import hantianyu1504d.bwie.com.avenue.nearby.view.ViewPagerFragment;
 
 
 public class HomeFragment extends Fragment implements HomeView {
@@ -54,30 +57,33 @@ public class HomeFragment extends Fragment implements HomeView {
     ImageView rightTwoImage;
     @BindView(R.id.main_search_image)
     ImageView mainSearchImage;
-    @BindView(R.id.foot_tab)
+    @BindView(R.id.home_tab)
     TabLayout footTab;
-    @BindView(R.id.foot_viewpaer)
-    ViewPager footViewpaer;
+    @BindView(R.id.home_viewpaer)
+    MyViewPager footViewpaer;
     Unbinder unbinder;
     @BindView(R.id.nearbyshops_recycler)
     RecyclerView nearbyshopsRecycler;
     private HomePresenter presenter;
     private static final String TAG = "HomeFragment";
     private List<Fragment> mFragments;
-
+    private List<Fragment> homeFragments ;
+    private List<String> str_list ;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         unbinder = ButterKnife.bind(this, view);
+        str_list = new ArrayList<>();
+        homeFragments = new ArrayList<>();
         presenter = new HomePresenter(this);
         presenter.getDateBanner();
         presenter.getDateShops();
         initFragment();
         initShops();
         mainMiddlePager.setAdapter(new FragAdapter(getFragmentManager()));
-
+        initFootMain();
         return view;
     }
     public void initShops(){
@@ -173,5 +179,29 @@ public class HomeFragment extends Fragment implements HomeView {
         }
 
     }
-
+    /**
+     * tablayout和ViewPagwer
+     */
+    private void initFootMain() {
+        str_list.add("美食");
+        str_list.add("休闲娱乐");
+        str_list.add("生活服务");
+        str_list.add("酒店");
+        str_list.add("全部");
+        for (int i = 0; i < str_list.size(); i++) {
+            ViewPagerFragment vpFragment = new ViewPagerFragment();
+            vpFragment.setLoadCallBack(new ViewPagerFragment.LoadCallBack() {
+                @Override
+                public void loadSuccess(int totalHeight) {
+                    footViewpaer.refresh(totalHeight);
+                }
+            });
+            homeFragments.add(vpFragment);
+        }
+       
+        HomeViewPagerAdapter vpAdapter = new HomeViewPagerAdapter(getFragmentManager(), str_list, homeFragments);
+        footViewpaer.setAdapter(vpAdapter);
+        footTab.setupWithViewPager(footViewpaer);
+        footViewpaer.setOffscreenPageLimit(0);
+    }
 }

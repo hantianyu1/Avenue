@@ -40,6 +40,10 @@ public class ViewPagerFragmentAdapter extends RecyclerView.Adapter {
         return viewHolder;
     }
 
+    public int getViewHeight() {
+        return  200;
+    }
+
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         viewHolder = (ViewHolder) holder;
@@ -56,6 +60,7 @@ public class ViewPagerFragmentAdapter extends RecyclerView.Adapter {
 //        viewHolder.text_shop_site.setText(slist.get(position).getDistance());
 
     }
+
 
     @Override
     public int getItemCount() {

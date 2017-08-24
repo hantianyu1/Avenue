@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<hantianyu1504d.bwie.com.avenue.myview.MyScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:background="@color/cf2f4f5">
     <!--android:fillViewport="true"
         允许被子控件填充满-->
@@ -253,11 +254,11 @@
             android:layout_height="@dimen/x88"
             android:background="#FFF"></android.support.design.widget.TabLayout>
 
-        <android.support.v4.view.ViewPager
+        <hantianyu1504d.bwie.com.avenue.myview.MyViewPager
             android:id="@+id/home_viewpaer"
             android:layout_width="match_parent"
-            android:layout_height="900dp"></android.support.v4.view.ViewPager>
+            android:layout_height="match_parent"></hantianyu1504d.bwie.com.avenue.myview.MyViewPager>
 
     </LinearLayout>
 
-</ScrollView>
+</hantianyu1504d.bwie.com.avenue.myview.MyScrollView>
