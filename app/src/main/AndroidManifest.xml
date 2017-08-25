@@ -50,6 +50,7 @@
         <activity android:name=".mine.view.activity.Card_Holder_Activity"></activity>
         <activity android:name=".mine.view.activity.Actitity_Login"></activity>
         <activity android:name=".mine.view.activity.Actitity_Log"></activity>
+        <activity android:name=".mine.view.activity.Set_PassWord_Activity"></activity>
     </application>
 
 </manifest>

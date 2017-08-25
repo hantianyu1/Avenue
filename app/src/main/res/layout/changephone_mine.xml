@@ -45,6 +45,7 @@
             android:layout_height="wrap_content"
             android:hint="请重新输入手机号"
             android:textSize="@dimen/x28"
+            android:layout_marginLeft="@dimen/x30"
             android:background="@null"
             android:textColorHint="@color/c999999"
             android:layout_alignTop="@+id/radioButton"

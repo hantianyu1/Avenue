@@ -59,7 +59,6 @@ public class Actitity_Login extends BaseActvitiy implements IMainView {
     RelativeLayout rlayoutLogin;
     private Login_Presener login_presener;
     private TimeCount timeCount;
-    CommonUtils commonUtils=new CommonUtils();
 
     @Override
     public void initData() {

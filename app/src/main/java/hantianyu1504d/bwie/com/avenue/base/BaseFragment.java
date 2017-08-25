@@ -14,33 +14,58 @@ import butterknife.Unbinder;
 
 /**
  * Created by lichaohui on 2017/8/5.
+ * fragment 的 懒加载
  */
 
 public abstract class BaseFragment extends Fragment {
 
 
     private Unbinder bind;
-    public Context mContext;
+    protected Context mContext;
     private View inflate;
+    /**
+     * 控件是否初始化完成
+     */
+    private boolean isViewCreated;
+    /**
+     * 数据是否已加载完毕
+     */
+    private boolean isLoadDataCompleted;
+
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         inflate = inflater.inflate(setLayout(), container, false);
-
+        isViewCreated = true;
         return inflate;
     }
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        bind = ButterKnife.bind(this,view);
+        bind = ButterKnife.bind(this, view);
     }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser && isViewCreated && !isLoadDataCompleted) {
+            isLoadDataCompleted = true;
+            initData();
+        }
+    }
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mContext = getActivity();
-        initData();
+        if (getUserVisibleHint()) {
+            mContext = getActivity();
+            isLoadDataCompleted = true;
+            initData();
+        }
+
     }
 
 

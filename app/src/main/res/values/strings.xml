@@ -60,4 +60,7 @@
     <string name="shop_price">￥45/人</string>
     <string name="shop_integral">积分率</string>
     <string name="shop_site">安贞距您100m</string>
+    <string name="txt_setfragemnt">请输入支付密码</string>
+    <string name="txt_setfragemnt_next">下一步</string>
+
 </resources>

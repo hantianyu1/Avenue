@@ -7,7 +7,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -19,7 +18,6 @@ import hantianyu1504d.bwie.com.avenue.mine.mode.bean.UserLog;
 import hantianyu1504d.bwie.com.avenue.mine.mode.utils.CommonUtils;
 import hantianyu1504d.bwie.com.avenue.mine.presener.Login_Presener;
 import hantianyu1504d.bwie.com.avenue.mine.view.iview.IMainView;
-
 
 /**
  * Created by lichaohui on 2017/8/10.
@@ -48,10 +46,7 @@ public class Actitity_Log extends BaseActvitiy implements IMainView<UserLog> {
         if (msg!=null && msg!=""){
             SPUtil.put(mContext,Canstant.anim.MINE_KEY,msg);
         }
-
-
     }
-
     @Override
     public void errCallBack(String err, int code) {
 
@@ -59,7 +54,9 @@ public class Actitity_Log extends BaseActvitiy implements IMainView<UserLog> {
 
     @Override
     public void initData() {
-
+        // 设置登录默认的账号密码
+        edtLogPhone.setText("15210024204");
+        edtLogPassword.setText("123");
     }
     @Override
     public void initView() {
@@ -86,12 +83,10 @@ public class Actitity_Log extends BaseActvitiy implements IMainView<UserLog> {
                 break;
             // 登录按钮
             case R.id.rbtn_mine_log:
+                // 防止多次点击
                 if (CommonUtils.isFastDoubleClick()) {
                     return;
                 }
-
-                Toast.makeText(this,"zzz",Toast.LENGTH_SHORT).show();
-
                 String password = edtLogPassword.getText().toString().trim();
                 String phone = edtLogPhone.getText().toString().trim();
                 login_presener.loadPresener(phone, password, mContext);
