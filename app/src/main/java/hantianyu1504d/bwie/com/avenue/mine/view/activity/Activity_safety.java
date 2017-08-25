@@ -61,7 +61,7 @@ public class Activity_safety extends BaseActvitiy {
                 break;
             // 重置支付 密码
             case R.id.txt_safe_reset_payment:
-
+            startActivity(new Intent(mContext, Set_PassWord_Activity.class));
                 break;
             //重置手势密码
             case R.id.txt_safe_reset_password:
@@ -74,8 +74,8 @@ public class Activity_safety extends BaseActvitiy {
             // 退出登录
             case R.id.txt_safe_exit:
                 // 清除 sp 记录
-                SPUtil.put(mContext,Canstant.anim.MINE_KEY,"");
-                SPUtil.remove(mContext,Canstant.anim.MINE_KEY);
+                SPUtil.remove(mContext, Canstant.anim.MINE_KEY);
+                SPUtil.remove(mContext, Canstant.anim.TOKEN);
                 Toast.makeText(this, "已经退出登录！！！", Toast.LENGTH_SHORT).show();
                 break;
         }
