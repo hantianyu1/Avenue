@@ -35,6 +35,7 @@ import hantianyu1504d.bwie.com.avenue.rebate.activity.RebatePlanActivity;
 import hantianyu1504d.bwie.com.avenue.rebate.activity.RecordActivity;
 import hantianyu1504d.bwie.com.avenue.rebate.adapter.RecyclerViewAdapter;
 import hantianyu1504d.bwie.com.avenue.rebate.bean.CountCashbackData;
+import hantianyu1504d.bwie.com.avenue.rebate.bean.RebateAlreadyData;
 import hantianyu1504d.bwie.com.avenue.rebate.bean.RebatePlanData;
 import hantianyu1504d.bwie.com.avenue.rebate.present.CountCashPresenter;
 import hantianyu1504d.bwie.com.avenue.rebate.present.ICountCashView;
@@ -73,6 +74,8 @@ public class RebateFragment<T> extends Fragment implements ICountCashView<T>, IP
     private HashMap<String, String> map = new HashMap<>();
     private HashMap<String, String> mapPlan = new HashMap<>();
     private String token;
+
+    private RebateAlreadyData data;
 
     public RebateFragment() {
     }
@@ -117,7 +120,8 @@ public class RebateFragment<T> extends Fragment implements ICountCashView<T>, IP
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_more:
-                if (recyclerViewAdapter.getItemCount() > 2) {
+
+                if (recyclerViewAdapter.getItemCount() >2) {
                     btnMore.setClickable(true);
                     btnMore.setText("显示更多");
                     recyclerViewAdapter.AddItem(2);
@@ -138,7 +142,6 @@ public class RebateFragment<T> extends Fragment implements ICountCashView<T>, IP
                 break;
         }
     }
-
 
     @Override
     public void onSuccessCount(T t) {

@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -24,7 +25,7 @@ import hantianyu1504d.bwie.com.avenue.rebate.bean.RebatePlanData;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> implements View.OnClickListener {
     private Context context;
-    private List<RebatePlanData> list;
+    private List<RebatePlanData> list=new ArrayList<>();
     private ViewHolder holder;
     private int num = 2;
     private MyItemClickListener mListener = null;
