@@ -104,4 +104,5 @@
     <dimen name="x66">33dp</dimen>
     <dimen name="x108">54dp</dimen>
     <dimen name="x340">170dp</dimen>
+    <dimen name="x65" type="dimen" format="float">32.5dp</dimen>
 </resources>

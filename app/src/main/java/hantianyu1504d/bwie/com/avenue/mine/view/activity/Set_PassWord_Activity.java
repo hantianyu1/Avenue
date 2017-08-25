@@ -1,6 +1,7 @@
 package hantianyu1504d.bwie.com.avenue.mine.view.activity;
 
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -9,6 +10,8 @@ import butterknife.OnClick;
 import hantianyu1504d.bwie.com.avenue.R;
 import hantianyu1504d.bwie.com.avenue.base.BaseActvitiy;
 import hantianyu1504d.bwie.com.avenue.mine.view.iview.PasswordInputView;
+
+
 
 /**
  * Created by lichaohui on 2017/8/25.
@@ -22,6 +25,8 @@ public class Set_PassWord_Activity extends BaseActvitiy {
     PasswordInputView passwordView;
     @BindView(R.id.rlayout_next)
     RelativeLayout rlayoutNext;
+    @BindView(R.id.img_back)
+    ImageView img_back;
 
     @Override
     public void initData() {
@@ -40,13 +45,16 @@ public class Set_PassWord_Activity extends BaseActvitiy {
     }
 
 
-    @OnClick({R.id.rlayout_next})
+    @OnClick({R.id.rlayout_next, R.id.img_back})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.rlayout_next:
                 String trim = passwordView.getText().toString().trim();
                 Toast.makeText(this, "" + trim, Toast.LENGTH_SHORT).show();
 
+                break;
+            case R.id.img_back:
+                finish();
                 break;
         }
     }
