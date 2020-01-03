@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ZoomControls;
 
@@ -42,6 +43,7 @@ public class NearbyFragment extends Fragment {
     private LocationClient mLocationClient;
     private MyLocationConfiguration.LocationMode mCurrentMode = MyLocationConfiguration.LocationMode.NORMAL;
     private BDLocationListener myListener;
+    private Button butt;
 
     /*BDAbstractLocationListener为7.2版本新增的Abstract类型的监听接口，原有BDLocationListener接口暂时同步保留。具体介绍请参考后文中的说明*/
     public NearbyFragment() {
@@ -65,6 +67,7 @@ public class NearbyFragment extends Fragment {
 
     private void initView() {
         map = (MapView) view.findViewById(R.id.nearby_map);
+//        butt = (Button) view.findViewById(R.id.butt);
         initMap();
         tabLayout = (TabLayout) view.findViewById(R.id.foot_tab1);
         viewPager = (ViewPager) view.findViewById(R.id.foot_viewpaer1);
@@ -155,5 +158,29 @@ public class NearbyFragment extends Fragment {
         viewPager.setAdapter(viewAdapter);
         tabLayout.setupWithViewPager(viewPager);
     }
+
+    //---------------------
+    public void onDestroy() {
+        super.onDestroy();
+        //在activity执行onDestroy时执行mMapView.onDestroy()，实现地图生命周期管理
+        map.onDestroy();
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        //在activity执行onResume时执行mMapView. onResume ()，实现地图生命周期管理
+        map.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        //在activity执行onPause时执行mMapView. onPause ()，实现地图生命周期管理
+        map.onPause();
+    }
+
+    //---------------------
 
 }

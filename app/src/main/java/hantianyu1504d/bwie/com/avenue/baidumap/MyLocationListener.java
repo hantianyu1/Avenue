@@ -9,6 +9,9 @@ import com.baidu.location.Poi;
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.BitmapDescriptor;
 import com.baidu.mapapi.map.BitmapDescriptorFactory;
+import com.baidu.mapapi.map.MapStatus;
+import com.baidu.mapapi.map.MapStatusUpdate;
+import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MarkerOptions;
 import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.model.LatLng;
@@ -153,6 +156,21 @@ public class MyLocationListener implements BDLocationListener {
             }
         }
         Log.e("BaiduLocationApiDem", sb.toString());
+//-------------------------------
+        BitmapDescriptor bitmapDescriptor = BitmapDescriptorFactory.fromResource(R.mipmap.dingwei);
+        LatLng latlng = new LatLng(location.getLatitude(), location.getLongitude());
+        OverlayOptions options = new MarkerOptions().position(latlng).icon(bitmapDescriptor);
+        bdMap.addOverlay(options);
+        MapStatus mMapStatus = new MapStatus.Builder()
+                .target(latlng)
+                .zoom(12)
+                .build();
+//定义MapStatusUpdate对象，以便描述地图状态将要发生的变化
+
+        MapStatusUpdate mMapStatusUpdate = MapStatusUpdateFactory.newMapStatus(mMapStatus);
+//改变地图状态
+        bdMap.setMapStatus(mMapStatusUpdate);
+//-------------------------------
 
     }
 
